@@ -1,11 +1,12 @@
 import merge from "lodash/merge";
+
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const _nullUser = Object.freeze({
   currentUser: null
 });
 
-const sessionReducer = (action, state = _nullUser) => {
+const sessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
 
   switch(action.type) {
