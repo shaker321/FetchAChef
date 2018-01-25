@@ -56,10 +56,9 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div>
         <form
           onSubmit={ this.handleSubmit.bind(this) }
-          className="login-form-box"
         >
           Welcome to FetchAChef
 
@@ -69,7 +68,7 @@ class SessionForm extends React.Component {
 
           { this.renderErrors() }
 
-          <div className="login-form">
+          <div>
             <br/>
 
             <label>Username:
@@ -77,7 +76,6 @@ class SessionForm extends React.Component {
                 type="text"
                 value={ this.state.username }
                 onChange = { this.update("username") }
-                className="login-input"
               />
             </label>
 
@@ -88,7 +86,6 @@ class SessionForm extends React.Component {
                 type="password"
                 value={ this.state.password }
                 onChange={ this.update("password") }
-                className="login-input"
               />
             </label>
           </div>
