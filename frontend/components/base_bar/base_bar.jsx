@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 class BaseBar extends React.Component {
   constructor(props) {
@@ -19,4 +18,4 @@ class BaseBar extends React.Component {
   }
 }
 
-export default withRouter(BaseBar);
+export default BaseBar;

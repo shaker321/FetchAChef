@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class NavBar extends React.Component {
         <ul>
           <li><Link to="/">FetchAChef</Link></li>
           <li><Link to="/">Cart</Link></li>
-          <li><Link to="/">Welcome `${this.state.username}`</Link></li>
+          <li><Link to="/">Welcome!</Link></li>
         </ul>
       </div>
     );
@@ -37,7 +37,7 @@ class NavBar extends React.Component {
   render() {
     let buttons;
 
-    this.state.currentUser ? (buttons = this.loggedInButtons()) : (buttons = this.loggedOutButtons());
+    this.state.username ? (buttons = this.loggedInButtons()) : (buttons = this.loggedOutButtons());
 
     return (
       buttons
@@ -45,4 +45,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default withRouter(NavBar);
+export default NavBar;
