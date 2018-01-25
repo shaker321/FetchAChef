@@ -1,0 +1,22 @@
+.base-bar {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: white;
+  border-top: solid green 1px;
+  color: green;
+  height: 62px;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+.base-bar ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.base-bar ul li {
+  list-style: none;
+  margin: 5px;
+  float: left;
+}

@@ -14,9 +14,9 @@ class NavBar extends React.Component {
     return (
       <div>
         <ul>
-          <li><Link to="/">FetchAChef</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-          <li><Link to="/login">Log In</Link></li>
+          <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
+          <li><Link to="/signup" className="nav-bar-signup nav-bar-buttons">Sign Up</Link></li>
+          <li><Link to="/login" className="nav-bar-login nav-bar-buttons">Log In</Link></li>
         </ul>
       </div>
     );
@@ -24,11 +24,12 @@ class NavBar extends React.Component {
 
   loggedInButtons() {
     return (
-      <div>
+      <div className="nav-bar">
         <ul>
-          <li><Link to="/">FetchAChef</Link></li>
-          <li><Link to="/">Cart</Link></li>
-          <li><Link to="/">Welcome!</Link></li>
+          <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
+          <li><Link to="/" className="nav-bar-buttons nav-bar-cart">Cart</Link></li>
+          <li><Link to="/" className="nav-bar-user nav-bar-buttons">Welcome!</Link></li>
+          <li><Link to={ this.props.logout() }>Logout</Link></li> //Move to dropdown
         </ul>
       </div>
     );

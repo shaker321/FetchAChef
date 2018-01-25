@@ -1,0 +1,70 @@
+/*NavBar*/
+.nav-bar {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: white;
+  border-bottom: solid green 1px;
+  height: 62px;
+  width: 100%;
+  margin: auto;
+}
+
+.nav-bar-buttons {
+  border: 1px solid green;
+  color: green;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  margin: 6px;
+  background-color: white;
+  float: right;
+  margin-top: 11px;
+}
+
+.nav-bar-link-to-home {
+  float: left;
+  margin-left: 30px;
+}
+
+.nav-bar-login,
+.nav-bar-user  {
+  margin-right: 30px;
+}
+
+.nav-bar-cart {
+  background-image: asset-url("cart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 16px;
+  border: none;
+}
+
+// // Search
+// .search-locations-bar {
+//   height: 20px;
+//   padding: 10px;
+//   width: 35%;
+//   margin: 10px 0px;
+//   float: left;
+// }
+//
+// /*drop down*/
+// .drop-down-menu {
+//   border: 1px solid green;
+//   list-style: none;
+//   font-size: 12px;
+//   position: absolute;
+//   background-color: white;
+// }
+//
+// .drop-down-menu-item {
+//   margin-bottom: 3px;
+//   padding: 10px 20px;
+// }
+//
+// .drop-down-menu-item:hover {
+//   background-color: green;
+//   color: white;
+// }

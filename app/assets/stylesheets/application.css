@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /*reset*/
+
+  html, body, section, article,
+  h1, h2, h3, h6, p, strong,
+  em, a, select, ul, li, input,
+  a textarea, button, img, label {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: inherit;
+    font: inherit;
+    text-decoration: inherit;
+    text-align: inherit;
+    color: inherit;
+    background: transparent;
+    list-style: none;
+  }
+
+  html {
+    background-color: #EAEAEA;
+    min-width: 750px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    cursor: pointer;
+  }
+
+ .link {
+   outline: none;
+   text-decoration: none;
+   padding: 2px 1px 0;
+ }
+
+ .link:link {
+   color: #265301;
+ }
+
+ .link:visited {
+   color: #437A16;
+ }
+
+ .link:focus {
+   border-bottom: 1px solid;
+   background: #BAE498;
+ }
+
+ .link:hover {
+   border-bottom: 1px solid;
+   background: #CDFEAA;
+ }
+
+ .link:active {
+   background: #265301;
+   color: #CDFEAA;
+ }

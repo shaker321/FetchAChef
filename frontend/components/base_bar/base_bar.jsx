@@ -7,7 +7,7 @@ class BaseBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="base-bar">
         <ul>
           <li><a href="mailto:anthonypaul.shaker@gmail.com">Contact</a></li>
           <li><a href="https://github.com/shaker321/FetchAChef" target="_blank">Github</a></li>
