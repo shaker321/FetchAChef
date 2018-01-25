@@ -12,7 +12,7 @@ class NavBar extends React.Component {
 
   loggedOutButtons() {
     return (
-      <div>
+      <div className="nav-bar">
         <ul>
           <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
           <li><Link to="/signup" className="nav-bar-signup nav-bar-buttons">Sign Up</Link></li>

@@ -1,0 +1,54 @@
+// Main Page
+.main-page {
+  height: -webkit-calc(100% - 124px);
+}
+
+.main-page-image {
+  height: 100%;
+}
+
+.main-page-image {
+  background-image: asset-url("front-page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+.main-page-title, .main-page-description {
+  color: white;
+  z-index: 1001;
+  line-height: 1.2;
+  text-shadow: 2px 2px 3px rgba(0,0,0,1);
+}
+
+.main-page-title {
+  font-size: 56px;
+  padding-top: 10%;
+}
+
+.main-page-description {
+  font-size: 25px;
+  padding-top: 2%;
+  padding-bottom: 8%;
+}
+
+.main-page-image ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.main-page-image li {
+  list-style: none;
+  margin: 15px;
+  float: left;
+  font-size: 20px;
+  padding-top: 25px;
+  background-color: green;
+  border-radius: 5px;
+  padding: 10px;
+}
