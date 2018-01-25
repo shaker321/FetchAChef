@@ -6,14 +6,8 @@ class NavBar extends React.Component {
     super(props);
 
     this.state = {
-      currentUser: ""
+      username: this.props.currentUser
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.setState({ currentUser: this.props.user.username });
-    }
   }
 
   loggedOutButtons() {
@@ -34,7 +28,7 @@ class NavBar extends React.Component {
         <ul>
           <li><Link to="/">FetchAChef</Link></li>
           <li><Link to="/">Cart</Link></li>
-          <li><Link to="/">Welcome `${this.state.currentUser}`</Link></li>
+          <li><Link to="/">Welcome `${this.state.username}`</Link></li>
         </ul>
       </div>
     );
