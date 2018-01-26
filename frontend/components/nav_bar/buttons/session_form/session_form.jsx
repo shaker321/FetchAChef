@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
 
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
@@ -29,7 +29,13 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+
+    this.props.processForm({
+      user: {
+        username: this.state.username,
+        password: this.state.password
+      }
+    });
   }
 
 
@@ -38,65 +44,84 @@ class SessionForm extends React.Component {
       <ul>
         { this.props.errors.map(
           (error, i) => (
-            <li key={`error-${i}`}> { error } </li>
+            <li className="login-form-errors" key={ `error-${i}` }> { error } </li>
           )
         )}
       </ul>
     );
   }
 
-  toggleMessage() {
+  toggleForm() {
     let navLink;
     let text;
 
     if (this.props.type === "login") {
       text = (
-        <h6 className="login-form-text">Don't have an account?</h6>
+        <h6 className="login-form-text" key="text">Don't have an account?</h6>
       );
 
       navLink = (
-        <Link to="/signup" className="login-form-navLink">Sign up!</Link>
+        <button
+          onClick={ this.props.toggle }
+          className="login-form-navLink"
+          key="navLink">Sign up!
+        </button>
       );
-    } else {
+    } else if (this.props.type === "signup") {
       text = (
-        <h6 className="login-form-text">Already have an account?</h6>
+        <h6 className="login-form-text" key="text">Already have an account?</h6>
       );
 
       navLink = (
-        <Link to="/signup" className="login-form-navLink">Log In!</Link>
+        <button
+          onClick={ this.props.toggle }
+          className="login-form-navLink"
+          key="navLink">Log In!
+        </button>
       );
     }
 
     return ( [text, navLink] );
   }
 
+  submitButtonName() {
+    return (this.props.type === "login" ? "Log In" : "Sign Up");
+  }
+
   render() {
     return (
-      <form onSubmit={ this.handleSubmit.bind(this) } >
-        { this.renderErrors() }
-        <div>
-          <input
-            type="text"
-            value={ this.state.username }
-            placeholder="Username"
-            onChange = { this.update("username") }
-          />
+      <div className="login-form-container">
+        <div className="login-form-box">
+          <form onSubmit={ this.handleSubmit.bind(this) }>
+            { this.renderErrors() }
+            <div>
+              <input
+                type="text"
+                value={ this.state.username }
+                placeholder="Username"
+                onChange = { this.update("username") }
+                className="login-input"
+              />
 
-          <input
-            type="password"
-            value={ this.state.password }
-            placeholder="Password"
-            onChange={ this.update("password") }
-          />
+              <input
+                type="password"
+                value={ this.state.password }
+                placeholder="Password"
+                onChange={ this.update("password") }
+                className="login-input"
+              />
 
-          <input
-            type="submit"
-            value={ this.props.formType }
-          />
+              <input
+                type="submit"
+                value={ this.submitButtonName() }
+                className="login-form-submit"
+              />
+            </div>
 
-          { this.toggleMessage() }
+            { this.toggleForm() }
+          </form>
         </div>
-      </form>
+      </div>
     );
   }
 }

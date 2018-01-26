@@ -1,13 +1,13 @@
 // modal
 .modal {
-  position: fixed;
-  top: 30%;
-  left: 30%;
-  right: 30%;
-  bottom: 30%;
+  position: absolute;
   z-index: 15;
   width: 452px;
-  height: 312px;
+  height: 404px;
+  left: 50%;
+  top: 50%;
+  margin: -202px 0 0 -226px;
+  display: table;
 }
 
 /*login/logout form*/
@@ -15,8 +15,8 @@
 .login-form-container {
   background-color: white;
   border: solid green 1px;
-  height: 310px;
-  width: 450px;
+  height: 100%;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
 }

@@ -22,12 +22,14 @@ class NavBar extends React.Component {
     e.preventDefault();
     this.setState({ modalOpen: true });
     this.form = "signup";
+    this.toggle = this.openModalFromLogIn.bind(this);
   }
 
   openModalFromLogIn(e) {
     e.preventDefault();
     this.setState({ modalOpen: true });
     this.form = "login";
+    this.toggle = this.openModalFromSignUp.bind(this);
   }
 
   loggedOutButtons() {
@@ -69,7 +71,7 @@ class NavBar extends React.Component {
           isOpen={ this.state.modalOpen }
           onRequestClose={ this.closeModal }
         >
-          <SessionFormContainer type={this.form}/>
+          <SessionFormContainer type={this.form} toggle={this.toggle}/>
         </Modal>
       </div>
     );
