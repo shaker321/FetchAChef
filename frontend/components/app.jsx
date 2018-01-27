@@ -6,7 +6,7 @@ import { AuthRoute } from "../util/route_util.jsx";
 import BaseBar from "./base_bar/base_bar.jsx";
 import MainPage from "./main_page/main_page.jsx";
 import NavBarContainer from "./nav_bar/nav_bar_container.jsx";
-import SessionFormContainer from "./session_form/session_form_container.jsx";
+import SessionFormContainer from "./nav_bar/buttons/session_form/session_form_container.jsx";
 
 const App = () => (
   <div>
