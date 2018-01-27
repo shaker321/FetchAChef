@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="login-form-box">
           <form onSubmit={ this.handleSubmit.bind(this) }>
-            { this.renderErrors() }
+            { this.renderErrors() ? this.renderErrors() : this.props.close() }
             <div>
               <input
                 type="text"

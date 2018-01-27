@@ -69,9 +69,9 @@ class NavBar extends React.Component {
         <Modal
           className="modal"
           isOpen={ this.state.modalOpen }
-          onRequestClose={ this.closeModal }
+          onRequestClose={ this.closeModal.bind(this) }
         >
-          <SessionFormContainer type={this.form} toggle={this.toggle}/>
+          <SessionFormContainer type={this.form} toggle={this.toggle} close={this.closeModal.bind(this)}/>
         </Modal>
       </div>
     );

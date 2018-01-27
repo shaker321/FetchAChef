@@ -8,7 +8,8 @@ const mapStateToProps = (state, nextProps) => {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session,
     formType: nextProps.type,
-    toggle: nextProps.toggle
+    toggle: nextProps.toggle,
+    close: nextProps.close
   };
 };
 
