@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,12 +9,6 @@ class SessionForm extends React.Component {
       username: "",
       password: "",
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push("/");
-    }
   }
 
   update(field) {
@@ -31,11 +25,11 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
 
     this.props.processForm({
-      user: {
-        username: this.state.username,
-        password: this.state.password
-      }
+      username: this.state.username,
+      password: this.state.password
     });
+    debugger
+    history.push("/");
   }
 
 
@@ -93,7 +87,8 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="login-form-box">
           <form onSubmit={ this.handleSubmit.bind(this) }>
-            { this.renderErrors() ? this.renderErrors() : this.props.close() }
+            { this.props.errors ? this.renderErrors() : this.props.close() }
+
             <div>
               <input
                 type="text"
