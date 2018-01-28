@@ -15,7 +15,10 @@ class NavBar extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalOpen: false });
+    this.setState({
+      username: this.props.currentUser,
+      modalOpen: false
+    });
   }
 
   openModalFromSignUp(e) {
@@ -49,9 +52,8 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         <ul>
           <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
-          <li><Link to="/" className="nav-bar-buttons nav-bar-cart">Cart</Link></li>
+          <li><Link to="/" className="nav-bar-buttons nav-bar-cart"></Link></li>
           <li><Link to="/" className="nav-bar-user nav-bar-buttons">Welcome!</Link></li>
-          <li><Link to={ this.props.logout() }>Logout</Link></li> //Move to dropdown
         </ul>
       </div>
     );

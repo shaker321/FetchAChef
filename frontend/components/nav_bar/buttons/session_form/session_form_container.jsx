@@ -16,7 +16,6 @@ const mapStateToProps = (state, nextProps) => {
 const mapDispatchToProps = (dispatch, nextProps) => {
   const formType = nextProps.type;
   const processForm = (formType === 'login') ? login : signup;
-  // const refresh =
 
   return {
       processForm: user => dispatch(processForm(user)),

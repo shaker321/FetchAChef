@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -28,8 +28,6 @@ class SessionForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     });
-    debugger
-    history.push("/");
   }
 
 
@@ -112,9 +110,9 @@ class SessionForm extends React.Component {
                 className="login-form-submit"
               />
             </div>
-
-            { this.toggleForm() }
           </form>
+
+          { this.toggleForm() }
         </div>
       </div>
     );
