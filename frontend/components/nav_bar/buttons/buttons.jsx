@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
 import SessionFormContainer from "./session_form/session_form_container.jsx";
+import DropDownMenuContainer from "./drop_down_menu/drop_down_menu_container.jsx";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class NavBar extends React.Component {
 
     this.state = {
       username: this.props.currentUser,
-      modalOpen: false
+      modalOpen: false,
+      dropDownOpen: false
     };
   }
 
@@ -35,6 +37,20 @@ class NavBar extends React.Component {
     this.toggle = this.openModalFromSignUp.bind(this);
   }
 
+  dropDownOn(e) {
+    e.preventDefault();
+    this.setState({ dropDownOpen: true });
+  }
+
+  dropDownOff(e) {
+    e.preventDefault();
+    this.setState({ dropDownOpen: false });
+  }
+
+  renderDropDownMenu() {
+    return (this.state.dropDownOpen ? <DropDownMenuContainer/> : null);
+  }
+
   loggedOutButtons() {
     return (
       <div className="nav-bar">
@@ -52,9 +68,15 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         <ul>
           <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
+          <li>
+            <Link to="/"
+              className="nav-bar-user nav-bar-buttons"
+              onMouseOver={ this.dropDownOn }
+              onMouseLeave={ this.dropDownOff }>Welcome!
+              { this.renderDropDownMenu() }
+            </Link>
+          </li>
           <li><Link to="/" className="nav-bar-buttons nav-bar-cart"></Link></li>
-          <li><Link to="/" className="nav-bar-user nav-bar-buttons">Welcome!</Link></li>
-          <li><Link to={ this.props.logout() }>Logout</Link></li> //Move to dropdown
         </ul>
       </div>
     );
