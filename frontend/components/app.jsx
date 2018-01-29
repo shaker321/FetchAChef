@@ -8,7 +8,7 @@ import MainPage from "./main_page/main_page.jsx";
 import NavBarContainer from "./nav_bar/nav_bar_container.jsx";
 
 const App = () => (
-  <div>
+  <div className="page">
     <header>
       <NavBarContainer/>
     </header>
