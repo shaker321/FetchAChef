@@ -22,27 +22,71 @@ class DropDownMenu extends React.Component {
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
-        <li><div onClick={ this.redirect } className="drop-down-menu-item">Change Password</div></li>,
-        <li><div onClick={ this.redirect } className="drop-down-menu-item">User Orders</div></li>
+        <li>
+          <div
+            onClick={ this.redirect }
+            className="drop-down-menu-item"
+            >Change Password
+          </div>
+        </li>,
+        <li>
+          <div
+            onClick={ this.redirect }
+            className="drop-down-menu-item"
+            >User Orders
+          </div>
+        </li>
       ];
 
-      if ((this.props.currentUser.username === "test@test.com") || (this.props.currentUser.kitchen && this.props.currentUser.chef)) { // for testing
+      if ((this.props.currentUser.username === "test@test.com") ||
+          (this.props.currentUser.kitchen && this.props.currentUser.chef)
+      ) { // for testing
         dropDownMenuItems.push(
-          <li><div onClick={ this.redirect } className="drop-down-menu-item">Chef Tools</div></li>,
-          <li><div onClick={ this.redirect } className="drop-down-menu-item">Kitchen Tools</div></li>
+          <li>
+            <div
+              onClick={ this.redirect }
+              className="drop-down-menu-item"
+              >Chef Tools
+            </div>
+          </li>,
+          <li>
+            <div
+              onClick={ this.redirect }
+              className="drop-down-menu-item"
+              >Kitchen Tools
+            </div>
+          </li>
         );
       } else if (this.props.currentUser.kitchen) {
         dropDownMenuItems.push(
-          <li><div onClick={ this.redirect } className="drop-down-menu-item">Kitchen Tools</div></li>
+          <li>
+            <div
+              onClick={ this.redirect }
+              className="drop-down-menu-item"
+              >Kitchen Tools
+            </div>
+          </li>
         );
       } else if (this.props.currentUser.chef) {
         dropDownMenuItems.push(
-          <li><div onClick={ this.redirect } className="drop-down-menu-item">Chef Tools</div></li>
+          <li>
+            <div
+              onClick={ this.redirect }
+              className="drop-down-menu-item"
+              >Chef Tools
+          </div>
+        </li>
         );
       }
 
       dropDownMenuItems.push(
-        <li><div onClick={ this.props.logout } className="drop-down-menu-item">Log Out</div></li>
+        <li>
+          <div
+            onClick={ this.props.logout }
+            className="drop-down-menu-item">
+            Log Out
+        </div>
+      </li>
       );
 
       return (

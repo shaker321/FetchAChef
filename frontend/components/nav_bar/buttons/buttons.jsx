@@ -71,8 +71,8 @@ class NavBar extends React.Component {
           <li>
             <Link to="/"
               className="nav-bar-user nav-bar-buttons"
-              onMouseOver={ this.dropDownOn }
-              onMouseLeave={ this.dropDownOff }>Welcome!
+              onMouseOver={ this.dropDownOn.bind(this) }
+              onMouseLeave={ this.dropDownOff.bind(this) }>Welcome!
               { this.renderDropDownMenu() }
             </Link>
           </li>

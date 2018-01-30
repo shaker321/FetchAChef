@@ -13,6 +13,7 @@ const mapStateToProps = (state, nextProps) => {
 };
 
 const mapDispatchToProps = (dispatch, nextProps) => {
+  return {};
 };
 
 export default connect(
