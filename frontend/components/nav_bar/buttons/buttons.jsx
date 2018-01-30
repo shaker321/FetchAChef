@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
-import SessionFormContainer from "./session_form/session_form_container.jsx";
 import DropDownMenuContainer from "./drop_down_menu/drop_down_menu_container.jsx";
+import SessionFormContainer from "./session_form/session_form_container.jsx";
+import SearchLocationsBar from "./search_locations_bar/search_locations_bar.jsx";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -55,9 +56,17 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <ul>
-          <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
-          <li><button onClick={ this.openModalFromSignUp.bind(this) } className="nav-bar-signup nav-bar-buttons">Sign Up</button></li>
-          <li><button onClick={ this.openModalFromLogIn.bind(this) } className="nav-bar-login nav-bar-buttons">Log In</button></li>
+          <li>
+            <button
+              onClick={ this.openModalFromSignUp.bind(this) }
+              className="nav-bar-signup nav-bar-buttons">Sign Up</button></li>
+          <li>
+            <button
+              onClick={ this.openModalFromLogIn.bind(this) }
+              className="nav-bar-login nav-bar-buttons"
+              >Log In
+            </button>
+          </li>
         </ul>
       </div>
     );
@@ -67,16 +76,21 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <ul>
-          <li><Link to="/" className="nav-bar-link-to-home nav-bar-buttons">FetchAChef</Link></li>
           <li>
-            <Link to="/"
+            <Link
+              to="/"
               className="nav-bar-user nav-bar-buttons"
               onMouseOver={ this.dropDownOn.bind(this) }
               onMouseLeave={ this.dropDownOff.bind(this) }>Welcome!
               { this.renderDropDownMenu() }
             </Link>
           </li>
-          <li><Link to="/" className="nav-bar-buttons nav-bar-cart"></Link></li>
+          <li>
+            <Link
+              to="/"
+              className="nav-bar-buttons nav-bar-cart">
+            </Link>
+          </li>
         </ul>
       </div>
     );
@@ -89,6 +103,14 @@ class NavBar extends React.Component {
 
     return (
       <div>
+        <Link
+          to="/"
+          className="nav-bar-link-to-home nav-bar-buttons"
+          >FetchAChef
+        </Link>
+
+        <SearchLocationsBar/>
+        
         { buttons }
 
         <Modal
@@ -96,7 +118,11 @@ class NavBar extends React.Component {
           isOpen={ this.state.modalOpen }
           onRequestClose={ this.closeModal.bind(this) }
         >
-          <SessionFormContainer type={this.form} toggle={this.toggle} close={this.closeModal.bind(this)}/>
+          <SessionFormContainer
+            type={this.form}
+            toggle={this.toggle}
+            close={this.closeModal.bind(this)}
+          />
         </Modal>
       </div>
     );
