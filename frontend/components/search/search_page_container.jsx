@@ -6,7 +6,7 @@ const mapStateToProps = (state, location) => ({
 
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 

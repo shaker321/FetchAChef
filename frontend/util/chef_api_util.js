@@ -64,5 +64,3 @@ export const updateChef = (chef, success) => {
     }
   });
 };
-
-module.exports = ChefApiUtil;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 class KitchenMap extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class KitchenMap extends React.Component {
     });
 
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.map);
-    this.map = new gooogle.maps.Map(mapDOMNode, {
+    this.map = new google.maps.Map(mapDOMNode, {
       center: {
         lat: 40.7529,
         lng: -73.9942
@@ -40,7 +41,7 @@ class KitchenMap extends React.Component {
 
           this.map.setCenter(pos);
         }
-      )
+      );
     }
 
     this.mapsListener = google.maps.event.addListener(
@@ -58,8 +59,7 @@ class KitchenMap extends React.Component {
     let latLngBounds = this.map.getBounds();
     let northEastBound = latLngBounds.getNorthEast();
     let southWestBound = latLngBounds.getSouthWest();
-
-    LocationStore.setBounds({
+    let bounds = {
       bounds: {
         "northEast": {
           lat: (northEastBound.lat()).toString(),
@@ -70,13 +70,13 @@ class KitchenMap extends React.Component {
           lng: (southWestBound.lng()).toString()
         }
       }
-    });
+    };
 
-    KitchenActions.fetchAllKitchens(LocationStore.getBounds());
+    this.props.fetchAllKitchens(bounds);
   }
 
   createMarkers() {
-    let kitchens = KitchenStore.all();
+    let kitchens = this.props.fetchAllKitchens();
     let that = this;
     let remainingMarkers = [];
 
@@ -116,7 +116,7 @@ class KitchenMap extends React.Component {
 
             that.infowindow = new google.maps.InfoWindow({
               content:
-                `<a href="#/api/kitchens/${kitchens[marker.id].id}">
+                `<a href="/api/kitchens/${kitchens[marker.id].id}">
                   <h3 class="info-window-text">${kitchens[marker.id].kitchen_name}</h3>
                 </a>`
             });

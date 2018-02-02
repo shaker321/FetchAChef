@@ -14,7 +14,7 @@ class MainPage extends React.Component {
           <h3 className="main-page-description">Chef cooked. Direct to your table.</h3>
 
           <ul>
-            <li><Link to="/" className="main-page-links">Order Food</Link></li>
+            <li><Link to="/api/kitchens" className="main-page-links">Order Food</Link></li>
             <li><Link to="/" className="main-page-links">I'm a Chef</Link></li>
             <li><Link to="/" className="main-page-links">Open a Kitchen</Link></li>
           </ul>
