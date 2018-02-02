@@ -48,7 +48,7 @@ Chef.destroy_all
 Chef.create!(
   first_name: "Tony",
   last_name: "Shaker",
-  email_address: "test@test.com",
+  username: "test@test.com",
   general_cuisine: "European",
   specific_cuisine: "Italian",
   description: "I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. I'm not actually Italian. ",
@@ -60,7 +60,7 @@ Chef.create!(
 Chef.create!(
   first_name: "Papa",
   last_name: "John's",
-  email_address: "test2@test.com",
+  username: "test2@test.com",
   general_cuisine: "North American",
   specific_cuisine: "Mexican",
   description: "I eat Mexican food myself. Taco Bell es mue bueno!",
