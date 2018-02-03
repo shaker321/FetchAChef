@@ -14,7 +14,7 @@ User.create!(username: "test2@test.com", password: "testtest");
 # Kitchens
 Kitchen.destroy_all
 Kitchen.create!(
-  kitchen_name: "Now We're Cooking - NYC 1",
+  kitchen_name: "FetchAChef - NYC 1",
   description: "A kitchen in NYC",
   user_id: User.first.id,
   owner: "Bob Bobartin",
@@ -24,7 +24,7 @@ Kitchen.create!(
 )
 
 Kitchen.create!(
-  kitchen_name: "Now We're Cooking - NYC 2",
+  kitchen_name: "FetchAChef - NYC 2",
   description: "Another kitchen in NYC",
   user_id: User.second.id,
   owner: "A community Church",
