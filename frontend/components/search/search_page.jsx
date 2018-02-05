@@ -51,7 +51,6 @@ class SearchPage extends React.Component {
         <KitchenMapContainer
           lat={ lat }
           lng={ lng }
-          locationId={ this.props.params.location_id }
         />
       </div>
     );
