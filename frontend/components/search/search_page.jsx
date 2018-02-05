@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import KitchenMap from "./kitchen_map/kitchen_map_container.jsx";
+import KitchenMapContainer from "./kitchen_map/kitchen_map_container.jsx";
 // import KitchenIndex from "somewhere";
 
 class SearchPage extends React.Component {
@@ -13,10 +13,10 @@ class SearchPage extends React.Component {
     // <KitchenIndex
     //   locationId={ this.props.params.location_id }
     // />
-
+    
     return (
       <div className="search-page">
-        <KitchenMap
+        <KitchenMapContainer
           lat={ parseFloat(this.props.location.query.lat) }
           lng={ parseFloat(this.props.location.query.lat) }
           locationId={ this.props.params.location_id }

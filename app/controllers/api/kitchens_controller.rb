@@ -2,7 +2,11 @@ class Api::KitchensController < ApplicationController
   before_action :require_logged_in, only: [:update, :destroy]
 
   def index
-    @kitchens = Kitchen.in_bounds(params[:bounds][:bounds]).includes(:chefs)
+    if params[:bounds]
+      @kitchens = Kitchen.in_bounds(params[:bounds][:bounds]).includes(:chefs)
+    else
+      @kitchens = Kitchen.all
+    end
   end
 
   def show

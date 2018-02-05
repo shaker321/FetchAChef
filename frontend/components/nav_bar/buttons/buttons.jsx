@@ -98,7 +98,7 @@ class NavBar extends React.Component {
 
   render() {
     let buttons;
-
+    
     this.state.username ? (buttons = this.loggedInButtons()) : (buttons = this.loggedOutButtons());
 
     return (
@@ -109,8 +109,10 @@ class NavBar extends React.Component {
           >FetchAChef
         </Link>
 
-        <SearchLocationsBar/>
-        
+        <SearchLocationsBar
+          history={ this.props.history }
+        />
+
         { buttons }
 
         <Modal

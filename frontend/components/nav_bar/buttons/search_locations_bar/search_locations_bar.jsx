@@ -19,7 +19,7 @@ class SearchLocationsBar extends React.Component {
     this.autocompleteListener = google.maps.event.addListener(
       this.autocomplete,
       "place_changed",
-      this.handleSubmit
+      this.handleSubmit.bind(this)
     );
   }
 
@@ -35,11 +35,11 @@ class SearchLocationsBar extends React.Component {
       lat: address.geometry.location.lat(),
       lng: address.geometry.location.lng()
     };
-
-    // hashHistory.push({
-    //   pathname: "/api/chefs",
-    //   query: coords
-    // });
+    
+    this.props.history.push({
+      pathname: "/api/kitchens",
+      search: `lat=${coords.lat}&lng=${coords.lng}`
+    })
 
     this.componentWillUnmount();
   }

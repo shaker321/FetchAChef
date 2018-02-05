@@ -1,0 +1,57 @@
+// search page container
+.search-page {
+  height: -webkit-calc(100% - 124px);
+  background-color: white;
+}
+
+// map
+.map {
+  position: absolute;
+  right: 0px;
+  width: 40%;
+  height: -webkit-calc(100% - 124px);  display: block;
+  float: right;
+}
+
+// Chef Index
+.kitchen-index-items-container {
+  width: 60%;
+  height: -webkit-calc(100% - 124px);  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  background-color: white;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: green;
+  font-size: 36px;
+  -webkit-text-stroke: 1px black;
+}
+
+.kitchen-index-item {
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+  float: left;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.kitchen-index-item-text {
+  width: 100%;
+  bottom: 5px;
+  left: 5px;
+  float: left;
+  position: absolute;
+}
+
+.kitchen-index-item:hover {
+  opacity: 0.8;
+  box-shadow: 0 1px 8px blue;
+}
+
+.info-window-text {
+  text-align: center;
+}
