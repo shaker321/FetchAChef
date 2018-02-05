@@ -35,7 +35,7 @@ class SearchLocationsBar extends React.Component {
       lat: address.geometry.location.lat(),
       lng: address.geometry.location.lng()
     };
-    
+
     this.props.history.push({
       pathname: "/api/kitchens",
       search: `lat=${coords.lat}&lng=${coords.lng}`
