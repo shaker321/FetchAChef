@@ -1,66 +1,48 @@
-export const fetchAllChefs = (success, kitchenId) => {
+export const fetchAllChefs = (kitchenId) => {
   $.ajax({
     url: "/api/chefs",
     type: "GET",
     data: {
       kitchen_id: kitchenId
-    },
-    success: (data) => {
-      success(data);
     }
   });
 };
 
-export const fetchSingleChef = (id, success) => {
+export const fetchSingleChef = (id) => {
   $.ajax({
     url: "/api/chefs/" + id,
-    type: "GET",
-    success: (data) => {
-      success(data);
-    }
+    type: "GET"
   });
 };
 
-export const createChef = (chef, success) => {
+export const createChef = (chef) => {
   $.ajax({
     url: "/api/chefs",
     type: "POST",
-    data: chef,
-    success: (data) => {
-      success(data);
-    }
+    data: chef
   });
 };
 
-export const approveChef = (chef, success) => {
+export const approveChef = (chef) => {
   $.ajax({
     url: "/api/chefs/" + chef.chef.id,
     type: "PATCH",
-    data: chef,
-    success: (data) => {
-      success(data);
-    }
+    data: chef
   });
 };
 
-export const denyChef = (chefId, success) => {
+export const denyChef = (chefId) => {
   $.ajax({
     url: "/api/chefs/" + chefId,
     type: "DELETE",
-    data: chefId,
-    success: (data) => {
-      success(data);
-    }
+    data: chefId
   });
 };
 
-export const updateChef = (chef, success) => {
+export const updateChef = (chef) => {
   $.ajax({
     url: "/api/chefs/" + chef.id,
     type: "PATCH",
-    data: chef,
-    success: (data) => {
-      success(data);
-    }
+    data: chef
   });
 };

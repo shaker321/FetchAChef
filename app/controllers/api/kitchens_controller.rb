@@ -7,6 +7,8 @@ class Api::KitchensController < ApplicationController
     else
       @kitchens = Kitchen.all
     end
+
+    render :index
   end
 
   def show

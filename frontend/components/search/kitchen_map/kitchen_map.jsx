@@ -12,7 +12,7 @@ class KitchenMap extends React.Component {
     this.markerActive = undefined;
 
     this.setCenterCoords();
-    this.createMarkers();
+    // this.createMarkers();
   }
 
   setCenterCoords() {
@@ -65,15 +65,15 @@ class KitchenMap extends React.Component {
         }
       }
     };
-
-    this.props.fetchAllKitchens(this.bounds);
+    this.createMarkers();
+    // this.props.fetchAllKitchens(this.bounds);
   }
 
   createMarkers() {
     let kitchens = this.props.fetchAllKitchens(this.bounds);
     let that = this;
     let remainingMarkers = [];
-    
+
     this.markers.forEach(
       (marker, index) => {
         if (kitchens[marker.id]) {

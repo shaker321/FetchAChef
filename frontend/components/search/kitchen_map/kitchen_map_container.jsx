@@ -8,11 +8,9 @@ const mapStateToProps = (state, location) => ({
   fetchAllKitchens
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchAllKitchens: () => dispatch(fetchAllKitchens())
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  fetchAllKitchens: (bounds) => dispatch(fetchAllKitchens(bounds))
+});
 
 export default connect(
   mapStateToProps,
