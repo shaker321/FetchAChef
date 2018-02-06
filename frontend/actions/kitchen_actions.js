@@ -13,11 +13,23 @@ export const receiveSingleKitchen = (kitchen) => ({
   kitchen
 });
 
-export const fetchAllKitchens = filters => dispatch => (
-  APIUtil.fetchAllKitchens(filters).then(kitchens => (
-    dispatch(receiveAllKitchens(kitchens))
-  ))
-);
+// export const fetchAllKitchens = () => dispatch => (
+//   APIUtil.fetchAllKitchens().then(kitchens => (
+//     dispatch(receiveAllKitchens(kitchens))
+//   ))
+// );
+
+// Do this instead
+export const fetchAllKitchens = () => {
+  debugger
+  return (dispatch) => {
+    debugger
+    return APIUtil.fetchAllKitchens().then((kitchens) => {
+      debugger
+      return dispatch(receiveAllKitchens(kitchens));
+    });
+  };
+};
 
 export const fetchSingleKitchen = id => dispatch => (
   APIUtil.fetchSingleKitchen(id).then(kitchen => (

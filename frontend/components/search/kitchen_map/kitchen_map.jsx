@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 
 class KitchenMap extends React.Component {
   constructor(props) {
@@ -11,13 +11,11 @@ class KitchenMap extends React.Component {
     this.markers = [];
     this.markerActive = undefined;
 
-    this.createMarkers();
     this.setCenterCoords();
+    this.createMarkers();
   }
 
   setCenterCoords() {
-    let location = parseInt(this.props.locationId);
-
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.map);
     this.map = new google.maps.Map(mapDOMNode, {
       center: {
@@ -25,11 +23,6 @@ class KitchenMap extends React.Component {
         lng: -73.9942
       },
       zoom: 13
-    });
-
-    this.map.setCenter({
-      lat: location.center_lat,
-      lng: location.center_lng
     });
 
     if (navigator.geolocation) {
@@ -48,7 +41,7 @@ class KitchenMap extends React.Component {
     this.mapsListener = google.maps.event.addListener(
       this.map,
       "idle",
-      this._getMapCoords
+      this.getMapCoords.bind(this)
     );
   }
 
@@ -57,10 +50,10 @@ class KitchenMap extends React.Component {
   }
 
   getMapCoords() {
-    let latLngBounds = this.map.getBounds();
+    let latLngBounds = this.map.getBounds();          // map needs to be loaded before getBounds works
     let northEastBound = latLngBounds.getNorthEast();
     let southWestBound = latLngBounds.getSouthWest();
-    let bounds = {
+    this.bounds = {
       bounds: {
         "northEast": {
           lat: (northEastBound.lat()).toString(),
@@ -73,14 +66,14 @@ class KitchenMap extends React.Component {
       }
     };
 
-    this.props.fetchAllKitchens(bounds);
+    this.props.fetchAllKitchens(this.bounds);
   }
 
   createMarkers() {
-    let kitchens = this.props.fetchAllKitchens();
+    let kitchens = this.props.fetchAllKitchens(this.bounds);
     let that = this;
     let remainingMarkers = [];
-
+    
     this.markers.forEach(
       (marker, index) => {
         if (kitchens[marker.id]) {
