@@ -1,4 +1,4 @@
-export const fetchAllKs = (success, bounds) => {
+export const fetchAllKitchens = (success, bounds) => {
   debugger
   $.ajax({
     url: "/api/kitchens",

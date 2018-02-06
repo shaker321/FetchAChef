@@ -9,7 +9,9 @@ const mapStateToProps = (state, location) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    fetchAllKitchens: () => dispatch(fetchAllKitchens())
+  };
 };
 
 export default connect(
