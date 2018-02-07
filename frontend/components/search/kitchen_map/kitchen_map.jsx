@@ -53,6 +53,7 @@ class KitchenMap extends React.Component {
     let latLngBounds = this.map.getBounds();          // map needs to be loaded before getBounds works
     let northEastBound = latLngBounds.getNorthEast();
     let southWestBound = latLngBounds.getSouthWest();
+
     this.bounds = {
       bounds: {
         "northEast": {
@@ -65,12 +66,13 @@ class KitchenMap extends React.Component {
         }
       }
     };
+
+    this.props.fetchAllKitchens(this.bounds);
     this.createMarkers();
-    // this.props.fetchAllKitchens(this.bounds);
   }
 
   createMarkers() {
-    let kitchens = this.props.fetchAllKitchens(this.bounds);
+    let kitchens = this.props.kitchens;
     let that = this;
     let remainingMarkers = [];
 
@@ -130,12 +132,12 @@ class KitchenMap extends React.Component {
   }
 
   render() {
-    if (this.props.lat) {
-      this.map.setCenter({
-        lat: this.props.lat,
-        lng: this.props.lng
-      });
-    }
+    // if (this.props.lat) {
+    //   this.map.setCenter({
+    //     lat: this.props.lat,
+    //     lng: this.props.lng
+    //   });
+    // }
 
     return (
       <div className="map" ref="map">
