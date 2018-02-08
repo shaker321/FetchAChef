@@ -6,7 +6,7 @@ import { AuthRoute } from "../util/route_util.jsx";
 import BaseBar from "./base_bar/base_bar.jsx";
 import MainPage from "./main_page/main_page.jsx";
 import NavBarContainer from "./nav_bar/nav_bar_container.jsx";
-import SearchPageContainer from "./search/search_page_container.jsx";
+import SearchPage from "./search/search_page.jsx";
 
 const App = () => (
   <div className="page">
@@ -15,7 +15,7 @@ const App = () => (
     </header>
 
     <Route exact path="/" component={ MainPage } />
-    <Route path="/api/kitchens" component={ SearchPageContainer } />
+    <Route path="/api/kitchens" component={ SearchPage } />
 
     <footer>
       <BaseBar/>

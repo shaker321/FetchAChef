@@ -51,6 +51,7 @@ class SearchPage extends React.Component {
         <KitchenMapContainer
           lat={ lat }
           lng={ lng }
+          history={ this.props.history }
         />
       </div>
     );

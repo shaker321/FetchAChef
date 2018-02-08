@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 
+import KitchenIndexContainer from "./kitchen_index/kitchen_index_container.jsx";
+
 class KitchenMap extends React.Component {
   constructor(props) {
     super(props);
@@ -146,7 +148,11 @@ class KitchenMap extends React.Component {
     // }
 
     return (
-      <div className="map" ref="map">
+      <div>
+        <KitchenIndexContainer
+          history={ this.props.history }
+        />
+        <div className="map" ref="map"></div>
       </div>
     );
   }
