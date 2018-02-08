@@ -1,19 +1,20 @@
 import { connect } from "react-redux";
 
-import { login, logout, signup } from "../../../../actions/session_actions.js";
+import { logout } from "../../../../actions/session_actions.js";
 
 import DropDownMenu from "./drop_down_menu.jsx";
 
-
-const mapStateToProps = (state, nextProps) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     logout
   };
 };
 
-const mapDispatchToProps = (dispatch, nextProps) => {
-  return {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
+  };
 };
 
 export default connect(
