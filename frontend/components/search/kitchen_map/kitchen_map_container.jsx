@@ -6,7 +6,7 @@ import KitchenMap from "./kitchen_map.jsx";
 
 const mapStateToProps = (state) => ({
   fetchAllKitchens,
-  kitchens: Object.values(state.entities.kitchens),
+  kitchens: state.entities.kitchens,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -72,9 +72,13 @@ class KitchenMap extends React.Component {
   }
 
   createMarkers() {
-    let kitchens = this.props.kitchens;
     let that = this;
     let remainingMarkers = [];
+    let kitchens = {};
+
+    for (let i = 0; i < this.props.kitchens.length; i++) {
+      kitchens[this.props.kitchens[i].id] = this.props.kitchens[i];
+    }
 
     this.markers.forEach(
       (marker, index) => {
@@ -109,7 +113,7 @@ class KitchenMap extends React.Component {
               that.infowindow.close();
               that.markerActive = false;
             }
-
+            
             that.infowindow = new google.maps.InfoWindow({
               content:
                 `<a href="/api/kitchens/${kitchens[marker.id].id}">
