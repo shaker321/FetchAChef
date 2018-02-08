@@ -67,8 +67,8 @@ class KitchenMap extends React.Component {
       }
     };
 
-    this.props.fetchAllKitchens(this.bounds);
-    this.createMarkers();
+    this.props.fetchAllKitchens(this.bounds).then(this.createMarkers.bind(this));
+    // this.createMarkers();
   }
 
   createMarkers() {
