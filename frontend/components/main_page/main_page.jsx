@@ -22,7 +22,6 @@ class MainPage extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="main-page">
         <div className="main-page-image">

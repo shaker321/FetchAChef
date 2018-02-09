@@ -25,4 +25,6 @@ const App = () => (
   </div>
 );
 
+//add ensureloggedin to certain routes
+
 export default App;
