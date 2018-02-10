@@ -26,7 +26,7 @@ class MainPage extends React.Component {
       <div className="main-page">
         <div className="main-page-image">
           <h1 className="main-page-title">FetchAChef</h1>
-          <h3 className="main-page-description">Chef cooked. Direct to your table.</h3>
+          <h3 className="main-page-description">Homecooking by neighbors for your family.</h3>
 
           <ul>
             { this.buttons() }
