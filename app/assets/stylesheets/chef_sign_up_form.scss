@@ -1,0 +1,74 @@
+.chef-form-container {
+  height: -webkit-calc(100% - 124px);
+}
+
+.chef-form-image {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: asset-url("chef-signup-form.jpg");
+    background-image: -webkit-linear-gradient(
+      right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.5) 10%,
+      rgba(255, 255, 255, 0) 90%
+    ),
+    asset-url("chef-signup-form.jpg");
+}
+
+.chef-form-text {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: white;
+  color: black;
+  text-align: center;
+  float: right;
+}
+
+.chef-form-title {
+  font-size: 24px;
+  color: green;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+
+.chef-form-body {
+  font-size: 14px;
+  padding: 2%;
+  margin: 0 auto;
+}
+
+.chef-form-input {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.chef-form-img {
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+}
+
+.chef-form-img-show {
+  height: 100px;
+  width: 50%;
+  border-radius: 5px;
+  justify-content: center;
+  border: 1px solid lightgray;
+}
+
+.chef-form-submit {
+  border: 1px solid green;
+  color: green;
+  width: 50%;
+  border-radius: 5px;
+  height: 30px;
+}

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
-import { createChef, fetchAllKitchens } from "../../actions/chef_actions.js";
+import { createChef } from "../../actions/chef_actions.js";
+import { fetchAllKitchens } from "../../actions/kitchen_actions.js";
 
 import ChefSignUpForm from "./chef_sign_up_form.jsx";
 
@@ -13,7 +14,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createChef: (chef) => dispatch(createChef(chef))
+  createChef: (chef) => dispatch(createChef(chef)),
+  fetchAllKitchens: (bounds) => dispatch(fetchAllKitchens(bounds))
 });
 
 export default connect(

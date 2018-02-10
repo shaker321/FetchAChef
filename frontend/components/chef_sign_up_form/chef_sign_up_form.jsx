@@ -7,11 +7,12 @@ class ChefSignUpForm extends React.Component {
     this.state = {
       first_name: "",
       last_name: "",
-      username: this.props.currentUser.username,
+      username: this.props.currentUser,
       general_cuisine: "",
       specific_cuisine: "",
       kitchen_id: "",
-      user_id: this.props.currentUser.id
+      user_id: this.props.currentUser.id,
+      kitchens: []
     };
   }
 
@@ -27,18 +28,26 @@ class ChefSignUpForm extends React.Component {
           lng: "-180"
         }
       }
-    }).then(this.createKitchenOptions);
+    }).then(this.createKitchenOptions.bind(this));
   }
 
   createKitchenOptions() {
-    let kitchens = this.props.kitchens;
     this.kitchenOptions = [];
+    let approvedKitchens = [];
 
-    Object.keys(kitchens).forEach((key) => {
+    this.props.kitchens.forEach((kitchen) => {
+      if (kitchen.approved) {
+        approvedKitchens.push(kitchen);
+      }
+    });
+
+    Object.keys(approvedKitchens).forEach((key) => {
       this.kitchenOptions.push(
-        <option value={ kitchens[key].id }>{ kitchens[key].kitchen_name }</option>
+        <option value={ approvedKitchens[key].id }>{ approvedKitchens[key].kitchen_name }</option>
       );
     });
+
+    this.setState({ kitchens: this.kitchenOptions });
   }
 
   handleSubmit(e) {
@@ -107,7 +116,7 @@ class ChefSignUpForm extends React.Component {
 
           <select onChange={ this.update("kitchen_id") } className="chef-form-input">
             <option value="" disabled="disabled" selected="selected">Kitchen</option>
-            { this.kitchenOptions }
+            { this.state.kitchens }
           </select>
 
           <br/>
