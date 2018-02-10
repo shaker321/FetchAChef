@@ -26,7 +26,7 @@ export const fetchSingelChef = id => dispatch => (
 );
 
 export const createChef = chef => dispatch => (
-  APIUtil.fetchSingleChef(chef.id).then(chef => (
+  APIUtil.createChef(chef).then(chef => (
     dispatch(receiveSingleChef(chef))
   ))
 );

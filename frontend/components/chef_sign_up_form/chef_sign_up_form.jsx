@@ -3,11 +3,11 @@ import React from "react";
 class ChefSignUpForm extends React.Component {
   constructor(props) {
     super(props);
-
+    debugger
     this.state = {
       first_name: "",
       last_name: "",
-      username: this.props.currentUser,
+      username: this.props.currentUser.username,
       general_cuisine: "",
       specific_cuisine: "",
       kitchen_id: "",
@@ -53,21 +53,30 @@ class ChefSignUpForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.creatChef({
-      chef: this.state
+    this.props.createChef({
+      chef: {
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        username: this.state.username,
+        general_cuisine: this.state.general_cuisine,
+        specific_cuisine: this.state.specific_cuisine,
+        kitchen_id: this.state.kitchen_id,
+        user_id: this.props.currentUser.id,
+        approved: false
+      }
     });
 
     this.props.history.push("/");
   }
 
   update(property) {
-    return (e) => this.setState({ property: e.target.value }); // [property]?
+    return (e) => this.setState({ [property]: e.target.value }); // [property]?
   }
 
   render() {
     return (
       <div className="chef-form-container">
-        <form onSubmit={ this.handleSubmit } className="chef-form-text">
+        <form onSubmit={ this.handleSubmit.bind(this) } className="chef-form-text">
           <h3 className="chef-form-title">Become a Chef!</h3>
           <input
             type="text"
