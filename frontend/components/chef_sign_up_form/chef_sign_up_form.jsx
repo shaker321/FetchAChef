@@ -3,13 +3,14 @@ import React from "react";
 class ChefSignUpForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+
     this.state = {
       first_name: "",
       last_name: "",
       username: this.props.currentUser.username,
       general_cuisine: "",
       specific_cuisine: "",
+      description: "",
       kitchen_id: "",
       user_id: this.props.currentUser.id,
       kitchens: []
@@ -60,6 +61,7 @@ class ChefSignUpForm extends React.Component {
         username: this.state.username,
         general_cuisine: this.state.general_cuisine,
         specific_cuisine: this.state.specific_cuisine,
+        description: this.state.description,
         kitchen_id: this.state.kitchen_id,
         user_id: this.props.currentUser.id,
         approved: false
@@ -127,6 +129,15 @@ class ChefSignUpForm extends React.Component {
             <option value="" disabled="disabled" selected="selected">Kitchen</option>
             { this.state.kitchens }
           </select>
+
+          <br/>
+
+          <textarea
+            type="text"
+            value={ this.state.description }
+            onChange={ this.update("description") }
+            className="chef-form-input chef-form-input-description"
+            placeholder="About Me"/>
 
           <br/>
 

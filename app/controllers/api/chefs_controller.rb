@@ -16,9 +16,8 @@ class Api::ChefsController < ApplicationController
   end
 
   def create
-    debugger
     @chef = Chef.new(chef_params)
-
+    debugger
     if @chef.save
       render :show
     else
