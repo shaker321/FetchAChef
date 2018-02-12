@@ -1,26 +1,25 @@
-.chef-form-container {
+.kitchen-form-container {
   height: -webkit-calc(100% - 124px);
 }
 
-.chef-form-image {
+.kitchen-form-image {
   width: 50%;
   height: 100%;
   display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: asset-url("chef-sign-up-form.jpg");
+  background-image: asset-url("kitchen-sign-up-form.jpg");
   background-image: -webkit-linear-gradient(
-    right,
+    left,
     rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 0.5) 10%,
     rgba(255, 255, 255, 0) 90%
   ),
-  asset-url("chef-sign-up-form.jpg");
+  asset-url("kitchen-sign-up-form.jpg");
 }
 
-//minor bug on medium sized screen where submit button overflows into basebar - fix it
-.chef-form-text {
+.kitchen-form-text {
   width: 50%;
   height: 100%;
   display: inline-block;
@@ -28,23 +27,21 @@
   background-color: white;
   color: black;
   text-align: center;
-  float: right;
+  float: left;
 }
 
-.chef-form-title {
+.kitchen-form-title {
   font-size: 24px;
   color: green;
-  padding-top: 5%;
-  padding-bottom: 2%;
 }
 
-.chef-form-body {
+.kitchen-form-body {
   font-size: 14px;
   padding: 2%;
   margin: 0 auto;
 }
 
-.chef-form-input {
+.kitchen-form-input {
   width: 50%;
   border-radius: 5px;
   border: 1px solid lightgray;
@@ -52,17 +49,13 @@
   margin-bottom: 15px;
 }
 
-.chef-form-input-description {
-  height: 100px;
-}
-
-.chef-form-img {
+.kitchen-form-img {
   justify-content: center;
   text-align: center;
   width: 50%;
 }
 
-.chef-form-img-show {
+.kitchen-form-img-show {
   height: 100px;
   width: 50%;
   border-radius: 5px;
@@ -70,7 +63,7 @@
   border: 1px solid lightgray;
 }
 
-.chef-form-submit {
+.kitchen-form-submit {
   border: 1px solid green;
   color: green;
   width: 50%;

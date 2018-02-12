@@ -44,7 +44,12 @@ class ChefSignUpForm extends React.Component {
 
     Object.keys(approvedKitchens).forEach((key) => {
       this.kitchenOptions.push(
-        <option value={ approvedKitchens[key].id }>{ approvedKitchens[key].kitchen_name }</option>
+        <option
+          key={ approvedKitchens[key].id }
+          value={ approvedKitchens[key].id }
+        >
+          { approvedKitchens[key].kitchen_name }
+        </option>
       );
     });
 

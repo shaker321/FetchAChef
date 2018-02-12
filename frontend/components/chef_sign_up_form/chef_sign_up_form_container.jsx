@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
   kitchens: state.entities.kitchens
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   createChef: (chef) => dispatch(createChef(chef)),
   fetchAllKitchens: (bounds) => dispatch(fetchAllKitchens(bounds))
 });

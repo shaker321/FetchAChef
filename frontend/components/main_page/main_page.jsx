@@ -14,7 +14,7 @@ class MainPage extends React.Component {
     if (this.props.loggedIn) {
       buttons.push(
         <li key="chef-button"><Link to="/api/chefs/post" className="main-page-links">I'm a Chef</Link></li>,
-        <li key="kitchen-button"><Link to="/" className="main-page-links">Open a Kitchen</Link></li>
+        <li key="kitchen-button"><Link to="/api/kitchens/post" className="main-page-links">Open a Kitchen</Link></li>
       );
     }
 

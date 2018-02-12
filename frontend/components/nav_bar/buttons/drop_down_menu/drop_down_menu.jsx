@@ -22,14 +22,14 @@ class DropDownMenu extends React.Component {
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
-        <li>
+        <li key="change-password">
           <div
             onClick={ this.redirect }
             className="drop-down-menu-item"
             >Change Password
           </div>
         </li>,
-        <li>
+        <li key="user-orders">
           <div
             onClick={ this.redirect }
             className="drop-down-menu-item"
@@ -42,14 +42,14 @@ class DropDownMenu extends React.Component {
           (this.props.currentUser.kitchen && this.props.currentUser.chef)
       ) { // for testing
         dropDownMenuItems.push(
-          <li>
+          <li key="chef-tools">
             <div
               onClick={ this.redirect }
               className="drop-down-menu-item"
               >Chef Tools
             </div>
           </li>,
-          <li>
+          <li key="kitchen-tools">
             <div
               onClick={ this.redirect }
               className="drop-down-menu-item"
@@ -59,7 +59,7 @@ class DropDownMenu extends React.Component {
         );
       } else if (this.props.currentUser.kitchen) {
         dropDownMenuItems.push(
-          <li>
+          <li key="kitchen-tools">
             <div
               onClick={ this.redirect }
               className="drop-down-menu-item"
@@ -69,7 +69,7 @@ class DropDownMenu extends React.Component {
         );
       } else if (this.props.currentUser.chef) {
         dropDownMenuItems.push(
-          <li>
+          <li key="chef-tools">
             <div
               onClick={ this.redirect }
               className="drop-down-menu-item"
@@ -80,7 +80,7 @@ class DropDownMenu extends React.Component {
       }
 
       dropDownMenuItems.push(
-        <li>
+        <li key="logout-button">
           <div
             onClick={ this.props.logout }
             className="drop-down-menu-item">
