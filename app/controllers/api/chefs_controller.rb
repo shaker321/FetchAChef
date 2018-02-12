@@ -17,7 +17,7 @@ class Api::ChefsController < ApplicationController
 
   def create
     @chef = Chef.new(chef_params)
-    debugger
+
     if @chef.save
       render :show
     else
@@ -59,7 +59,8 @@ class Api::ChefsController < ApplicationController
       :general_cuisine,
       :kitchen_id,
       :user_id,
-      :approved
+      :approved,
+      :description
     )
   end
 end
