@@ -19,21 +19,21 @@ export const fetchAllChefs = filters => dispatch => (
   ))
 );
 
-export const fetchSingelChef = id => dispatch => (
+export const fetchSingleChef = id => dispatch => (
   APIUtil.fetchSingleChef(id).then(chef => (
     dispatch(receiveSingleChef(chef))
   ))
 );
 
 export const createChef = chef => dispatch => (
-  APIUtil.createChef(chef).then(chef => (
-    dispatch(receiveSingleChef(chef))
+  APIUtil.createChef(chef).then(newChef => (
+    dispatch(receiveSingleChef(newChef))
   ))
 );
 
 export const approveChef = chef => dispatch => (
-  APIUtil.approveChef(chef.id).then(chef => (
-    dispatch(receiveSingleChef(chef))
+  APIUtil.approveChef(chef.id).then(approvedChef => (
+    dispatch(receiveSingleChef(approvedChef))
   ))
 );
 
@@ -44,7 +44,7 @@ export const denyChef = chefId => dispatch => (
 );
 
 export const updateChef = chef => dispatch => (
-  APIUtil.updateChef(chef.id).then((chef) => (
-    dispatch(receiveAllChefs)
+  APIUtil.updateChef(chef.id).then(() => (
+    dispatch(receiveAllChefs())
   ))
 );

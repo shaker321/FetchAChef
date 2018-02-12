@@ -26,7 +26,7 @@ export const fetchSingleKitchen = id => dispatch => (
 );
 
 export const createKitchen = kitchen => dispatch => (
-  APIUtil.createKitchen(kitchen).then(kitchen => (
-    dispatch(receiveSingleKitchen(kitchen))
+  APIUtil.createKitchen(kitchen).then(newKitchen => (
+    dispatch(receiveSingleKitchen(newKitchen))
   ))
 );
