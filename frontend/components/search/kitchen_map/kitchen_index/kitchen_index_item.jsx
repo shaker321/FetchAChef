@@ -8,8 +8,11 @@ class KitchenIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.fetchSingleKitchen(this.props.kitchen.id);
-    this.props.history.push("/api/kitchens/" + this.props.kitchen.id);
+
+    this.props.history.push({
+      pathname: "/api/kitchens/",
+      search: `kitchenId=${this.props.kitchen.id}`
+    });
   }
 
   render() {

@@ -6,7 +6,6 @@ import KitchenSignUpForm from "./kitchen_sign_up_form.jsx";
 
 const mapStateToProps = (state) => ({
   createKitchen,
-  history,
   currentUser: state.session.currentUser
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-
+// Add in file upload to AWS S3
 class KitchenSignUpForm extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ class KitchenSignUpForm extends React.Component {
     const coords = {
       lat: this.address.geometry.location.lat(),
       lng: this.address.geometry.location.lng()
-    }
+    };
 
     let formData = new FormData();
     formData.append("kitchen[kitchen_name]", this.state.kitchen_name);
@@ -82,7 +82,7 @@ class KitchenSignUpForm extends React.Component {
         food_handler_cert: file,
         food_handler_cert_url: fileReader.result
       });
-    }).bind(this)
+    }).bind(this);
 
     if (file) {
       fileReader.readAsDataURL(file);
