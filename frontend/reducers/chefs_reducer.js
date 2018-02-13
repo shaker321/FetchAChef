@@ -13,7 +13,7 @@ const chefsReducer = (state = {}, action) => {
     case RECEIVE_ALL_CHEFS:
       return action.chefs;
     case RECEIVE_SINGLE_CHEF:
-      const newChef = { [action.kitchen.id]: action.kitchen };
+      const newChef = { [action.chef.id]: action.chef };
       return merge({}, state, newChef);
     default:
       return state;
