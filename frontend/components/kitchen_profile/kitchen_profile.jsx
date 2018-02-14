@@ -1,8 +1,8 @@
 import React from "react";
 
-import MenuIndexItem from "somewhere";
-import ReviewForm from "somewhere"
-import ReviewIndexItem from "somewhere";
+// import MenuIndexItem from "somewhere";
+// import ReviewForm from "somewhere"
+// import ReviewIndexItem from "somewhere";
 
 class KitchenProfile extends React.Component {
   constructor(props) {
@@ -138,10 +138,10 @@ class KitchenProfile extends React.Component {
       <div className="kitchen-profile-resp">☆ ☆ ☆ ☆ ☆</div>
     ];
 
-    if (!avgRating) {
+    if (!this.avgRating) {
       this.avgRating = "N/A";
     } else {
-      this.avgRating = ratings[avgRating - 1];
+      this.avgRating = ratings[this.avgRating - 1];
     }
   }
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { fetchSingleKitchen } from "../../action/kitchen_actions.js";
+import { fetchSingleKitchen } from "../../actions/kitchen_actions.js";
 
 import KitchenProfile from "./kitchen_profile";
 

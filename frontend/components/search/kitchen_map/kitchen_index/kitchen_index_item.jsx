@@ -8,11 +8,8 @@ class KitchenIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-
-    this.props.history.push({
-      pathname: "/api/kitchens/",
-      search: `kitchenId=${this.props.kitchen.id}`
-    });
+    let path = this.props.history.location.pathname + this.props.kitchen.id.toString();
+    this.props.history.push(path);
   }
 
   render() {
@@ -20,7 +17,7 @@ class KitchenIndexItem extends React.Component {
       <div>
         <button
           className="kitchen-index-item"
-          onClick={ this.handleClick }
+          onClick={ this.handleClick.bind(this) }
         >
           <div className="kitchen-index-item-text">
             { this.props.kitchen.kitchen_name }
