@@ -2,7 +2,7 @@ import React from "react";
 
 // import MenuIndexItem from "somewhere";
 // import ReviewForm from "somewhere"
-// import ReviewIndexItem from "somewhere";
+import ReviewIndexItem from "./reviews/review_index_item.jsx";
 
 class KitchenProfile extends React.Component {
   constructor(props) {
@@ -96,7 +96,7 @@ class KitchenProfile extends React.Component {
                   onClick={ (e) => this.addItemToCart(item, e) }
                 />
                 </ul>
-              )
+              );
             }
           });
         }
@@ -176,7 +176,7 @@ class KitchenProfile extends React.Component {
         <div className="reviews-container">
           <div className="kitchen-review-header">Reviews</div>
           <ReviewForm kitchenId={ this.state.kitchen.id }/>
-          { this.this.reviewIndexItems }
+          { this.reviewIndexItems }
         </div>
       </div>
     );

@@ -1,0 +1,66 @@
+html, body, main, main > div {
+  height: 100%;
+}
+
+.kitchen-profile {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  background-color: white;
+  height: auto;
+}
+
+.kitchen-profile-name {
+  margin: 0 auto;
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.kitchen-profile-container {
+  margin: 0 auto;
+  width: 78%;
+  float: right;
+  padding-left: 2%;
+}
+
+.kitchen-profile-upper-container {
+  height: 400px;
+}
+
+.kitchen-profile-container {
+  overflow: scroll;
+}
+
+.kitchen-profile-field {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline;
+}
+
+.kitchen-profile-resp {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline;
+}
+
+.kitchen-profile-description {
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.kitchen-profile-description-resp {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0% 5%;
+}
+
+.kitchen-profile-side-bar {
+  float: left;
+  width: 20%;
+}
+
+.kitchen-profile-location-map {
+  height: 300px;
+  width: 100%;
+}
