@@ -1,15 +1,19 @@
 import { connect } from "react-redux";
 
-import { fetchSingleChef } from "../../../chef_actions.js"
+import { fetchSingleChef } from "../../../actions/chef_actions.js";
 
-import MenuIndexItem from "./menu_index_item.jsx"
+import MenuIndexItem from "./menu_index_item.jsx";
 
-const mapStateToProps = (state) => ({
-  fetchSingleChef
+const mapStateToProps = (state, props) => ({
+  fetchSingleChef,
+  title: props.title,
+  description: props.description,
+  chefId: props.chefId,
+  price: props.price,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  return {};
+  fetchsingleChef: (id) => dispatch(fetchSingleChef(id))
 });
 
 export default connect(

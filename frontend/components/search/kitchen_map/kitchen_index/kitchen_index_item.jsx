@@ -8,7 +8,7 @@ class KitchenIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    let path = this.props.history.location.pathname + this.props.kitchen.id.toString();
+    let path = this.props.history.location.pathname + "/" + this.props.kitchen.id.toString();
     this.props.history.push(path);
   }
 

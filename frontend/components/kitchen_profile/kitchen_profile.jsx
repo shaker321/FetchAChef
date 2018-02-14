@@ -1,7 +1,7 @@
 import React from "react";
 
-// import MenuIndexItem from "somewhere";
-// import ReviewForm from "somewhere"
+import MenuIndexItemContainer from "./menu/menu_index_item_container.jsx";
+import ReviewFormContainer from "./reviews/review_form_container.jsx";
 import ReviewIndexItem from "./reviews/review_index_item.jsx";
 
 class KitchenProfile extends React.Component {
@@ -82,7 +82,7 @@ class KitchenProfile extends React.Component {
             if (item.chef.id === chef.id) {
               menu.push(
                 <ul className="menu-index-item">
-                  <MenuIndexItem
+                  <MenuIndexItemContainer
                     title={ item.title }
                     description={ item.description }
                     chefId={ item.chef_id }
@@ -175,7 +175,7 @@ class KitchenProfile extends React.Component {
 
         <div className="reviews-container">
           <div className="kitchen-review-header">Reviews</div>
-          <ReviewForm kitchenId={ this.state.kitchen.id }/>
+          <ReviewFormContainer kitchenId={ this.state.kitchen.id }/>
           { this.reviewIndexItems }
         </div>
       </div>

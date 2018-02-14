@@ -46,3 +46,26 @@ export const updateChef = (chef) => (
     data: chef
   })
 );
+
+export const createReview = (review) => (
+  $.ajax({
+    method: "POST",
+    url: "api/reviews",
+    data: review
+  })
+);
+
+export const createMenuItem = (menuItem) => (
+  $.ajax({
+    method: "POST",
+    url: "api/menu_items",
+    data: menuItem
+  })
+);
+
+export const deleteMenuItem = (id) => (
+  $.ajax({
+    type: "DELETE",
+    url: "/api/menu_items/" + id
+  })
+);

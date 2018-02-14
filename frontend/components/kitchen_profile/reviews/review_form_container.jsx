@@ -6,7 +6,8 @@ import ReviewForm from "./review_form";
 
 const mapStateToProp = (state) => ({
   currentUser: state.session.currentUser
-  createReview
+  createReview,
+  kitchenId
 });
 
 const mapDispatchToProps = (dispatch) => ({
