@@ -1,13 +1,12 @@
 import { connect } from "react-redux";
 
-import { createReview } from "../../../actions/" "something";
+import { createReview } from "../../../actions/chef_actions.js";
 
 import ReviewForm from "./review_form";
 
-const mapStateToProp = (state) => ({
-  currentUser: state.session.currentUser
-  createReview,
-  kitchenId
+const mapStateToProps = (state) => ({
+  currentUser: state.session.currentUser,
+  createReview
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -17,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(KitchenProfile);
+)(ReviewForm);

@@ -69,139 +69,139 @@ Chef.create!(
   approved: false
 )
 
-# # Menu Items
-# MenuItem.destroy_all
-# MenuItem.create!(
-#   chef_id: Chef.last.id,
-#   title: "Food1",
-#   price: 10,
-#   description: "Awesome Description dsfklsdfj;lsadkf 1"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.last.id,
-#   title: "Food2",
-#   price: 25,
-#   description: "Awesome Description dsfklsdfj;lsadkf 2"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.last.id,
-#   title: "Food3",
-#   price: 15,
-#   description: "Awesome Description dsfklsdfj;lsadkf 3"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.last.id,
-#   title: "Food4",
-#   price: 8,
-#   description: "Awesome Description dsfklsdfj;lsadkf 4"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.first.id,
-#   title: "Chicken Parm",
-#   price: 8,
-#   description: "Chicken with melted parmegiano cheese on it"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.first.id,
-#   title: "Spagetti and Meatballs",
-#   price: 10,
-#   description: "Pasta with meat sauce and ground beef meatballs"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.first.id,
-#   title: "Gnochi",
-#   price: 10,
-#   description: "Dough balls"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.first.id,
-#   title: "Pizza",
-#   price: 10,
-#   description: "Cheese, tomato sauce, bread"
-# )
-#
-# MenuItem.create!(
-#   chef_id: Chef.first.id,
-#   title: "Cheese and crackers",
-#   price: 10,
-#   description: "Assorted cheeses with real crackers"
-# )
-#
-# # Reviews
-# Review.destroy_all
-# Review.create!(
-#   rating: 3,
-#   body: "Mediocre",
-#   user_id: User.first.id,
-#   username: User.first.username,
-#   kitchen_id: Kitchen.first.id
-# )
-#
-# Review.create!(
-#   rating: 5,
-#   body: "Excellent",
-#   user_id: User.first.id,
-#   username: User.first.username,
-#   kitchen_id: Kitchen.first.id
-# )
-#
-# Review.create!(
-#   rating: 4,
-#   body: "Amazing",
-#   user_id: User.first.id,
-#   username: User.first.username,
-#   kitchen_id: Kitchen.first.id
-# )
-#
-# Review.create!(
-#   rating: 5,
-#   body: "Bee's Knees",
-#   user_id: User.first.id,
-#   username: User.first.username,
-#   kitchen_id: Kitchen.first.id
-# )
-#
-# # Orders
-# Order.destroy_all
-# Order.create!(
-#   chef_id: Chef.last.id,
-#   user_id: User.first.id,
-#   price: MenuItem.first.price,
-#   menu_item_id: MenuItem.first.id,
-#   complete: false,
-#   kitchen_id: Kitchen.last.id
-# )
-#
-# Order.create!(
-#   chef_id: Chef.last.id,
-#   user_id: User.first.id,
-#   price: MenuItem.second.price,
-#   menu_item_id: MenuItem.second.id,
-#   complete: false,
-#   kitchen_id: Kitchen.last.id
-# )
-#
-# Order.create!(
-#   chef_id: Chef.last.id,
-#   user_id: User.first.id,
-#   price: MenuItem.third.price,
-#   menu_item_id: MenuItem.third.id,
-#   complete: true,
-#   kitchen_id: Kitchen.last.id
-# )
-#
-# Order.create!(
-#   chef_id: Chef.last.id,
-#   user_id: User.first.id,
-#   price: MenuItem.first.price,
-#   menu_item_id: MenuItem.first.id,
-#   complete: true,
-#   kitchen_id: Kitchen.last.id
-# )
+# Menu Items
+MenuItem.destroy_all
+MenuItem.create!(
+  chef_id: Chef.last.id,
+  title: "Food1",
+  price: 10,
+  description: "Awesome Description dsfklsdfj;lsadkf 1"
+)
+
+MenuItem.create!(
+  chef_id: Chef.last.id,
+  title: "Food2",
+  price: 25,
+  description: "Awesome Description dsfklsdfj;lsadkf 2"
+)
+
+MenuItem.create!(
+  chef_id: Chef.last.id,
+  title: "Food3",
+  price: 15,
+  description: "Awesome Description dsfklsdfj;lsadkf 3"
+)
+
+MenuItem.create!(
+  chef_id: Chef.last.id,
+  title: "Food4",
+  price: 8,
+  description: "Awesome Description dsfklsdfj;lsadkf 4"
+)
+
+MenuItem.create!(
+  chef_id: Chef.first.id,
+  title: "Chicken Parm",
+  price: 8,
+  description: "Chicken with melted parmegiano cheese on it"
+)
+
+MenuItem.create!(
+  chef_id: Chef.first.id,
+  title: "Spagetti and Meatballs",
+  price: 10,
+  description: "Pasta with meat sauce and ground beef meatballs"
+)
+
+MenuItem.create!(
+  chef_id: Chef.first.id,
+  title: "Gnochi",
+  price: 10,
+  description: "Dough balls"
+)
+
+MenuItem.create!(
+  chef_id: Chef.first.id,
+  title: "Pizza",
+  price: 10,
+  description: "Cheese, tomato sauce, bread"
+)
+
+MenuItem.create!(
+  chef_id: Chef.first.id,
+  title: "Cheese and crackers",
+  price: 10,
+  description: "Assorted cheeses with real crackers"
+)
+
+# Reviews
+Review.destroy_all
+Review.create!(
+  rating: 3,
+  body: "Mediocre",
+  user_id: User.first.id,
+  username: User.first.username,
+  kitchen_id: Kitchen.first.id
+)
+
+Review.create!(
+  rating: 5,
+  body: "Excellent",
+  user_id: User.first.id,
+  username: User.first.username,
+  kitchen_id: Kitchen.first.id
+)
+
+Review.create!(
+  rating: 4,
+  body: "Amazing",
+  user_id: User.first.id,
+  username: User.first.username,
+  kitchen_id: Kitchen.first.id
+)
+
+Review.create!(
+  rating: 5,
+  body: "Bee's Knees",
+  user_id: User.first.id,
+  username: User.first.username,
+  kitchen_id: Kitchen.first.id
+)
+
+# Orders
+Order.destroy_all
+Order.create!(
+  chef_id: Chef.last.id,
+  user_id: User.first.id,
+  price: MenuItem.first.price,
+  menu_item_id: MenuItem.first.id,
+  complete: false,
+  kitchen_id: Kitchen.last.id
+)
+
+Order.create!(
+  chef_id: Chef.last.id,
+  user_id: User.first.id,
+  price: MenuItem.second.price,
+  menu_item_id: MenuItem.second.id,
+  complete: false,
+  kitchen_id: Kitchen.last.id
+)
+
+Order.create!(
+  chef_id: Chef.last.id,
+  user_id: User.first.id,
+  price: MenuItem.third.price,
+  menu_item_id: MenuItem.third.id,
+  complete: true,
+  kitchen_id: Kitchen.last.id
+)
+
+Order.create!(
+  chef_id: Chef.last.id,
+  user_id: User.first.id,
+  price: MenuItem.first.price,
+  menu_item_id: MenuItem.first.id,
+  complete: true,
+  kitchen_id: Kitchen.last.id
+)

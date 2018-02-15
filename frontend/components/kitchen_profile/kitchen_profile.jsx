@@ -10,7 +10,7 @@ class KitchenProfile extends React.Component {
 
     this.state = {
       kitchen: this.props.fetchSingleKitchen(this.parseKitchenId()),
-      address: null
+      address: ""
     };
   }
 
