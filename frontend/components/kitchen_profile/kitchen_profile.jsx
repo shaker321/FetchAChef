@@ -9,28 +9,36 @@ class KitchenProfile extends React.Component {
     super(props);
 
     this.state = {
-      kitchen: this.props.fetchSingleKitchen(this.parseKitchenId()),
+      kitchen: "",
       address: ""
     };
+
+    this.props.fetchSingleKitchen(this.parseKitchenId()).then(this.createKitchenMap.bind(this));
   }
 
   parseKitchenId() {
-    if (this.props.history.location.query) {
-      let query = this.props.history.location.query;
-      let acceptableChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-      let kitchenId = [];
+    this.kitchenId;
 
-      for (let i = 0; i < query.length; i++) {
-        if (acceptableChars.includes(query[i])) {
-          kitchenId.push(query[i]);
+    if (this.props.history.location.pathname) {
+      let pathname = this.props.history.location.pathname;
+      let acceptableChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+      this.kitchenId = [];
+
+      for (let i = 0; i < pathname.length; i++) {
+        if (acceptableChars.includes(pathname[i])) {
+          this.kitchenId.push(pathname[i]);
         }
       }
 
-      return parseInt(kitchenId);
+      return parseInt(this.kitchenId);
     }
   }
 
-  componentDidMount() {
+  createKitchenMap() {
+    this.setState({
+      kitchen: this.props.kitchens[this.kitchenId]
+    });
+
     this.getAddress(this.state.kitchen.lat, this.state.kitchen.lng);
     this.createKitchenLocationMap();
   }
@@ -45,6 +53,7 @@ class KitchenProfile extends React.Component {
         address: results[0].formatted_address
       });
     });
+
   }
 
   createKitchenLocationMap() {
@@ -53,15 +62,17 @@ class KitchenProfile extends React.Component {
       lng: this.state.kitchen.lng
     };
 
-    this.map = new google.maps.Map(document.getElementById("map"), {
-      center: kitchenCoords,
-      zoom: 13
-    });
+    if (document.getElementById("map")) {
+      this.map = new google.maps.Map(document.getElementById("map"), {
+        center: kitchenCoords,
+        zoom: 13
+      });
 
-    this.marker = new google.maps.Marker({
-      map: this.map,
-      position: kitchenCoords
-    });
+      this.marker = new google.maps.Marker({
+        map: this.map,
+        position: kitchenCoords
+      });
+    }
   }
 
   addItemToCart(item, e) {
@@ -146,6 +157,12 @@ class KitchenProfile extends React.Component {
   }
 
   render() {
+    let mapId;
+
+    if (this.state.kitchen) {
+      mapId = "map";
+    }
+
     return (
       <div className="kitchen-profile">
         <h1 className="kitchen-profile-name">{ this.state.kitchen.kitchen_name }</h1>
@@ -164,7 +181,7 @@ class KitchenProfile extends React.Component {
           <div className="kitchen-profile-side-bar">
             <h4 className="kitchen-profile-location">Location</h4>
             <h3 className="kitchen-profile-location-resp">{ this.state.address }</h3>
-            <div className="kitchen-profile-location-map" id="map"></div>
+            <div className="kitchen-profile-location-map" id={ mapId }></div>
           </div>
 
           <div className="menu-container">

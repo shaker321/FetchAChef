@@ -1,0 +1,29 @@
+.menu-container {
+  margin: 0 auto;
+  width: 78%;
+  float: right;
+  padding-left: 2%;
+  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  -webkit-text-stroke: 1px black;
+  height: 70%;
+}
+
+.menu-header {}
+
+.menu-index-item > ul {
+  list-style: none;
+  width: 90%;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.menu-index-item-title {}
+
+.menu-index-item-description {
+  width: 70%;
+}
+
+.menu-index-item-price {}

@@ -5,7 +5,8 @@ import { fetchSingleKitchen } from "../../actions/kitchen_actions.js";
 import KitchenProfile from "./kitchen_profile";
 
 const mapStateToProps = (state) => ({
-  fetchSingleKitchen
+  fetchSingleKitchen,
+  kitchens: state.entities.kitchens
 });
 
 const mapDispatchToProps = (dispatch) => ({
