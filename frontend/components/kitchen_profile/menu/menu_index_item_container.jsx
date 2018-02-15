@@ -8,7 +8,7 @@ const mapStateToProps = (state, props) => ({
   fetchSingleChef,
   title: props.title,
   description: props.description,
-  chefId: props.chefId,
+  chef: props.chef,
   price: props.price,
 });
 

@@ -9,20 +9,21 @@ class KitchenProfile extends React.Component {
     super(props);
 
     this.state = {
-      kitchen: "",
+      kitchen: {},
       address: ""
     };
+  }
 
+  componentWillMount() {
     this.props.fetchSingleKitchen(this.parseKitchenId()).then(this.createKitchenMap.bind(this));
   }
 
   parseKitchenId() {
-    this.kitchenId;
+    this.kitchenId = [];
 
     if (this.props.history.location.pathname) {
       let pathname = this.props.history.location.pathname;
       let acceptableChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-      this.kitchenId = [];
 
       for (let i = 0; i < pathname.length; i++) {
         if (acceptableChars.includes(pathname[i])) {
@@ -30,7 +31,9 @@ class KitchenProfile extends React.Component {
         }
       }
 
-      return parseInt(this.kitchenId);
+      this.kitchenId = parseInt(this.kitchenId.join(""));
+
+      return this.kitchenId;
     }
   }
 
@@ -90,13 +93,13 @@ class KitchenProfile extends React.Component {
       chefs.forEach((chef) => {
         if (chef.approved) {
           this.state.kitchen.menu_items.forEach((item) => {
-            if (item.chef.id === chef.id) {
+            if (item.chef_id === chef.id) {
               menu.push(
                 <ul className="menu-index-item">
                   <MenuIndexItemContainer
                     title={ item.title }
                     description={ item.description }
-                    chefId={ item.chef_id }
+                    chef={ chef }
                     price={ item.price }
                     key={ item.id }
                   />
@@ -113,6 +116,8 @@ class KitchenProfile extends React.Component {
         }
       });
     }
+
+    return menu;
   }
 
   reviews() {
@@ -137,7 +142,7 @@ class KitchenProfile extends React.Component {
       });
     }
 
-    // this.reviewIndexItems.reverse();
+    this.reviewIndexItems.reverse();
 
     this.avgRating = Math.round(sumRatings / numRatings );
 
@@ -157,11 +162,7 @@ class KitchenProfile extends React.Component {
   }
 
   render() {
-    let mapId;
-
-    if (this.state.kitchen) {
-      mapId = "map";
-    }
+    this.reviews();
 
     return (
       <div className="kitchen-profile">
@@ -181,7 +182,7 @@ class KitchenProfile extends React.Component {
           <div className="kitchen-profile-side-bar">
             <h4 className="kitchen-profile-location">Location</h4>
             <h3 className="kitchen-profile-location-resp">{ this.state.address }</h3>
-            <div className="kitchen-profile-location-map" id={ mapId }></div>
+            <div className="kitchen-profile-location-map" id="map"></div>
           </div>
 
           <div className="menu-container">
