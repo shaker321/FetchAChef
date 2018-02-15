@@ -23,4 +23,6 @@ class Chef < ApplicationRecord
 
   belongs_to :user
   belongs_to :kitchen
+  has_many :menu_items
+  has_many :orders
 end

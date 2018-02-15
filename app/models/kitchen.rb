@@ -20,6 +20,9 @@ class Kitchen < ApplicationRecord
 
   has_many :chefs
   belongs_to :user # manager/owner
+  has_many :menu_items, through: :chefs
+  has_many :orders
+  has_many :reviews
 
   def self.in_bounds(bounds)
     lat_upper = (bounds["northEast"]["lat"]).to_f

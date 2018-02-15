@@ -17,12 +17,22 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_one :chef
+  has_one :cart
+  has_one :kitchen
+  has_many :reviews
+  has_many :orders
+  has_one :chef
+
+  attr_reader :password
+
   after_initialize :ensure_session_token
+  after_create :create_cart
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
-    return nil unless user
-    user.is_password?(password) ? user : nil
+    return nil unless user && user.is_password?(password)
+    user
   end
 
   def password=(password)
@@ -36,8 +46,13 @@ class User < ApplicationRecord
 
   def reset_session_token!
     generate_unique_session_token
-    save!
+    self.save!
     self.session_token
+  end
+
+  def create_cart
+    @cart = Cart.new({ user_id: self.id })
+    @cart.save!
   end
 
   private
