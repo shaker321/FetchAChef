@@ -55,6 +55,14 @@ class User < ApplicationRecord
     @cart.save!
   end
 
+  def can_change_password?(current_password, new_password, new_password_confirm)
+    new_password == new_password_confirm && is_password?(current_password) && new_password.length >= 6
+  end
+
+  def change_password(password)
+    password=(password)
+  end
+
   private
 
   def ensure_session_token

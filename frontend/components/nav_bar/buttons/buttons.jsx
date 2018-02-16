@@ -49,7 +49,7 @@ class NavBar extends React.Component {
   }
 
   renderDropDownMenu() {
-    return (this.state.dropDownOpen ? <DropDownMenuContainer/> : null);
+    return (this.state.dropDownOpen ? <DropDownMenuContainer history={ this.props.history }/> : null);
   }
 
   loggedOutButtons() {

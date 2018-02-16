@@ -6,9 +6,12 @@ class DropDownMenu extends React.Component {
     super(props);
   }
 
-  redirect(e) {
+  //consolidate following methods into one somehow
+
+  redirectToChangePasswordForm(e) {
     e.preventDefault();
     e.stopPropagation();
+    this.props.history.push("/api/users/" + this.props.currentUser.id);
 
     //forward to change password form
     //forward to chef signup
@@ -24,7 +27,7 @@ class DropDownMenu extends React.Component {
       let dropDownMenuItems = [
         <li key="change-password">
           <div
-            onClick={ this.redirect }
+            onClick={ this.redirectToChangePasswordForm.bind(this) }
             className="drop-down-menu-item"
             >Change Password
           </div>

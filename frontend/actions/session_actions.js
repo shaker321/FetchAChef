@@ -34,3 +34,9 @@ export const logout = () => dispatch => (
     dispatch(receiveCurrentUser(null))
   ))
 );
+
+export const changePassword = (password) => dispatch => (
+  APIUtil.changePassword().then((loggedInUser) => (
+    dispatch(receiveCurrentUser(loggedInUser))
+  ))
+);

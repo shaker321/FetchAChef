@@ -4,6 +4,7 @@ import { Route, Redirect, Link, HashRouter } from "react-router-dom";
 import { AuthRoute } from "../util/route_util.jsx";
 
 import BaseBar from "./base_bar/base_bar.jsx";
+import ChangePasswordFormContainer from "./change_password_form/change_password_form_container.jsx";
 import ChefSignUpFormContainer from "./chef_sign_up_form/chef_sign_up_form_container.jsx";
 import ChefProfileContainer from "./chef_profile/chef_profile_container.jsx";
 import KitchenProfileContainer from "./kitchen_profile/kitchen_profile_container.jsx";
@@ -24,6 +25,7 @@ const App = () => (
     <Route path="/api/chefs/:chefId" component={ ChefProfileContainer } />
     <Route path="/api/chefs/post" component={ ChefSignUpFormContainer } />
     <Route path="/api/kitchens/post" component={ KitchenSignUpFormContainer} />
+    <Route path="/api/users/:user_id" component={ ChangePasswordFormContainer } />
 
     <footer>
       <BaseBar/>
