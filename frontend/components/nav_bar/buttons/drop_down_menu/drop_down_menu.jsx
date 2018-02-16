@@ -22,6 +22,12 @@ class DropDownMenu extends React.Component {
     //redirect to kitchen tools
   }
 
+  redirectToUserOrders(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.history.push("/api/users/" + this.props.currentUser.id + "/orders");
+  }
+
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
@@ -34,7 +40,7 @@ class DropDownMenu extends React.Component {
         </li>,
         <li key="user-orders">
           <div
-            onClick={ this.redirect }
+            onClick={ this.redirectToUserOrders.bind(this) }
             className="drop-down-menu-item"
             >User Orders
           </div>

@@ -1,0 +1,51 @@
+.user-orders-container {
+  height: -webkit-calc(100% - 124px);
+}
+
+.user-orders-image {
+  background-image: asset-url("user-orders.jpg");
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: -webkit-linear-gradient(
+    right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 0) 90%
+  ),
+  asset-url("user-orders.jpg");
+}
+
+.user-orders-text {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: inline-block;
+  float: right;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  overflow: scroll;
+}
+
+.user-orders-title {
+  font-size: 34px;
+  padding: 5%;
+  color: green;
+}
+
+.user-orders-index {
+  width: 70%;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.user-orders-index-item > ul {
+  list-style: none;
+  width: 90%;
+  padding: 10px;
+  text-align: left;
+}
