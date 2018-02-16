@@ -1,0 +1,55 @@
+.chef-profile-container {
+  height: -webkit-calc(100% - 124px);
+}
+
+.chef-profile-image {
+  background-image: asset-url("chef-profile.jpg");
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 0) 90%
+  ),
+  asset-url("chef-profile.jpg");
+}
+
+.chef-profile-text {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  color: black;
+}
+
+.chef-profile-title {
+  font-size: 34px;
+  padding-top: 5%;
+  color: green;
+  text-align: center;
+}
+
+.chef-profile-field {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline;
+  padding-left: 5%;
+}
+
+.chef-profile-resp {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline;
+}
+
+.chef-profile-description {
+  margin: 2% 5%;
+  display: block;
+}
