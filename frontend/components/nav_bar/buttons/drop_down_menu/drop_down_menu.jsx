@@ -28,6 +28,12 @@ class DropDownMenu extends React.Component {
     this.props.history.push("/api/users/" + this.props.currentUser.id + "/orders");
   }
 
+  redirectToChefTools(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.history.push("/api/users/" + this.props.currentUser.id + "/chef_tools");
+  }
+
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
@@ -53,7 +59,7 @@ class DropDownMenu extends React.Component {
         dropDownMenuItems.push(
           <li key="chef-tools">
             <div
-              onClick={ this.redirect }
+              onClick={ this.redirectToChefTools.bind(this) }
               className="drop-down-menu-item"
               >Chef Tools
             </div>
