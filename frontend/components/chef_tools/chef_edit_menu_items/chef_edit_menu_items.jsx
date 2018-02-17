@@ -1,6 +1,6 @@
 import React from "react";
 
-import MenuIndexItem from "somewhere";
+import MenuIndexItemContainer from "../../kitchen_profile/menu/menu_index_item_container.jsx";
 
 class ChefEditMenuItems extends React.Component {
   constructor(props) {
@@ -111,7 +111,7 @@ class ChefEditMenuItems extends React.Component {
         menu.push(
           <div>
             <div className="chef-edit-menu-items-menu-index-item">
-              <MenuIndexItem
+              <MenuIndexItemContainer
                 title={ item.title }
                 description={ item.description }
                 price={ item.price}
