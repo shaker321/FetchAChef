@@ -17,7 +17,7 @@ class ChefEditMenuItems extends React.Component {
   }
 
   updateMenuItems() {
-    this.chef = this.props.chef;
+    this.chef = this.props.currentUser.chef;
     this.setState({
       menuItems: this.chef.menu_items
     });
