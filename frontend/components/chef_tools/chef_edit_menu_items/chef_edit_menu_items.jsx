@@ -136,9 +136,9 @@ class ChefEditMenuItems extends React.Component {
   }
 
   render() {
+    // <div className= "chef-edit-menu-items-image"></div>
     return (
       <div className="chef-edit-menu-items-container">
-        <div className= "chef-edit-menu-items-image"></div>
         <div className="chef-edit-menu-items-text">
           <h3 className="chef-edit-menu-items-title">Edit Menu Items</h3>
           <div>
