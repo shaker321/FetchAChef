@@ -29,9 +29,9 @@ class ChefEditProfile extends React.Component {
           lat: "-90", lng: "-180"
         }
       }
-    }).then(this.props.createKitchenOptions);
+    }).then(this.createKitchenOptions.bind(this));
 
-    this.props.fetchSingleChef(this.props.currentUser.chef.id).then(this.setChef);
+    this.props.fetchSingleChef(this.props.currentUser.chef.id).then(this.setChef.bind(this));
   }
 
   setChef() {
@@ -52,6 +52,7 @@ class ChefEditProfile extends React.Component {
   createKitchenOptions() {
     this.kitchenOptions = [];
     let approvedKitchens = [];
+    let that = this;
 
     this.props.kitchens.forEach((kitchen) => {
       if (kitchen.approved) {
@@ -60,14 +61,27 @@ class ChefEditProfile extends React.Component {
     });
 
     Object.keys(approvedKitchens).forEach((key) => {
-      this.kitchenOptions.push(
-        <option
-          key={ approvedKitchens[key].id }
-          value={ approvedKitchens[key].id }
-        >
-          { approvedKitchens[key].kitchen_name }
-        </option>
-      );
+      debugger
+      if (approvedKitchens[key].id === that.chef.kitchen_id) {
+        this.kitchenOptions.push(
+          <option
+            key={ approvedKitchens[key].id }
+            value={ approvedKitchens[key].id }
+            selected="selected"
+          >
+            { approvedKitchens[key].kitchen_name }
+          </option>
+        );
+      } else {
+        this.kitchenOptions.push(
+          <option
+            key={ approvedKitchens[key].id }
+            value={ approvedKitchens[key].id }
+            >
+            { approvedKitchens[key].kitchen_name }
+          </option>
+        );
+      }
     });
 
     this.setState({ kitchens: this.kitchenOptions });
@@ -162,7 +176,6 @@ class ChefEditProfile extends React.Component {
           <br/>
 
           <select onChange={ this.update("kitchen_id") } className="chef-edit-profile-form-input">
-            <option value={ this.props.kitchens[this.state.kitchen_id] } selected="selected">this.props.kitchens[this.state.kitchen_id]</option>
             { this.state.kitchens }
           </select>
 
