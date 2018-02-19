@@ -61,7 +61,6 @@ class ChefEditProfile extends React.Component {
     });
 
     Object.keys(approvedKitchens).forEach((key) => {
-      debugger
       if (approvedKitchens[key].id === that.chef.kitchen_id) {
         this.kitchenOptions.push(
           <option

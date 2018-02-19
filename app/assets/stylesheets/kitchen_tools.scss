@@ -1,0 +1,104 @@
+.kitchen-tools-container {
+  height: 200%;
+}
+
+.kitchen-tools-image {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: asset-url("kitchen-tools.jpg");
+  background-image: -webkit-linear-gradient(
+    right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 0) 90%
+  ),
+  asset-url("kitchen-tools.jpg");
+}
+
+.kitchen-tools-text {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: white;
+  color: black;
+  text-align: center;
+  float: right;
+}
+
+.kitchen-tools-title {
+  font-size: 24px;
+  color: green;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+
+.kitchen-tools-subtitle {
+  font-size: 18px;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+
+
+.kitchen-tools-body {
+  font-size: 14px;
+  padding: 2%;
+  margin: 0 auto;
+}
+
+.kitchen-tools-input {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.kitchen-tools-description-input {
+  height: 100px;
+  width: 50%;
+}
+
+.kitchen-tools-img {
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+}
+
+.kitchen-tools-img-show {
+  height: 100px;
+  width: 50%;
+  border-radius: 5px;
+  justify-content: center;
+  border: 1px solid lightgray;
+}
+
+.kitchen-tools-submit {
+  border: 1px solid green;
+  color: green;
+  width: 50%;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.kitchen-tools-index-item {
+  text-align: left;
+  list-style: none;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: -webkit-calc(100% - 20px - 2px);
+}
+
+.kitchen-tools-index-item-approve-button{
+  color: green;
+}
+
+.kitchen-tools-index-item-deny-button{
+  color: red;
+}

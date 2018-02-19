@@ -10,6 +10,7 @@ import ChefTools from "./chef_tools/chef_tools.jsx";
 import ChefProfileContainer from "./chef_profile/chef_profile_container.jsx";
 import KitchenProfileContainer from "./kitchen_profile/kitchen_profile_container.jsx";
 import KitchenSignUpFormContainer from "./kitchen_sign_up_form/kitchen_sign_up_form_container.jsx";
+import KitchenToolsContainer from "./kitchen_tools/kitchen_tools_container.jsx";
 import MainPageContainer from "./main_page/main_page_container.jsx";
 import NavBarContainer from "./nav_bar/nav_bar_container.jsx";
 import SearchPage from "./search/search_page.jsx";
@@ -26,6 +27,7 @@ const App = () => (
     <Route exact path="/api/kitchens/:kitchenId" component={ KitchenProfileContainer } />
     <Route exact path="/api/chefs/:chefId" component={ ChefProfileContainer } />
     <Route path="/api/chefs/:chef_id/chef_tools" component={ ChefTools } />
+    <Route path="/api/kitchens/:kitchen_id/kitchen_tools" component={ KitchenToolsContainer } />
     <Route path="/api/chefs/post" component={ ChefSignUpFormContainer } />
     <Route path="/api/kitchens/post" component={ KitchenSignUpFormContainer} />
     <Route exact path="/api/users/:user_id" component={ ChangePasswordFormContainer } />

@@ -24,3 +24,11 @@ export const createKitchen = (kitchen) => (
     data: kitchen
   })
 );
+
+export const updateKitchen = (kitchen) => (
+  $.ajax({
+    url: "/api/kitchens/" + kitchen.id,
+    type: "PATCH",
+    data: kitchen
+  })
+);

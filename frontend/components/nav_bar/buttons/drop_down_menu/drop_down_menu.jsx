@@ -12,14 +12,6 @@ class DropDownMenu extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.history.push("/api/users/" + this.props.currentUser.id);
-
-    //forward to change password form
-    //forward to chef signup
-    //redirect to chef edit profil
-    //redirect to chef edit menu items
-    //redirect to user orders
-    //redirect to admin tools
-    //redirect to kitchen tools
   }
 
   redirectToUserOrders(e) {
@@ -32,6 +24,12 @@ class DropDownMenu extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.history.push("/api/chefs/" + this.props.currentUser.chef.id + "/chef_tools");
+  }
+
+  redirectToKitchenTools(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.history.push("/api/kitchens/" + this.props.currentUser.kitchen.id + "/kitchen_tools");
   }
 
   render() {
@@ -66,7 +64,7 @@ class DropDownMenu extends React.Component {
           </li>,
           <li key="kitchen-tools">
             <div
-              onClick={ this.redirect }
+              onClick={ this.redirectToKitchenTools.bind(this) }
               className="drop-down-menu-item"
               >Kitchen Tools
             </div>
@@ -76,7 +74,7 @@ class DropDownMenu extends React.Component {
         dropDownMenuItems.push(
           <li key="kitchen-tools">
             <div
-              onClick={ this.redirect }
+              onClick={ this.redirectToKitchenTools.bind(this) }
               className="drop-down-menu-item"
               >Kitchen Tools
             </div>
@@ -86,7 +84,7 @@ class DropDownMenu extends React.Component {
         dropDownMenuItems.push(
           <li key="chef-tools">
             <div
-              onClick={ this.redirect }
+              onClick={ this.redirectToChefTools.bind(this) }
               className="drop-down-menu-item"
               >Chef Tools
           </div>

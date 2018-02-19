@@ -30,3 +30,9 @@ export const createKitchen = kitchen => dispatch => (
     dispatch(receiveSingleKitchen(newKitchen))
   ))
 );
+
+export const updateKitchen = kitchen => dispatch => (
+  APIUtil.updateKitchen(kitchen.id).then(() => (
+    dispatch(receiveAllKitchens())
+  ))
+);
