@@ -1,7 +1,7 @@
 import React from "react";
 
-// import ChefProfile from "somwhere";
 import ChefEditMenuItemsContainer from "./chef_edit_menu_items/chef_edit_menu_items_container.jsx";
+import ChefEditProfileContainer from "./chef_edit_profile/chef_edit_profile_container.jsx";
 
 class ChefTools extends React.Component {
   constructor(props) {
@@ -10,7 +10,8 @@ class ChefTools extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="chef-tools-container">
+        <ChefEditProfileContainer/>
         <ChefEditMenuItemsContainer/>
       </div>
     );
