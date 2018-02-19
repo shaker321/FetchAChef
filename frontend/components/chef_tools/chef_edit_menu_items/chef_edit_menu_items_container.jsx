@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   createMenuItem,
   deleteMenuItem,
   fetchSingleChef,
+  chefs: state.entities.chefs,
   currentUser: state.session.currentUser
 });
 
@@ -21,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchSingleChef: (id) => dispatch(fetchSingleChef(id))
 });
 
-export default connect({
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-})(ChefEditMenuItems);
+)(ChefEditMenuItems);

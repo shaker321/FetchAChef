@@ -31,7 +31,7 @@ class DropDownMenu extends React.Component {
   redirectToChefTools(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.props.history.push("/api/users/" + this.props.currentUser.id + "/chef_tools");
+    this.props.history.push("/api/chefs/" + this.props.currentUser.chef.id + "/chef_tools");
   }
 
   render() {

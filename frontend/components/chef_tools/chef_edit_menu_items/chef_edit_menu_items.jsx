@@ -7,17 +7,21 @@ class ChefEditMenuItems extends React.Component {
     super(props);
 
     this.state = {
-      menuItems: ""
+      menuItems: "",
+      showAddMenuItem: false
     };
   }
 
   componentDidMount() {
-    this.showAddMenuItem = false;
+    this.setState({
+      showAddMenuItem: false
+    });
+
     this.props.fetchSingleChef(this.props.currentUser.chef.id).then(this.updateMenuItems.bind(this));
   }
 
   updateMenuItems() {
-    this.chef = this.props.currentUser.chef;
+    this.chef = this.props.chefs[this.props.currentUser.chef.id];
     this.setState({
       menuItems: this.chef.menu_items
     });
@@ -43,23 +47,26 @@ class ChefEditMenuItems extends React.Component {
       }
     });
 
-    this.showAddMenuItem = false;
+    this.setState({
+      showAddMenuItem: false
+    });
   }
 
   showAddMenuItemForm(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    this.showAddMenuItem = true;
-    // this.forceUpdate();
+    this.setState({
+      showAddMenuItem: true
+    });
   }
 
   menuItemForm() {
     let addMenuItemForm;
 
-    if (this.showAddMenuItem) {
+    if (this.state.showAddMenuItem) {
       addMenuItemForm = (
-        <form onSubmit={ this.addMenuItem }>
+        <form onSubmit={ this.addMenuItem.bind(this) }>
           <div className="chef-edit-menu-items-menu-index-item">
             <ul>
               <li>
@@ -101,7 +108,6 @@ class ChefEditMenuItems extends React.Component {
     return addMenuItemForm;
   }
 
-
   menuItems() {
     const MenuIndexItems = this.state.menuItems;
     let menu = [];
@@ -112,10 +118,10 @@ class ChefEditMenuItems extends React.Component {
           <div>
             <div className="chef-edit-menu-items-menu-index-item">
               <MenuIndexItemContainer
+                chef={ this.chef }
                 title={ item.title }
                 description={ item.description }
                 price={ item.price}
-                chefId={ item.chef_id }
                 key={ item.id }
               />
 
@@ -154,7 +160,7 @@ class ChefEditMenuItems extends React.Component {
               type="submit"
               value="Add Item"
               className="chef-edit-menu-items-add-menu-item"
-              onClick={ this.showAddMenuItemForm }
+              onClick={ this.showAddMenuItemForm.bind(this) }
             />
           </div>
         </div>
