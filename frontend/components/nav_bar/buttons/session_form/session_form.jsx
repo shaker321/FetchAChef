@@ -12,11 +12,7 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return (
-      e => this.setState({
-        [field]: e.currentTarget.value
-      })
-    );
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
@@ -28,17 +24,17 @@ class SessionForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     });
+
+    this.props.close();
   }
 
 
   renderErrors() {
     return (
       <ul>
-        { this.props.errors.map(
-          (error, i) => (
+        { this.props.errors.map((error, i) => (
             <li className="login-form-errors" key={ `error-${i}` }> { error } </li>
-          )
-        )}
+        ))}
       </ul>
     );
   }
@@ -85,7 +81,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="login-form-box">
           <form onSubmit={ this.handleSubmit.bind(this) }>
-            { this.props.errors ? this.renderErrors() : this.props.close() }
+            { this.props.errors ? this.renderErrors() : null }
 
             <div>
               <input

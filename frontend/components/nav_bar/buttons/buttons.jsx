@@ -59,12 +59,12 @@ class NavBar extends React.Component {
           <li>
             <button
               onClick={ this.openModalFromSignUp.bind(this) }
-              className="nav-bar-signup nav-bar-buttons">Sign Up</button></li>
+              className="nav-bar-signup nav-bar-buttons">Sign Up
+            </button></li>
           <li>
             <button
               onClick={ this.openModalFromLogIn.bind(this) }
-              className="nav-bar-login nav-bar-buttons"
-              >Log In
+              className="nav-bar-login nav-bar-buttons">Log In
             </button>
           </li>
         </ul>
@@ -121,9 +121,9 @@ class NavBar extends React.Component {
           onRequestClose={ this.closeModal.bind(this) }
         >
           <SessionFormContainer
-            type={this.form}
-            toggle={this.toggle}
-            close={this.closeModal.bind(this)}
+            type={ this.form }
+            toggle={ this.toggle }
+            close={ this.closeModal.bind(this) }
           />
         </Modal>
       </div>
