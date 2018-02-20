@@ -23,20 +23,25 @@ class SessionForm extends React.Component {
     this.props.processForm({
       username: this.state.username,
       password: this.state.password
-    });
-
-    this.props.close();
+    }).then(this.closeModal.bind(this));
   }
 
+  closeModal() {
+    if (!this.props.errors) {
+      this.props.close();
+    }
+  }
 
   renderErrors() {
-    return (
-      <ul>
-        { this.props.errors.map((error, i) => (
-            <li className="login-form-errors" key={ `error-${i}` }> { error } </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      return (
+        <ul>
+          { this.props.errors.map((error, i) => (
+              <li className="login-form-errors" key={ `error-${i}` }> { error } </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   toggleForm() {
@@ -81,7 +86,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="login-form-box">
           <form onSubmit={ this.handleSubmit.bind(this) }>
-            { this.props.errors ? this.renderErrors() : null }
+            { this.renderErrors() }
 
             <div>
               <input
