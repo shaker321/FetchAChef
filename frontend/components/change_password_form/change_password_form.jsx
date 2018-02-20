@@ -25,13 +25,13 @@ class ChangePasswordForm extends React.Component {
   render() {
     return (
       <div className="change-password-form-container">
-        <form onSubmit={ this.handleSubmit } className="change-password-form">
+        <form onSubmit={ this.handleSubmit.bind(this) } className="change-password-form">
           <h3 className="change-password-form-title">Change Password</h3>
           <input
             type="password"
             value={ this.state.currentPassword }
             placeholder= "Current Password"
-            onChange={ this.update("oldPassword") }
+            onChange={ this.update("currentPassword") }
             className="change-password-form-input"
           />
 

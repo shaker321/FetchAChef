@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
       params[:user][:new_password_confirm]
     )
       logout
-      @user.change_password(params[:user][:password])
+      @user.change_password(params[:user][:new_password])
     end
 
     if @user.update(user_params)
@@ -33,6 +33,16 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(
+      :username,
+      :password,
+      :current_password,
+      :new_password,
+      :new_password_confirm
+    ).except(
+      :current_password,
+      :new_password,
+      :new_password_confirm
+    )
   end
 end

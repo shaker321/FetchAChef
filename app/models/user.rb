@@ -22,7 +22,6 @@ class User < ApplicationRecord
   has_one :kitchen
   has_many :reviews
   has_many :orders
-  has_one :chef
 
   attr_reader :password
 
@@ -35,9 +34,9 @@ class User < ApplicationRecord
     user
   end
 
-  def password=(password)
-    @password = password
-    self.password_digest = BCrypt::Password.create(password)
+  def password=(new_password)
+    @password = new_password
+    self.password_digest = BCrypt::Password.create(new_password)
   end
 
   def is_password?(password)
@@ -59,8 +58,8 @@ class User < ApplicationRecord
     new_password == new_password_confirm && is_password?(current_password) && new_password.length >= 6
   end
 
-  def change_password(password)
-    password=(password)
+  def change_password(new_password)
+    self.password=(new_password)
   end
 
   private
