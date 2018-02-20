@@ -18,16 +18,24 @@ class KitchenMap extends React.Component {
   }
 
   setCenterCoords() {
+    let lat = 40.7529;
+    let lng = -73.9942;
+
+    if (this.props.lat && this.props.lng) {
+      lat = this.props.lat;
+      lng = this.props.lng;
+    }
+
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.map);
     this.map = new google.maps.Map(mapDOMNode, {
       center: {
-        lat: 40.7529,
-        lng: -73.9942
+        lat: lat,
+        lng: lng
       },
       zoom: 13
     });
 
-    if (navigator.geolocation) {
+    if (navigator.geolocation && !this.props.lat) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           let pos = {
@@ -140,13 +148,6 @@ class KitchenMap extends React.Component {
   }
 
   render() {
-    // if (this.props.lat) {
-    //   this.map.setCenter({
-    //     lat: this.props.lat,
-    //     lng: this.props.lng
-    //   });
-    // }
-
     return (
       <div>
         <KitchenIndexContainer

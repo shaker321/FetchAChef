@@ -10,8 +10,8 @@ class SearchPage extends React.Component {
   }
 
   parseLatLng() {
-    if (this.props.history.location.query) {
-      let query = this.props.history.location.query;
+    if (this.props.history.location.search) {
+      let query = this.props.history.location.search;
       let lat = [];
       let lng = [];
       let queryNum = -1;
@@ -29,7 +29,7 @@ class SearchPage extends React.Component {
         }
       }
 
-      return [parseFloat(lat), parseFloat(lng)];
+      return [parseFloat(lat.join("")), parseFloat(lng.join(""))];
     }
   }
 
@@ -45,7 +45,7 @@ class SearchPage extends React.Component {
       lat = latLng[0];
       lng = latLng[1];
     }
-
+    
     return (
       <div className="search-page">
         <KitchenMapContainer
