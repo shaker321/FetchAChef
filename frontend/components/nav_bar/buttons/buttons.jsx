@@ -52,6 +52,13 @@ class NavBar extends React.Component {
     return (this.state.dropDownOpen ? <DropDownMenuContainer history={ this.props.history }/> : null);
   }
 
+  redirectToCart(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.props.history.push(`/api/users/${this.props.currentUser.id}/cart`);
+  }
+
   loggedOutButtons() {
     return (
       <div className="nav-bar">
@@ -86,10 +93,10 @@ class NavBar extends React.Component {
             </Link>
           </li>
           <li>
-            <Link
-              to="/"
+            <button
+              onClick={ this.redirectToCart.bind(this) }
               className="nav-bar-buttons nav-bar-cart">
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

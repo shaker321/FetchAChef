@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update]
     resources :chefs, only: [:create, :destroy, :index, :show, :update]
     resources :kitchens, only: [:create, :destroy, :index, :show, :update]
+    resources :menu_items, only: [:create, :update, :destroy]
+    resources :reviews, only: [:create]
+    resources :orders, only: [:create, :destroy]
+    resources :carts, only: [:show, :update]
   end
 
   root "static_pages#root"

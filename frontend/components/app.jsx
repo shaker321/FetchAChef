@@ -4,6 +4,7 @@ import { Route, Redirect, Link, HashRouter } from "react-router-dom";
 import { AuthRoute } from "../util/route_util.jsx";
 
 import BaseBar from "./base_bar/base_bar.jsx";
+import CartContainer from "./nav_bar/buttons/cart/cart_container.jsx";
 import ChangePasswordFormContainer from "./change_password_form/change_password_form_container.jsx";
 import ChefSignUpFormContainer from "./chef_sign_up_form/chef_sign_up_form_container.jsx";
 import ChefTools from "./chef_tools/chef_tools.jsx";
@@ -32,6 +33,7 @@ const App = () => (
     <Route path="/api/kitchens/post" component={ KitchenSignUpFormContainer} />
     <Route exact path="/api/users/:user_id" component={ ChangePasswordFormContainer } />
     <Route path="/api/users/:user_id/orders" component={ UserOrdersContainer} />
+    <Route path="/api/users/:user_id/cart" component={ CartContainer } />
 
     <footer>
       <BaseBar/>
