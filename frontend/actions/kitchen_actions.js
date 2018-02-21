@@ -32,7 +32,7 @@ export const createKitchen = kitchen => dispatch => (
 );
 
 export const updateKitchen = kitchen => dispatch => (
-  APIUtil.updateKitchen(kitchen.id).then(() => (
-    dispatch(receiveAllKitchens())
+  APIUtil.updateKitchen(kitchen).then((kitchens) => (
+    dispatch(receiveAllKitchens(kitchens))
   ))
 );

@@ -29,6 +29,8 @@ export const updateKitchen = (kitchen) => (
   $.ajax({
     url: "/api/kitchens/" + kitchen.id,
     type: "PATCH",
-    data: kitchen
+    data: kitchen,
+    processData: false,
+    contentType: false,
   })
 );

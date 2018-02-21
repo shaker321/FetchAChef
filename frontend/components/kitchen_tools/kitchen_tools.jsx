@@ -22,7 +22,9 @@ class KitchenTools extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSingleKitchen(this.props.currentUser.kitchen.id).then(this.setKitchen.bind(this));
+    this.props.fetchSingleKitchen(this.props.currentUser.kitchen.id).then(
+    this.props.fetchAllChefs(this.props.currentUser.kitchen.id)).then(
+    this.setKitchen.bind(this));
 
     let input = document.getElementById("kitchen-tools-location-input");
     this.autocomplete = new google.maps.places.Autocomplete(input);
@@ -47,7 +49,7 @@ class KitchenTools extends React.Component {
   }
 
   setKitchen() {
-    this.kitchen = this.props.currentUser.kitchen;
+    this.kitchen = this.props.kitchens[this.props.currentUser.kitchen.id];
 
     this.setState({
       kitchen_name: this.kitchen.kitchen_name,
@@ -62,6 +64,7 @@ class KitchenTools extends React.Component {
       health_cert_url: "",
       food_handler_cert: this.state.food_handler_cert,
       food_handler_cert_url: "",
+      chefs: this.props.chefs
     });
 
     this.getAddress();
@@ -84,12 +87,22 @@ class KitchenTools extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const coords = {
-      lat: this.address.geometry.location.lat(),
-      lng: this.address.geometry.location.lng()
-    };
+    let coords;
+
+    if (this.address) {
+      coords = {
+        lat: this.address.geometry.location.lat(),
+        lng: this.address.geometry.location.lng()
+      };
+    } else {
+      coords = {
+        lat: this.state.lat,
+        lng: this.state.lng
+      };
+    }
 
     let formData = new FormData();
+    formData.append("kitchen[id]", this.props.currentUser.kitchen.id);
     formData.append("kitchen[kitchen_name]", this.state.kitchen_name);
     formData.append("kitchen[description]", this.state.description);
     formData.append("kitchen[lat]", coords.lat);
@@ -104,7 +117,7 @@ class KitchenTools extends React.Component {
     }
 
     this.props.updateKitchen(formData);
-    // this.props.history.push("/");
+    this.props.history.push("/");
   }
 
   updateKitchenImage(e) {
@@ -129,7 +142,22 @@ class KitchenTools extends React.Component {
     let fileReader = new FileReader();
 
     fileReader.onloadend = (() => {
-      this.setState({health_cert: file, health_cert_url: fileReader.result});
+      this.setState({ health_cert: file, health_cert_url: fileReader.result });
+    }).bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+  updateFoodHandlerCert(e) {
+    e.preventDefault();
+
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.onloadend = (() => {
+      this.setState({ food_handler_cert: file, food_handler_cert_url: fileReader.result });
     }).bind(this);
 
     if (file) {
@@ -167,18 +195,20 @@ class KitchenTools extends React.Component {
     const pendingChefs = [];
     const pendingChefIndexItems = [];
 
-    Object.keys(this.state.chefs).forEach((chef_id) => {
-      if (this.state.chefs[chef_id].approved === true) {
-        approvedChefs.push(this.state.chefs[chef_id]);
-      } else {
-        pendingChefs.push(this.state.chefs[chef_id]);
-      }
-    });
+    if (this.state.chefs) {
+      Object.keys(this.state.chefs).forEach((chef_id) => {
+        if (this.state.chefs[chef_id].approved === true) {
+          approvedChefs.push(this.state.chefs[chef_id]);
+        } else {
+          pendingChefs.push(this.state.chefs[chef_id]);
+        }
+      });
+    }
 
     if (approvedChefs) {
       approvedChefs.forEach((chef) => {
         approvedChefIndexItems.push(
-          <li className="kitchen-tools-index-item">
+          <li className="kitchen-tools-index-item" key={ chef.id }>
             <div>Name: { chef.first_name } { chef.last_name }</div>
             <div>Username: { chef.username }</div>
             <div>General Cuisine: { chef.general_cuisine }</div>
@@ -201,7 +231,7 @@ class KitchenTools extends React.Component {
               value="Approve"
               className="kitchen-tools-index-item-approve-button"
               onClick={ this.approveChef.bind(this) }
-              id={chef.id}
+              id={ chef.id }
             />
 
             <br/>
@@ -237,18 +267,20 @@ class KitchenTools extends React.Component {
             <input
               type="text"
               value={ this.state.kitchen_name }
-              onChange={ this.update("kitchen_name") }
+              onChange={ this.update("kitchen_name").bind(this) }
               className="kitchen-tools-input"
-              placeholder="Kitchen Name"/>
+              placeholder="Kitchen Name"
+            />
 
             <br/>
 
             <input
               type="text"
               value={ this.state.owner }
-              onChange={ this.update("owner") }
+              onChange={ this.update("owner").bind(this) }
               className="kitchen-tools-input"
-              placeholder="Owner"/>
+              placeholder="Owner"
+            />
 
             <br/>
 
@@ -257,16 +289,19 @@ class KitchenTools extends React.Component {
               className="kitchen-tools-input"
               id="kitchen-tools-location-input"
               placeholder="Kitchen Address"
-              value={ this.state.address }/>
+              value={ this.state.address }
+              onChange={ this.update("address").bind(this) }
+            />
 
             <br/>
 
             <textarea
               type="text"
               value={ this.state.description }
-              onChange={ this.update("description") }
+              onChange={ this.update("description").bind(this) }
               className="kitchen-tools-input kitchen-tools-description-input"
-              placeholder="About Us"/>
+              placeholder="About Us"
+            />
 
             <br/>
 
@@ -283,7 +318,7 @@ class KitchenTools extends React.Component {
 
             <div className="kitchen-tools-img-container">
               <h5 className="kitchen-tools-body">Health Certification</h5>
-              <input type="file" onChange={ this.updateHealthCert } className="kitchen-tools-img"/>
+              <input type="file" onChange={ this.updateHealthCert.bind(this) } className="kitchen-tools-img"/>
 
               <br/>
 
@@ -294,7 +329,7 @@ class KitchenTools extends React.Component {
 
             <div className="kitchen-tools-img-container">
               <h5 className="kitchen-tools-body">Food Handler Certification</h5>
-              <input type="file" onChange={ this.updateFoodHandlerCert } className="kitchen-tools-img"/>
+              <input type="file" onChange={ this.updateFoodHandlerCert.bind(this) } className="kitchen-tools-img"/>
 
               <br/>
 
@@ -307,7 +342,8 @@ class KitchenTools extends React.Component {
               type="submit"
               value="Update Profile"
               className="kitchen-tools-submit"
-              id="post"/>
+              id="post"
+            />
           </form>
 
           <h1 className="kitchen-tools-title">Chefs</h1>

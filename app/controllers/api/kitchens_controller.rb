@@ -32,7 +32,7 @@ class Api::KitchensController < ApplicationController
   end
 
   def update
-    @kitchen = Kitchen.find(params[:id])
+    @kitchen = Kitchen.find(params[:kitchen][:id])
 
     if @kitchen.update(kitchen_params)
       render :show
