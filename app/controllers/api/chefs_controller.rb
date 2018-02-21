@@ -26,7 +26,7 @@ class Api::ChefsController < ApplicationController
   end
 
   def update
-    @chef = Chef.find(params[:id])
+    @chef = Chef.find(params[:chef][:id])
 
     if @chef.update(chef_params)
       render :show

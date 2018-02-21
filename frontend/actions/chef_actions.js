@@ -39,14 +39,14 @@ export const approveChef = chef => dispatch => (
 );
 
 export const denyChef = chefId => dispatch => (
-  APIUtil.denyChef(chefId).then(() => (
-    dispatch(receiveAllChefs())
+  APIUtil.denyChef(chefId).then((chefs) => (
+    dispatch(receiveAllChefs(chefs))
   ))
 );
 
 export const updateChef = chef => dispatch => (
-  APIUtil.updateChef(chef.id).then(() => (
-    dispatch(receiveAllChefs())
+  APIUtil.updateChef(chef).then((chefs) => (
+    dispatch(receiveAllChefs(chefs))
   ))
 );
 

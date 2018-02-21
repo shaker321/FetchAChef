@@ -13,6 +13,7 @@ class ChefEditProfile extends React.Component {
       kitchen_id: "",
       description: "",
       userId: this.props.currentUser.id,
+      chefId: this.props.currentUser.chef.id,
       imageFile: "",
       imageUrl: "",
       kitchens: []
@@ -97,14 +98,15 @@ class ChefEditProfile extends React.Component {
     formData.append("chef[specific_cuisine]", this.state.specific_cuisine);
     formData.append("chef[description]", this.state.description);
     formData.append("chef[kitchen_id]", this.state.kitchen_id);
-    formData.append("chef[user_id]", this.state.user_id);
+    formData.append("chef[user_id]", this.state.userId);
+    formData.append("chef[id]", this.state.chefId);
 
     if (this.state.imageFile !== this.props.imageFile) {
       formData.append("chef[image]", this.state.imageFile);
     }
 
     this.props.updateChef(formData);
-    // this.props.history.push("/");
+    this.props.history.push("/");
   }
 
   updateFile(e) {
@@ -126,6 +128,29 @@ class ChefEditProfile extends React.Component {
     return (e) => this.setState({[property]: e.target.value});
   }
 
+  generateOptions() {
+    let options = [(<option value={ this.state.general_cuisine }>{ this.state.general_cuisine }</option>)];
+    let potentialOptions = [
+      <option value="African">African</option>,
+      <option value="Asian">Asian</option>,
+      <option value="Caribbean">Caribbean</option>,
+      <option value="European">European</option>,
+      <option value="Indian">Indian</option>,
+      <option value="Mediterranean">Mediterranean</option>,
+      <option value="Middle Eastern">Middle Eastern</option>,
+      <option value="North American">North American</option>,
+      <option value="South American">South American</option>
+    ];
+
+    potentialOptions.forEach((option) => {
+      if (option.props.value !== this.state.general_cuisine) {
+        options.push(option);
+      }
+    });
+
+    return options;
+  }
+
   render() {
     // <div className="chef-edit-profile-form-image"></div>
     return (
@@ -135,7 +160,7 @@ class ChefEditProfile extends React.Component {
           <input
             type="text"
             value={ this.state.first_name }
-            onChange={ this.update("first_name") }
+            onChange={ this.update("first_name").bind(this) }
             className="chef-edit-profile-form-input"
             placeholder="First Name"/>
 
@@ -144,23 +169,14 @@ class ChefEditProfile extends React.Component {
           <input
             type="text"
             value={ this.state.last_name }
-            onChange={ this.update("last_name") }
+            onChange={ this.update("last_name").bind(this) }
             className="chef-edit-profile-form-input"
             placeholder="Last Name"/>
 
           <br/>
 
-          <select onChange={ this.update("general_cuisine") } className="chef-edit-profile-form-input">
-            <option value={ this.state.general_cuisine }>{ this.state.general_cuisine }</option>
-            <option value="African">African</option>
-            <option value="Asian">Asian</option>
-            <option value="Caribbean">Caribbean</option>
-            <option value="European">European</option>
-            <option value="Indian">Indian</option>
-            <option value="Mediterranean">Mediterranean</option>
-            <option value="Middle Eastern">Middle Eastern</option>
-            <option value="North American">North American</option>
-            <option value="South American">South American</option>
+          <select onChange={ this.update("general_cuisine").bind(this) } className="chef-edit-profile-form-input">
+            { this.generateOptions() }
           </select>
 
           <br/>
@@ -168,13 +184,13 @@ class ChefEditProfile extends React.Component {
           <input
             type="text"
             value={ this.state.specific_cuisine }
-            onChange={ this.update("specific_cuisine") }
+            onChange={ this.update("specific_cuisine").bind(this) }
             className="chef-edit-profile-form-input"
             placeholder="Specific Cuisine"/>
 
           <br/>
 
-          <select onChange={ this.update("kitchen_id") } className="chef-edit-profile-form-input">
+          <select onChange={ this.update("kitchen_id").bind(this) } className="chef-edit-profile-form-input">
             { this.state.kitchens }
           </select>
 
@@ -183,14 +199,14 @@ class ChefEditProfile extends React.Component {
           <textarea
             type="text"
             value={ this.state.description }
-            onChange={ this.update("description") }
+            onChange={ this.update("description").bind(this) }
             className="chef-edit-profile-form-input chef-edit-profile-description-form-input"
             placeholder="About Me"/>
 
           <br/>
 
           <div className="chef-edit-profile-form-img-container">
-            <input type="file" onChange={ this.updateFile } className="chef-edit-profile-form-img"/>
+            <input type="file" onChange={ this.updateFile.bind(this) } className="chef-edit-profile-form-img"/>
             <img src={ this.state.imageUrl } className="chef-edit-profile-form-img-show"/>
           </div>
 

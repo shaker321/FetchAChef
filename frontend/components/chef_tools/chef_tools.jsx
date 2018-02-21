@@ -11,7 +11,7 @@ class ChefTools extends React.Component {
   render() {
     return (
       <div className="chef-tools-container">
-        <ChefEditProfileContainer/>
+        <ChefEditProfileContainer history={ this.props.history }/>
         <ChefEditMenuItemsContainer/>
       </div>
     );

@@ -43,7 +43,9 @@ export const updateChef = (chef) => (
   $.ajax({
     url: "/api/chefs/" + chef.id,
     type: "PATCH",
-    data: chef
+    data: chef,
+    processData: false,
+    contentType: false,
   })
 );
 
