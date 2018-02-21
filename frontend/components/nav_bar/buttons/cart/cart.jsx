@@ -15,6 +15,7 @@ class Cart extends React.Component {
 
   setCart() {
     this.cart = this.props.cart;
+
     this.setState({
       cart: this.cart
     });
@@ -30,8 +31,9 @@ class Cart extends React.Component {
 
   pendingOrders() {
     const orders = [];
-    if (this.state.cart.orders) {
-      this.state.cart.orders.forEach((order) => {
+    
+    if (this.state.cart[this.props.currentUser.cart.id]) {
+      this.state.cart[this.props.currentUser.cart.id].orders.forEach((order) => {
         orders.push(
           <li className="cart-index-item">
             <div>Item: { order.menu_item.title }</div>
