@@ -2,7 +2,6 @@ import * as APIUtil from "../util/chef_api_util.js";
 
 export const RECEIVE_ALL_CHEFS = "RECEIVE_ALL_CHEFS";
 export const RECEIVE_SINGLE_CHEF = "RECEIVE_SINGLE_CHEF";
-export const RECEIVE_SINGLE_REVIEW = "RECEIVE_SINGLE_REVIEW";
 
 export const receiveAllChefs = (chefs) => ({
   type: RECEIVE_ALL_CHEFS,
@@ -47,12 +46,6 @@ export const denyChef = chefId => dispatch => (
 export const updateChef = chef => dispatch => (
   APIUtil.updateChef(chef).then((chefs) => (
     dispatch(receiveAllChefs(chefs))
-  ))
-);
-
-export const createReview = review => dispatch => (
-  APIUtil.createReview(review).then(review => (
-    dispatch(receiveSingleChef(review.chef))
   ))
 );
 

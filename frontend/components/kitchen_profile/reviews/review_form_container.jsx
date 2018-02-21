@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { createReview } from "../../../actions/chef_actions.js";
+import { createReview } from "../../../actions/kitchen_actions.js";
 
 import ReviewForm from "./review_form";
 

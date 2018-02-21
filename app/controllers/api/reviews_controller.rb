@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
     @review.username = User.find(review_params[:user_id]).username
 
     if @review.save
-      @kitchen = @review.kitchens
+      @kitchen = @review.kitchen
       render "api/kitchens/show"
     else
       render json: @review.errors.full_messages, status: :unprocessable_entity

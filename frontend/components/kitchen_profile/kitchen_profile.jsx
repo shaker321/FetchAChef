@@ -10,7 +10,7 @@ class KitchenProfile extends React.Component {
 
     this.state = {
       kitchen: {},
-      address: ""
+      address: "",
     };
   }
 
@@ -193,7 +193,7 @@ class KitchenProfile extends React.Component {
 
         <div className="reviews-container">
           <div className="kitchen-review-header">Reviews</div>
-          <ReviewFormContainer kitchenId={ this.state.kitchen.id }/>
+          <ReviewFormContainer kitchenId={ this.state.kitchen.id } addReview={ this.componentWillMount.bind(this) } />
           { this.reviewIndexItems }
         </div>
       </div>

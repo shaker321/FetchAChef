@@ -34,3 +34,11 @@ export const updateKitchen = (kitchen) => (
     contentType: false,
   })
 );
+
+export const createReview = (review) => (
+  $.ajax({
+    method: "POST",
+    url: "api/reviews",
+    data: review
+  })
+);

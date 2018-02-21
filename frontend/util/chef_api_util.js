@@ -49,14 +49,6 @@ export const updateChef = (chef) => (
   })
 );
 
-export const createReview = (review) => (
-  $.ajax({
-    method: "POST",
-    url: "api/reviews",
-    data: review
-  })
-);
-
 export const createMenuItem = (menuItem) => (
   $.ajax({
     method: "POST",

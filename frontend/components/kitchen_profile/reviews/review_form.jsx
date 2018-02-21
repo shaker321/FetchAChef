@@ -17,20 +17,20 @@ class ReviewForm extends React.Component {
       review: {
         rating: this.state.rating,
         body: this.state.body,
-        chef_id: this.props.chefId,
+        kitchen_id: this.props.kitchenId,
         user_id: this.props.currentUser.id
       }
     };
 
-    this.props.createReview(review); // .then(this.clearText);
+    this.props.createReview(review).then(this.clearText.bind(this)).then(this.props.addReview);
   }
 
-  // clearText() {
-  //   this.setState({
-  //     body: "",
-  //     rating: 0
-  //   });
-  // }
+  clearText() {
+    this.setState({
+      body: "",
+      rating: 0
+    });
+  }
 
   update(property) {
     return (e) => this.setState({ [property]: e.target.value });
@@ -51,27 +51,21 @@ class ReviewForm extends React.Component {
           className="review-form-submit"
           type="submit"
           id="post"
-          disable="disabled"
+          disabled="disabled"
         />
       );
     }
   }
 
   render() {
-    let disabled = "disabled";
-
-    if (this.props.currentUser) {
-      disabled = "";
-    }
-
     return (
       <div className="review-form">
-        <form onSubmit={ this.handleSubmit }>
+        <form onSubmit={ this.handleSubmit.bind(this) }>
           <label className="review-form-label">Post a Review</label>
 
           <br/>
 
-          <select onChange={ this.update("rating") } className="review-form-rating">
+          <select onChange={ this.update("rating").bind(this) } className="review-form-rating">
             <option value="" disabled="disabled" selected="selected">Select a Rating</option>
             <option value="5">☆ ☆ ☆ ☆ ☆</option>
             <option value="4">☆ ☆ ☆ ☆</option>
@@ -88,7 +82,7 @@ class ReviewForm extends React.Component {
             value={ this.state.body }
             placeholder="Tell us about your experience! (You must be logged in to post a review.)"
             className="review-form-body"
-            onChange={ this.update("body") }
+            onChange={ this.update("body").bind(this) }
           >
           </textarea>
 
