@@ -11,7 +11,7 @@ class Api::OrdersController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @order = Order.find(params[:id])
     @user = @order.user
 

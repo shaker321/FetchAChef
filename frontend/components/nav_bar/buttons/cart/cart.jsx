@@ -25,13 +25,14 @@ class Cart extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    this.props.removeFromCart(e.target.id);
+    this.props.removeFromCart(parseInt(e.target.id)).then(this.componentDidMount.bind(this));
     // CartActions.fetchCart(SessionStore.currentUser().cart.id);
   }
 
   pendingOrders() {
     const orders = [];
-    
+    let that = this;
+
     if (this.state.cart[this.props.currentUser.cart.id]) {
       this.state.cart[this.props.currentUser.cart.id].orders.forEach((order) => {
         orders.push(
@@ -44,7 +45,7 @@ class Cart extends React.Component {
               type="submit"
               value="Remove"
               className="cart-index-item-remove-button"
-              onClick={ this.removeItem }
+              onClick={ that.removeItem.bind(that) }
               id={ order.id }
             />
           </li>

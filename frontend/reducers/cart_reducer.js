@@ -9,7 +9,8 @@ const cartReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_CART:
       const newCart = { [action.cart.id]: action.cart };
-      return merge({}, state, newCart);
+      return Object.assign({}, state, newCart);
+      // return merge({}, state, newCart);
     default:
       return state;
   }
