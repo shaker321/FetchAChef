@@ -2,7 +2,7 @@ class Api::MenuItemsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def create
-    @menu_tiem = MenuItem.new(menu_item_params)
+    @menu_item = MenuItem.new(menu_item_params)
 
     if @menu_item.save
       @chef = @menu_item.chef

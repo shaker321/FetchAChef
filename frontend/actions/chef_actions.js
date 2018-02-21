@@ -57,8 +57,8 @@ export const createReview = review => dispatch => (
 );
 
 export const createMenuItem = menuItem => dispatch => (
-  APIUtil.createMenuItem(menuItem).then(menuItem => (
-    dispatch(receiveSingleChef(menuItem.chef))
+  APIUtil.createMenuItem(menuItem).then(chef => (
+    dispatch(receiveSingleChef(chef))
   ))
 );
 

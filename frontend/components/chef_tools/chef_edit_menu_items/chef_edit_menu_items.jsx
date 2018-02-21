@@ -45,7 +45,7 @@ class ChefEditMenuItems extends React.Component {
         description: e.target.description.value,
         price: e.target.price.value
       }
-    });
+    }).then(this.updateMenuItems.bind(this));
 
     this.setState({
       showAddMenuItem: false
