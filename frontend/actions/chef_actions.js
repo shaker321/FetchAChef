@@ -62,8 +62,8 @@ export const createMenuItem = menuItem => dispatch => (
   ))
 );
 
-export const deleteMenuItem = id => dispatch => (
-  APIUtil.deleteMenuItem(id).then(() => (
-    dispatch(receiveSingleChef(id))
+export const deleteMenuItem = itemId => dispatch => (
+  APIUtil.deleteMenuItem(itemId).then((chef) => (
+    dispatch(receiveSingleChef(chef))
   ))
 );

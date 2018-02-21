@@ -18,7 +18,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   createMenuItem: (menuItem) => dispatch(createMenuItem(menuItem)),
-  deleteMenuItem: (id) => dispatch(deleteMenuItem(id)),
+  deleteMenuItem: (itemId) => dispatch(deleteMenuItem(itemId)),
   fetchSingleChef: (id) => dispatch(fetchSingleChef(id))
 });
 

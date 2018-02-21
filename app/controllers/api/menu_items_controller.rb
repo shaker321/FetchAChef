@@ -22,7 +22,7 @@ class Api::MenuItemsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @menu_item = MenuItem.find(params[:id])
 
     if @menu_item

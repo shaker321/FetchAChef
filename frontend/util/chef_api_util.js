@@ -63,9 +63,9 @@ export const createMenuItem = (menuItem) => (
   })
 );
 
-export const deleteMenuItem = (id) => (
+export const deleteMenuItem = (itemId) => (
   $.ajax({
     type: "DELETE",
-    url: "/api/menu_items/" + id
+    url: "/api/menu_items/" + itemId
   })
 );

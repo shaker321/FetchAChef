@@ -30,8 +30,8 @@ class ChefEditMenuItems extends React.Component {
   deleteMenuItem(e) {
     e.preventDefault();
     e.stopPropagation();
-
-    this.props.deleteMenuItem(e.target.id);
+                                      // .then(this.props.fetchSingleChef(this.props.currentUser.chef.id))
+    this.props.deleteMenuItem(e.target.id).then(this.updateMenuItems.bind(this));
   }
 
   addMenuItem(e) {
@@ -115,7 +115,7 @@ class ChefEditMenuItems extends React.Component {
     if (MenuIndexItems) {
       MenuIndexItems.forEach((item) => {
         menu.push(
-          <div>
+          <div key={ item.id }>
             <div className="chef-edit-menu-items-menu-index-item">
               <MenuIndexItemContainer
                 chef={ this.chef }

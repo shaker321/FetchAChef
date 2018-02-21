@@ -14,7 +14,8 @@ const chefsReducer = (state = {}, action) => {
       return action.chefs;
     case RECEIVE_SINGLE_CHEF:
       const newChef = { [action.chef.id]: action.chef };
-      return merge({}, state, newChef);
+      return Object.assign({}, state, newChef);
+      // return merge({}, state, newChef);
     default:
       return state;
   }
