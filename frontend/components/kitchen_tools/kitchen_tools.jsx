@@ -31,6 +31,19 @@ class KitchenTools extends React.Component {
       "place_changed",
       this.updateAddress
     );
+
+  }
+
+  getAddress() {
+    let geocoder = new google.maps.Geocoder();
+    let latLng = new google.maps.LatLng(this.state.lat, this.state.lng);
+    let that = this;
+
+    geocoder.geocode({ "latLng": latLng }, (results, status) => {
+      that.setState({
+        address: results[0].formatted_address
+      });
+    });
   }
 
   setKitchen() {
@@ -50,6 +63,8 @@ class KitchenTools extends React.Component {
       food_handler_cert: this.state.food_handler_cert,
       food_handler_cert_url: "",
     });
+
+    this.getAddress();
   }
 
   updateAddress() {
@@ -241,7 +256,8 @@ class KitchenTools extends React.Component {
               type="text"
               className="kitchen-tools-input"
               id="kitchen-tools-location-input"
-              placeholder="Kitchen Address"/>
+              placeholder="Kitchen Address"
+              value={ this.state.address }/>
 
             <br/>
 
