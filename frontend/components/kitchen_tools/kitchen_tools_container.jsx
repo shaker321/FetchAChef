@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllChefs: (id) => dispatch(fetchAllChefs(id)),
   updateKitchen: (kitchen) => dispatch(updateKitchen(kitchen)),
   approveChef: (chef) => dispatch(approveChef(chef)),
-  denyChef: (id) => dispatch(fetchSingleKitchen(id))
+  denyChef: (id) => dispatch(denyChef(id))
 });
 
 export default connect(

@@ -65,7 +65,7 @@ Chef.create!(
   specific_cuisine: "Mexican",
   description: "I eat Mexican food myself. Taco Bell es mue bueno!",
   user_id: User.last.id,
-  kitchen_id: Kitchen.second.id,
+  kitchen_id: Kitchen.first.id,
   approved: false
 )
 

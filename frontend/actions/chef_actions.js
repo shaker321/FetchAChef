@@ -33,7 +33,7 @@ export const createChef = chef => dispatch => (
 );
 
 export const approveChef = chef => dispatch => (
-  APIUtil.approveChef(chef.id).then(approvedChef => (
+  APIUtil.approveChef(chef).then(approvedChef => (
     dispatch(receiveSingleChef(approvedChef))
   ))
 );

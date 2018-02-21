@@ -25,7 +25,7 @@ export const createChef = (chef) => (
 
 export const approveChef = (chef) => (
   $.ajax({
-    url: "/api/chefs/" + chef.chef.id,
+    url: "/api/chefs/" + chef.id,
     type: "PATCH",
     data: chef
   })

@@ -50,7 +50,7 @@ class KitchenTools extends React.Component {
 
   setKitchen() {
     this.kitchen = this.props.kitchens[this.props.currentUser.kitchen.id];
-
+    debugger
     this.setState({
       kitchen_name: this.kitchen.kitchen_name,
       description: this.kitchen.description,
@@ -173,12 +173,18 @@ class KitchenTools extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    let chef = this.state.chefs[e.target.id];
+    let newChef;
 
-    chef.approved = true;
+    this.state.chefs.forEach((chef) => {
+      if (chef.id === parseInt(e.target.id)) {
+        newChef = chef;
+      }
+    });
+
+    newChef.approved = true;
 
     this.props.approveChef({
-      chef: chef
+      chef: newChef
     });
   }
 
@@ -186,7 +192,7 @@ class KitchenTools extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    this.props.denyChef(e.target.id);
+    this.props.denyChef(parseInt(e.target.id));
   }
 
   approvedAndPendingChefs() {
@@ -241,7 +247,7 @@ class KitchenTools extends React.Component {
               value="Deny"
               className="kitchen-tools-index-item-deny-button"
               onClick={ this.denyChef.bind(this) }
-              id={chef.id}
+              id={ chef.id }
             />
           </li>
         );
