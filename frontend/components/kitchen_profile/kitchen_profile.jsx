@@ -82,11 +82,12 @@ class KitchenProfile extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    // CartActions.addToCart(SessionStore.currentUser().id, item)
+    this.props.addToCart(this.props.currentUser.id, item, this.state.kitchen);
   }
 
   menu() {
     const chefs = this.state.kitchen.chefs;
+    let that = this;
     let menu = [];
 
     if (chefs) {
@@ -107,7 +108,7 @@ class KitchenProfile extends React.Component {
                 <input
                   type="submit"
                   value="Add to Cart"
-                  onClick={ (e) => this.addItemToCart(item, e) }
+                  onClick={ (e) => that.addItemToCart(item, e) }
                 />
                 </ul>
               );

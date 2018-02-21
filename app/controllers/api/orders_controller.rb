@@ -42,6 +42,7 @@ class Api::OrdersController < ApplicationController
     params.require(:order).permit(
       :price,
       :chef_id,
+      :user_id,
       :kitchen_id,
       :menu_item_id,
       :complete

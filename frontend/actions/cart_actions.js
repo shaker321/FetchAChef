@@ -13,8 +13,8 @@ export const fetchCart = cartId => dispatch => (
   ))
 );
 
-export const addToCart = (userId, menuItem) => dispatch => (
-  APIUtil.addToCart(userId, menuItem).then(cart => (
+export const addToCart = (userId, menuItem, kitchen) => dispatch => (
+  APIUtil.addToCart(userId, menuItem, kitchen).then(cart => (
     dispatch(receiveCart(cart))
   ))
 );

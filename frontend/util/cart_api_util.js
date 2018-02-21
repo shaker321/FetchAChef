@@ -5,7 +5,7 @@ export const fetchCart = (id) => (
   })
 );
 
-export const addToCart = (userId, menuItem) => (
+export const addToCart = (userId, menuItem, kitchen) => (
   $.ajax({
     url: "/api/orders/",
     type: "POST",
@@ -14,6 +14,7 @@ export const addToCart = (userId, menuItem) => (
         price: menuItem.price,
         user_id: userId,
         chef_id: menuItem.chef_id,
+        kitchen_id: kitchen.id,
         menu_item_id: menuItem.id,
         complete: false
       }
