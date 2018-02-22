@@ -3,7 +3,7 @@
   <head>
     <title>FetchAChef</title>
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDq7QwBjD8dVbIxI_bqwBvc36zX_GH_N9g&libraries=places" %>
+    <%= javascript_include_tag "#{Figaro.env.GOOGLE_API_KEY}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
