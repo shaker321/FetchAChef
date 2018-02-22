@@ -1,15 +1,17 @@
 import { connect } from "react-redux";
 
-import { logout } from "../../actions/session_actions.js";
+import { login, logout } from "../../actions/session_actions.js";
 
 import Buttons from "./buttons/buttons.jsx";
 
 const mapStateToProps = (state) => ({
-    currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  login
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  login: (user) => dispatch(login(user))
 });
 
 export default connect(

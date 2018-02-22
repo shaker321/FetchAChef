@@ -38,6 +38,11 @@ class NavBar extends React.Component {
     this.toggle = this.openModalFromSignUp.bind(this);
   }
 
+  demoLogIn(e) {
+    e.preventDefault();
+    this.props.login({ username: "ChefRatatouille", password: "DemoChef"});
+  }
+
   dropDownOn(e) {
     e.preventDefault();
     this.setState({ dropDownOpen: true });
@@ -67,11 +72,18 @@ class NavBar extends React.Component {
             <button
               onClick={ this.openModalFromSignUp.bind(this) }
               className="nav-bar-signup nav-bar-buttons">Sign Up
-            </button></li>
+            </button>
+          </li>
           <li>
             <button
               onClick={ this.openModalFromLogIn.bind(this) }
               className="nav-bar-login nav-bar-buttons">Log In
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={ this.demoLogIn.bind(this) }
+              className="nav-bar-login nav-bar-buttons">Demo Log In
             </button>
           </li>
         </ul>

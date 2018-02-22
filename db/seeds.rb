@@ -8,7 +8,7 @@
 
 # Users
 User.destroy_all
-User.create!(username: "test@test.com", password: "testtest");
+User.create!(username: "ChefRatatouille", password: "DemoChef");
 User.create!(username: "test2@test.com", password: "testtest");
 
 # Kitchens

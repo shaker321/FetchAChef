@@ -10,7 +10,8 @@ const mapStateToProps = (state, nextProps) => {
     errors: state.errors.session,
     formType: nextProps.type,
     toggle: nextProps.toggle,
-    close: nextProps.close
+    close: nextProps.close,
+    login
   };
 };
 
@@ -19,9 +20,10 @@ const mapDispatchToProps = (dispatch, nextProps) => {
   const processForm = (formType === 'login') ? login : signup;
 
   return {
-      processForm: user => dispatch(processForm(user)),
-      formType
-    };
+    processForm: user => dispatch(processForm(user)),
+    login: user => dispatch(login(user)),
+    formType
+  };
 };
 
 export default connect(
