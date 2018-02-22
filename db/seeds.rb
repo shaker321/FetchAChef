@@ -20,15 +20,22 @@ User.create!(username: "ChefMalory", password: "i<3food")
 
 # Carts
 Cart.destroy_all
-Cart.create!(user_id: User.first.id)
-Cart.create!(user_id: User.second.id)
-Cart.create!(user_id: User.third.id)
-Cart.create!(user_id: User.fourth.id)
-Cart.create!(user_id: User.fifth.id)
-Cart.create!(user_id: User.sixth.id)
-Cart.create!(user_id: User.seventh.id)
-Cart.create!(user_id: User.eigth.id)
-Cart.create!(user_id: User.ninth.id)
+
+users = []
+
+User.all.each do |user|
+  users << user
+end
+
+Cart.create!(user_id: users[0].id)
+Cart.create!(user_id: users[1].id)
+Cart.create!(user_id: users[2].id)
+Cart.create!(user_id: users[3].id)
+Cart.create!(user_id: users[4].id)
+Cart.create!(user_id: users[5].id)
+Cart.create!(user_id: users[6].id)
+Cart.create!(user_id: users[7].id)
+Cart.create!(user_id: users[8].id)
 
 # Kitchens
 Kitchen.destroy_all
@@ -114,7 +121,7 @@ end
   description = descriptions.sample
   owner = owners.sample
   user_id = user_ids.sample
-  kitchen_image_num = (1..26).sample
+  kitchen_image_num = (1..23).to_a.sample
 
   Kitchen.create!(
     kitchen_name: kitchen_name,
@@ -308,15 +315,15 @@ general_cuisines = [
   "South American"
 ]
 
-specific_cusines = [
+specific_cuisines = [
   ["Nigerian", "Kenyan", "South African", "Moroccan", "Zimbabwean"],
   ["Chinese", "Japanese", "Korean", "Thai", "Filipino"],
   ["Jamaican", "Cuban", "Haitian", "Dominican", "Bahamian"],
   ["French", "Irish", "Polish", "German", "Spanish"],
-  ["North Indian", "South Indian"],
-  ["Greek", "Italian"],
+  ["North Indian", "South Indian", "North Indian", "South Indian", "North Indian"],
+  ["Greek", "Italian", "Greek", "Italian", "Greek"],
   ["Iranian", "Lebanese", "Jordanian", "Syrian", "Egyptian"],
-  ["American", "Canadian", "Mexican"],
+  ["American", "Canadian", "Mexican", "Canadian", "Mexican"],
   ["Brazilian", "Argentinian", "Colombian", "Venezuelian", "Chilean"]
 ]
 
@@ -331,7 +338,7 @@ end
   last_name = last_names.sample
   username = usernames.sample
   general_cuisine = general_cuisines.sample
-  specific_cuisine = specific_cuisines[general_cuisines.index(general_cuisine)][(0..8).sample]
+  specific_cuisine = specific_cuisines[general_cuisines.index(general_cuisine)][(0..4).to_a.sample]
   description = descriptions.sample
   user_id = user_ids.sample
   kitchen_id = kitchen_ids.sample
@@ -406,7 +413,7 @@ menu_item_descriptions = [
 900.times do
   chef_id = chef_ids.sample
   title = titles.sample
-  price = (5..15).sample
+  price = (5..15).to_a.sample
   description = menu_item_descriptions.sample
 
   MenuItem.create!(
@@ -481,7 +488,7 @@ end
   kitchen_id = kitchen_ids.sample
 
   Review.create!(
-    rating: (3..5).sample,
+    rating: (3..5).to_a.sample,
     body: review,
     user_id: user.id,
     username: user.username,
