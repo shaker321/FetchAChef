@@ -11,12 +11,12 @@ class KitchenTools extends React.Component {
       lng: "",
       owner: "",
       user_id: this.props.currentUser.id,
-      health_cert: "",
-      health_cert_url: "",
-      food_handler_cert: "",
-      food_handler_cert_url: "",
-      image_file: "",
-      image_url: "",
+      healthCert: "",
+      healthCertUrl: "",
+      foodHandlerCert: "",
+      foodHandlerCertUrl: "",
+      imageFile: "",
+      imageUrl: "",
       chefs: ""
     };
   }
@@ -58,12 +58,12 @@ class KitchenTools extends React.Component {
       lng: this.kitchen.lng,
       owner: this.kitchen.owner,
       user_id: this.kitchen.user_id,
-      image_file: this.kitchen.imageFile,
-      image_url: "",
-      health_cert: this.state.health_cert,
-      health_cert_url: "",
-      food_handler_cert: this.state.food_handler_cert,
-      food_handler_cert_url: "",
+      imageFile: this.kitchen.imageFile,
+      imageUrl: "",
+      healthCert: this.state.healthCert,
+      healthCertUrl: "",
+      foodHandlerCert: this.state.foodHandlerCert,
+      foodHandlerCertUrl: "",
       chefs: this.props.chefs
     });
 
@@ -109,11 +109,11 @@ class KitchenTools extends React.Component {
     formData.append("kitchen[lng]", coords.lng);
     formData.append("kitchen[owner]", this.state.owner);
     formData.append("kitchen[user_id]", this.state.user_id);
-    formData.append("kitchen[health_cert]", this.state.health_cert);
-    formData.append("kitchen[food_handler_cert]", this.state.food_handler_cert);
+    formData.append("kitchen[health_cert]", this.state.healthCert);
+    formData.append("kitchen[food_handler_cert]", this.state.foodHandlerCert);
 
     if (this.state.imageFile !== this.props.imageFile) {
-      formData.append("kitchen[image]", this.state.image_file);
+      formData.append("kitchen[image]", this.state.imageFile);
     }
 
     this.props.updateKitchen(formData);
@@ -127,7 +127,7 @@ class KitchenTools extends React.Component {
     let fileReader = new FileReader();
 
     fileReader.onloadend = (() => {
-      this.setState({image_file: file, image_url: fileReader.result});
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
     }).bind(this);
 
     if (file) {
@@ -142,7 +142,7 @@ class KitchenTools extends React.Component {
     let fileReader = new FileReader();
 
     fileReader.onloadend = (() => {
-      this.setState({ health_cert: file, health_cert_url: fileReader.result });
+      this.setState({ healthCert: file, healthCertUrl: fileReader.result });
     }).bind(this);
 
     if (file) {
@@ -157,7 +157,7 @@ class KitchenTools extends React.Component {
     let fileReader = new FileReader();
 
     fileReader.onloadend = (() => {
-      this.setState({ food_handler_cert: file, food_handler_cert_url: fileReader.result });
+      this.setState({ foodHandlerCert: file, foodHandlerCertUrl: fileReader.result });
     }).bind(this);
 
     if (file) {
@@ -317,7 +317,7 @@ class KitchenTools extends React.Component {
 
               <br/>
 
-              <img src={ this.state.image_url } className="kitchen-tools-img-show"/>
+              <img src={ this.state.imageUrl } className="kitchen-tools-img-show"/>
             </div>
 
             <br/>
@@ -328,7 +328,7 @@ class KitchenTools extends React.Component {
 
               <br/>
 
-              <img src={ this.state.health_cert_url } className="kitchen-tools-img-show"/>
+              <img src={ this.state.healthCertUrl } className="kitchen-tools-img-show"/>
             </div>
 
             <br/>
@@ -339,7 +339,7 @@ class KitchenTools extends React.Component {
 
               <br/>
 
-              <img src={ this.state.food_handler_cert_url } className="kitchen-tools-img-show"/>
+              <img src={ this.state.foodHandlerCertUrl } className="kitchen-tools-img-show"/>
             </div>
 
             <br/>

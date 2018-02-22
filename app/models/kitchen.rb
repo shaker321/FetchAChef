@@ -18,6 +18,15 @@ class Kitchen < ApplicationRecord
   validates :kitchen_name, :user_id, :lat, :lng, :owner, presence: true
   validates :approved, inclusion: { in: [true, false] }
 
+  has_attached_file :health_cert, default_url: "missing.png"
+  validates_attachment_content_type :health_cert, content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :food_handler_cert, default_url: "missing.png"
+  validates_attachment_content_type :food_handler_cert, content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :image, default_url: "missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   has_many :chefs
   belongs_to :user # manager/owner
   has_many :menu_items, through: :chefs

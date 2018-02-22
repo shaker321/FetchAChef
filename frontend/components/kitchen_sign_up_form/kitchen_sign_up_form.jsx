@@ -10,10 +10,10 @@ class KitchenSignUpForm extends React.Component {
       lat: undefined,
       lng: undefined,
       user_id: this.props.currentUser.id,
-      health_cert: null,
-      health_cert_url: null,
-      food_handler_cert: null,
-      food_handler_cert_url: null
+      healthCert: null,
+      healthCertUrl: null,
+      foodHandlerCert: null,
+      foodHandlerCertUrl: null
     };
   }
 
@@ -45,8 +45,8 @@ class KitchenSignUpForm extends React.Component {
     formData.append("kitchen[lat]", coords.lat);
     formData.append("kitchen[lng]", coords.lng);
     formData.append("kitchen[user_id]", this.state.user_id);
-    formData.append("kitchen[health_cert]", this.state.health_cert);
-    formData.append("kitchen[food_handler_cert]", this.state.food_handler_cert);
+    formData.append("kitchen[health_cert]", this.state.healthCert);
+    formData.append("kitchen[food_handler_cert]", this.state.foodHandlerCert);
 
     this.props.createKitchen(formData);
     this.props.history.push("/");
@@ -61,8 +61,8 @@ class KitchenSignUpForm extends React.Component {
 
     fileReader.onloadend = (() => {
       this.setState({
-        health_cert: file,
-        health_cert_url: fileReader.result
+        healthCert: file,
+        healthCertUrl: fileReader.result
       });
     }).bind(this);
 
@@ -79,8 +79,8 @@ class KitchenSignUpForm extends React.Component {
 
     fileReader.onloadend = (() => {
       this.setState({
-        food_handler_cert: file,
-        food_handler_cert_url: fileReader.result
+        foodHandlerCert: file,
+        foodHandlerCertUrl: fileReader.result
       });
     }).bind(this);
 
@@ -129,7 +129,7 @@ class KitchenSignUpForm extends React.Component {
 
             <br/>
 
-            <img src={ this.state.health_cert_url } className="kitchen-form-img-show"/>
+            <img src={ this.state.healthCertUrl } className="kitchen-form-img-show"/>
           </div>
 
           <br/>
@@ -140,7 +140,7 @@ class KitchenSignUpForm extends React.Component {
 
             <br/>
 
-            <img src={ this.state.food_handler_cert_url } className="kitchen-form-img-show"/>
+            <img src={ this.state.foodHandlerCertUrl } className="kitchen-form-img-show"/>
           </div>
 
           <br/>

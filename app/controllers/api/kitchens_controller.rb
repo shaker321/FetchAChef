@@ -64,7 +64,10 @@ class Api::KitchensController < ApplicationController
       :lng,
       :user_id,
       :owner,
-      :approved
+      :approved,
+      :health_cert,
+      :food_handler_cert,
+      :image
     )
   end
 end
