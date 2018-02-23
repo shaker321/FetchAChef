@@ -50,7 +50,7 @@ class KitchenTools extends React.Component {
 
   setKitchen() {
     this.kitchen = this.props.kitchens[this.props.currentUser.kitchen.id];
-    debugger
+    
     this.setState({
       kitchen_name: this.kitchen.kitchen_name,
       description: this.kitchen.description,

@@ -1,6 +1,7 @@
 .chef-tools-container {
   height: -webkit-calc(100% - 124px);
   background-color: white;
+  overflow: scroll;
 }
 
 // .chef-edit-menu-items-image {
@@ -23,7 +24,7 @@
 .chef-edit-menu-items-container {
   overflow: scroll;
   height: 100%;
-  border-left: 1px solid green;
+  border-left: 2px solid green;
 }
 
 .chef-edit-menu-items-text {
@@ -110,6 +111,7 @@
 }
 
 .chef-edit-profile-form-text {
+  // border-right: 1px solid green;
   width: 50%;
   height: 100%;
   display: inline-block;
