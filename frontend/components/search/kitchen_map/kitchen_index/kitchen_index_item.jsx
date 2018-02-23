@@ -19,9 +19,8 @@ class KitchenIndexItem extends React.Component {
           className="kitchen-index-item"
           onClick={ this.handleClick.bind(this) }
         >
-          <div className="kitchen-index-item-text">
-            { this.props.kitchen.kitchen_name }
-          </div>
+          <img src={ this.props.kitchen.image } className="kitchen-index-item-img"/>
+          <div className="kitchen-index-item-text">{ this.props.kitchen.kitchen_name }</div>
         </button>
       </div>
     );

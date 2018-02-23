@@ -128,11 +128,12 @@ class KitchenMap extends React.Component {
 
             that.infowindow = new google.maps.InfoWindow({
               content:
-                `<a href="/api/kitchens/${kitchens[marker.id].id}">
+                `<a href="#/api/kitchens/${kitchens[marker.id].id}">
                   <h3 class="info-window-text">${kitchens[marker.id].kitchen_name}</h3>
+                  <img class="info-window-image" src="${kitchens[marker.id].image}">
                 </a>`
             });
-
+            
             that.markerActive = true;
 
             that.infowindow.open(that.map, marker);

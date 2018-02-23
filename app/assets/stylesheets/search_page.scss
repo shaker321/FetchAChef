@@ -13,6 +13,16 @@
   float: right;
 }
 
+.info-window-image {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.info-window-text {
+  text-align: center;
+}
+
 // Chef Index
 .kitchen-index-items-container {
   width: 60%;
@@ -39,19 +49,29 @@
   overflow: hidden;
 }
 
+.kitchen-index-item-img {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  float: left;
+  position: absolute;
+  object-fit: cover;
+}
+
 .kitchen-index-item-text {
   width: 100%;
   bottom: 5px;
   left: 5px;
+  justify-content: center;
+  align-items: center;
   float: left;
   position: absolute;
 }
 
 .kitchen-index-item:hover {
   opacity: 0.8;
-  box-shadow: 0 1px 8px blue;
-}
-
-.info-window-text {
-  text-align: center;
+  box-shadow: 0 1px 8px green;
 }
