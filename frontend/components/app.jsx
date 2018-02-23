@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, Link, HashRouter } from "react-router-dom";
 
-import { AuthRoute } from "../util/route_util.jsx";
+import { ProtectedRoute } from "../util/route_util.jsx";
 
 import BaseBar from "./base_bar/base_bar.jsx";
 import CartContainer from "./nav_bar/buttons/cart/cart_container.jsx";
@@ -25,16 +25,16 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={ MainPageContainer } />
-      <Route exact path="/api/chefs/post" component={ ChefSignUpFormContainer } />
+      <ProtectedRoute exact path="/api/chefs/post" component={ ChefSignUpFormContainer } />
       <Route exact path="/api/chefs/:chef_id" component={ ChefProfileContainer } />
-      <Route exact path="/api/chefs/:chef_id/chef_tools" component={ ChefTools } />
-      <Route exact path="/api/kitchens/post" component={ KitchenSignUpFormContainer} />
+      <ProtectedRoute exact path="/api/chefs/:chef_id/chef_tools" component={ ChefTools } />
+      <ProtectedRoute exact path="/api/kitchens/post" component={ KitchenSignUpFormContainer} />
       <Route exact path="/api/kitchens" component={ SearchPage } />
       <Route exact path="/api/kitchens/:kitchen_id" component={ KitchenProfileContainer } />
-      <Route exact path="/api/kitchens/:kitchen_id/kitchen_tools" component={ KitchenToolsContainer } />
-      <Route exact path="/api/users/:user_id" component={ ChangePasswordFormContainer } />
-      <Route exact path="/api/users/:user_id/orders" component={ UserOrdersContainer} />
-      <Route exact path="/api/users/:user_id/cart" component={ CartContainer } />
+      <ProtectedRoute exact path="/api/kitchens/:kitchen_id/kitchen_tools" component={ KitchenToolsContainer } />
+      <ProtectedRoute exact path="/api/users/:user_id" component={ ChangePasswordFormContainer } />
+      <ProtectedRoute exact path="/api/users/:user_id/orders" component={ UserOrdersContainer} />
+      <ProtectedRoute exact path="/api/users/:user_id/cart" component={ CartContainer } />
     </Switch>
 
     <footer>
@@ -42,7 +42,5 @@ const App = () => (
     </footer>
   </div>
 );
-
-//add ensureloggedin to certain routes
 
 export default App;
