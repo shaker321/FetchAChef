@@ -120,7 +120,7 @@ class KitchenMap extends React.Component {
 
           that.markers.push(marker);
 
-          marker.addListener("click", () => {
+          marker.addListener("mouseover", () => {
             if (that.markerActive) {
               that.infowindow.close();
               that.markerActive = false;
@@ -133,7 +133,7 @@ class KitchenMap extends React.Component {
                   <img class="info-window-image" src="${kitchens[marker.id].image}">
                 </a>`
             });
-            
+
             that.markerActive = true;
 
             that.infowindow.open(that.map, marker);
