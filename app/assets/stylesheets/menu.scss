@@ -10,20 +10,25 @@
   height: 70%;
 }
 
-.menu-header {}
+.memu-index-item {
+}
 
-.menu-index-item > ul {
+.menu-index-item-add-to-cart {
+  display: inline-block;
+  float: right;
+  width: 25%;
+}
+
+.menu-index-item-content {
   list-style: none;
-  width: 90%;
+  width: 75%;
   margin: 5px;
   padding: 10px;
   border: 1px solid black;
+  display: inline-block;
+  float: left;
 }
-
-.menu-index-item-title {}
 
 .menu-index-item-description {
   width: 70%;
 }
-
-.menu-index-item-price {}

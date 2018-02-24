@@ -105,11 +105,12 @@ class KitchenProfile extends React.Component {
                     key={ item.id }
                   />
 
-                <input
-                  type="submit"
-                  value="Add to Cart"
-                  onClick={ (e) => that.addItemToCart(item, e) }
-                />
+                  <input
+                    className="menu-index-item-add-to-cart"
+                    type="submit"
+                    value="Add to Cart"
+                    onClick={ (e) => that.addItemToCart(item, e) }
+                  />
                 </ul>
               );
             }
@@ -167,32 +168,23 @@ class KitchenProfile extends React.Component {
 
     return (
       <div className="kitchen-profile">
-        <h1 className="kitchen-profile-name">{ this.state.kitchen.kitchen_name }</h1>
-
-        <div className="kitchen-profile-upper-container">
-          <div className="kitchen-profile-container">
-            <div className="kitchen-profile-field">Average Rating: </div>
-            <div className="kitchen-profile-resp">{ this.avgRating }</div>
-
-            <br/>
-
-            <h4 className="kitchen-profile-description">About Our Kitchen</h4>
-            <h3 className="kitchen-profile-description">{ this.state.kitchen.description }</h3>
-          </div>
-
-          <div className="kitchen-profile-side-bar">
-            <h4 className="kitchen-profile-location">Location</h4>
-            <h3 className="kitchen-profile-location-resp">{ this.state.address }</h3>
-            <div className="kitchen-profile-location-map" id="map"></div>
-          </div>
-
-          <div className="menu-container">
-            <h4 className="menu-header">What's Cooking Now?</h4>
-            { this.menu() }
-          </div>
+        <div className="kitchen-profile-upper-left">
+          <h1 className="kitchen-profile-name">{ this.state.kitchen.kitchen_name }</h1>
+          <div className="kitchen-profile-resp">{ this.avgRating }</div>
+          <h3 className="kitchen-profile-description">{ this.state.kitchen.description }</h3>
         </div>
 
-        <div className="reviews-container">
+        <div className="kitchen-profile-upper-right">
+          <div className="kitchen-profile-location-map" id="map"></div>
+          <h3 className="kitchen-profile-location-resp">{ this.state.address }</h3>
+        </div>
+
+        <div className="kitchen-profile-lower-left">
+          <h4 className="menu-header">What's Cooking Now?</h4>
+          { this.menu() }
+        </div>
+
+        <div className="kitchen-profile-lower-right">
           <div className="kitchen-review-header">Reviews</div>
           <ReviewFormContainer kitchenId={ this.state.kitchen.id } addReview={ this.componentWillMount.bind(this) } />
           { this.reviewIndexItems }

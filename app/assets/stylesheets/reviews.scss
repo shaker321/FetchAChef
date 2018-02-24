@@ -4,19 +4,18 @@
   text-align: center;
 }
 
-.chef-review-header {
+.kitchen-review-header {
   font-size: 32px;
   font-weight: bold;
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 20%;
 }
 
 .review-form-body {
   margin: 10px;
   padding: 10px;
   font-size: 14px;
-  width: 400px;
+  width: 300px;
   height: 100px;
 }
 
@@ -41,7 +40,6 @@
 .review-index-item {
   margin: 15px auto;
   padding: 0;
-  width: 700px;
   list-style: none;
 }
 
@@ -68,7 +66,7 @@
   margin-top: 10px;
 }
 
-.review-index-item:last-child{
-  border-bottom: 20px solid white;
-  margin-bottom: 0;
-}
+// .review-index-item:last-child{
+//   border-bottom: 20px solid white;
+//   margin-bottom: 0;
+// }

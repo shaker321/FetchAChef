@@ -8,7 +8,7 @@ class MenuIndexItem extends React.Component {
 
   render() {
     return (
-      <ul>
+      <ul className="menu-index-item-content">
         <li className="menu-index-item-title">{ this.props.title }</li>
         <li className="menu-index-item-description">{ this.props.description }</li>
         <li className="menu-index-item-title">
