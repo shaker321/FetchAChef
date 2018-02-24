@@ -1,6 +1,5 @@
 .chef-form-container {
   height: -webkit-calc(100% - 124px);
-  overflow: scroll;
 }
 
 .chef-form-image {
@@ -30,6 +29,7 @@
   color: black;
   text-align: center;
   float: right;
+  overflow: scroll;
 }
 
 .chef-form-title {
