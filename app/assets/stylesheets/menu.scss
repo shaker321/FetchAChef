@@ -16,7 +16,20 @@
 .menu-index-item-add-to-cart {
   display: inline-block;
   float: right;
-  width: 25%;
+  width: 18%;
+  text-align: center;
+  color: green;
+  border: 1px solid green;
+  border-radius: 5px;
+  height: 30px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+
+.menu-index-item-add-to-cart:hover {
+  background-color: green;
+  color: white;
 }
 
 .menu-index-item-content {
