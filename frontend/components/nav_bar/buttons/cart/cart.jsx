@@ -26,7 +26,6 @@ class Cart extends React.Component {
     e.stopPropagation();
 
     this.props.removeFromCart(parseInt(e.target.id)).then(this.componentDidMount.bind(this));
-    // CartActions.fetchCart(SessionStore.currentUser().cart.id);
   }
 
   pendingOrders() {

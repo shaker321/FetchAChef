@@ -1,5 +1,5 @@
 import React from "react";
-// Add in file upload to AWS S3
+
 class KitchenSignUpForm extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +52,6 @@ class KitchenSignUpForm extends React.Component {
     this.props.history.push("/");
   }
 
-  //figure out how to make below two methods DRY
   updateHealthCert(e) {
     e.preventDefault();
 

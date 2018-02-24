@@ -14,7 +14,6 @@ class KitchenMap extends React.Component {
     this.markerActive = undefined;
 
     this.setCenterCoords();
-    // this.createMarkers();
   }
 
   setCenterCoords() {
@@ -60,7 +59,7 @@ class KitchenMap extends React.Component {
   }
 
   getMapCoords() {
-    let latLngBounds = this.map.getBounds();          // map needs to be loaded before getBounds works
+    let latLngBounds = this.map.getBounds();
     let northEastBound = latLngBounds.getNorthEast();
     let southWestBound = latLngBounds.getSouthWest();
 
@@ -78,7 +77,6 @@ class KitchenMap extends React.Component {
     };
 
     this.props.fetchAllKitchens(this.bounds).then(this.createMarkers.bind(this));
-    // this.createMarkers();
   }
 
   createMarkers() {

@@ -152,7 +152,6 @@ class ChefEditProfile extends React.Component {
   }
 
   render() {
-    // <div className="chef-edit-profile-form-image"></div>
     return (
       <div className="chef-edit-profile-form-container">
         <form onSubmit={ this.handleSubmit.bind(this) } className="chef-edit-profile-form-text">

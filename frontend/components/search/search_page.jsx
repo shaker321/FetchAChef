@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import KitchenMapContainer from "./kitchen_map/kitchen_map_container.jsx";
-// import KitchenIndex from "somewhere";
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -34,9 +33,6 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    // <KitchenIndex
-    //   locationId={ this.props.params.location_id }
-    // />
     let lat;
     let lng;
     let latLng = this.parseLatLng();
@@ -45,7 +41,7 @@ class SearchPage extends React.Component {
       lat = latLng[0];
       lng = latLng[1];
     }
-    
+
     return (
       <div className="search-page">
         <KitchenMapContainer

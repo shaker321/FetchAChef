@@ -1,5 +1,3 @@
-import merge from "lodash/merge";
-
 import { RECEIVE_CART } from "../actions/cart_actions.js";
 
 const cartReducer = (state = {}, action) => {
@@ -10,7 +8,6 @@ const cartReducer = (state = {}, action) => {
     case RECEIVE_CART:
       const newCart = { [action.cart.id]: action.cart };
       return Object.assign({}, state, newCart);
-      // return merge({}, state, newCart);
     default:
       return state;
   }

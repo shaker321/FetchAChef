@@ -6,8 +6,6 @@ class DropDownMenu extends React.Component {
     super(props);
   }
 
-  //consolidate following methods into one somehow
-
   redirectToChangePasswordForm(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -51,9 +49,7 @@ class DropDownMenu extends React.Component {
         </li>
       ];
 
-      if ((this.props.currentUser.username === "test@test.com") ||
-          (this.props.currentUser.kitchen && this.props.currentUser.chef)
-      ) { // for testing
+      if (this.props.currentUser.kitchen && this.props.currentUser.chef) {
         dropDownMenuItems.push(
           <li key="chef-tools">
             <div

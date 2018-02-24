@@ -1,5 +1,3 @@
-import merge from "lodash/merge";
-
 import {
   RECEIVE_ALL_CHEFS,
   RECEIVE_SINGLE_CHEF
@@ -15,7 +13,6 @@ const chefsReducer = (state = {}, action) => {
     case RECEIVE_SINGLE_CHEF:
       const newChef = { [action.chef.id]: action.chef };
       return Object.assign({}, state, newChef);
-      // return merge({}, state, newChef);
     default:
       return state;
   }

@@ -30,7 +30,6 @@ class ChefEditMenuItems extends React.Component {
   deleteMenuItem(e) {
     e.preventDefault();
     e.stopPropagation();
-                                      // .then(this.props.fetchSingleChef(this.props.currentUser.chef.id))
     this.props.deleteMenuItem(e.target.id).then(this.updateMenuItems.bind(this));
   }
 
@@ -142,7 +141,6 @@ class ChefEditMenuItems extends React.Component {
   }
 
   render() {
-    // <div className= "chef-edit-menu-items-image"></div>
     return (
       <div className="chef-edit-menu-items-container">
         <div className="chef-edit-menu-items-text">
