@@ -1,3 +1,5 @@
+import merge from "lodash/merge";
+
 import { RECEIVE_CART } from "../actions/cart_actions.js";
 
 const cartReducer = (state = {}, action) => {

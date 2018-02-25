@@ -1,3 +1,5 @@
+import merge from "lodash/merge";
+
 import {
   RECEIVE_ALL_CHEFS,
   RECEIVE_SINGLE_CHEF

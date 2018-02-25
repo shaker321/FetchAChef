@@ -1,6 +1,5 @@
 .cart-container {
   height: -webkit-calc(100% - 124px);
-  overflow: scroll;
 }
 
 .cart-image {
@@ -29,6 +28,7 @@
   color: black;
   text-align: center;
   float: right;
+  overflow: scroll;
 }
 
 .cart-title {
