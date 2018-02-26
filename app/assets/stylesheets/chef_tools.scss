@@ -72,30 +72,7 @@
   font-weight: bold;
 }
 
-// .chef-edit-profile-form-image {
-//     width: 50%;
-//     height: 100%;
-//     display: inline-block;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     background-image: asset-url("chef-signup-form.jpg"); //NB: Change this to chef's picture
-//     background-image: -webkit-linear-gradient(
-//       left,
-//       rgba(255, 255, 255, 1) 0%,
-//       rgba(255, 255, 255, 0.5) 10%,
-//       rgba(255, 255, 255, 0) 90%
-//     ),
-//     asset-url("chef-signup-form.jpg");
-// }
-
-.chef-edit-profile-form-container {
-  // overflow: scroll;
-  // height: 100%;
-}
-
 .chef-edit-profile-form-text {
-  // border-right: 1px solid green;
   width: 50%;
   height: 100%;
   display: inline-block;
