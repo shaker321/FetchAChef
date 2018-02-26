@@ -18,8 +18,8 @@
   float: right;
   width: 17%;
   text-align: center;
-  color: green;
-  border: 1px solid green;
+  color: white;
+  border: 1px solid white;
   border-radius: 5px;
   height: 30px;
   font-weight: bold;
@@ -28,7 +28,7 @@
 }
 
 .menu-index-item-add-to-cart:active {
-  background-color: green;
+  background-color: white;
   color: white;
 }
 
@@ -37,7 +37,7 @@
   width: 75%;
   margin: 5px;
   padding: 10px;
-  border: 1px solid black;
+  // border: 1px solid white;
   display: inline-block;
   float: left;
 }

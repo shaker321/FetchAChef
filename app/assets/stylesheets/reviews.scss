@@ -45,6 +45,7 @@
 
 .review-index-item-rating {
   margin: 5px;
+  color: green;
 }
 
 .review-index-item-body {
@@ -56,8 +57,9 @@
 .review-index-item-username {}
 
 
-.review-index-item:nth-child(2n-1) {
-  background-color: green;
+.review-index-item {
+  // background-color: green;
+  // border-bottom: 1px solid lightgray;
   color: white;
 }
 
