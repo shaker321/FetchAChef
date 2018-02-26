@@ -11,7 +11,7 @@ class BaseBar extends React.Component {
         <ul>
           <li><a href="mailto:anthonypaul.shaker@gmail.com">Contact</a></li>
           <li><a href="https://github.com/shaker321/FetchAChef" target="_blank">Github</a></li>
-          <li><a href="http://www.tonyshaker.com/" target="_blank">Personal Site</a></li>
+          <li><a href="http://www.tonyshaker.com/" target="_blank">Portfolio</a></li>
         </ul>
       </div>
     );
