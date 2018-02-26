@@ -10,7 +10,13 @@
   height: 70%;
 }
 
-.memu-index-item {
+.menu-header {
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+.menu-index-item-title {
+  font-size: 25px;
 }
 
 .menu-index-item-add-to-cart {
@@ -37,7 +43,7 @@
   width: 75%;
   margin: 5px;
   padding: 10px;
-  // border: 1px solid white;
+  margin-bottom: -4px;
   display: inline-block;
   float: left;
 }

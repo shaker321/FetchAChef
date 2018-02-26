@@ -26,7 +26,8 @@
 // Chef Index
 .kitchen-index-items-container {
   width: 60%;
-  height: -webkit-calc(100% - 124px);  overflow: scroll;
+  height: -webkit-calc(100% - 124px);
+  overflow: scroll;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -42,7 +43,7 @@
 .kitchen-index-item {
   width: 200px;
   height: 200px;
-  margin: 30px;
+  margin: 15px;
   float: left;
   border: 1px solid black;
   position: relative;
