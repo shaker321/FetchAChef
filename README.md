@@ -22,9 +22,9 @@ Existing users can login and maximize their fun while new users can sign up with
 
 Users have different drop down menus and accessibility based on whether they are normal users, chefs, and/or own a public kitchen where chefs can cook out of.
 
-![User Drop Down Menu](docs/users_drop_down.png)
-![Chef Drop Down Menu](docs/chefs_drop_down.png)
-![Kitchen Drop Down Menu](docs/kitchens_drop_down.png)
+![User Drop Down Menu](docs/users_drop_down_menu.png)
+![Chef Drop Down Menu](docs/chefs_drop_down_menu.png)
+![Kitchen Drop Down Menu](docs/kitchens_drop_down_menu.png)
 
 Protected paths prevent users from accessing routes they do not have access to.
 
