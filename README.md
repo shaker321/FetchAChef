@@ -170,3 +170,7 @@ makeDateHumanReadable(date) {
 
 Finally, FetchAChef implements a responsive UI design optimized for varying browser sizes.
 ![Phone Screen](docs/phone_screen.jpg)
+
+### Future Additions
+
+In the future, FetchAChef will likely have search filters to find your favorite cuisine and increased image upload so that chefs can personalize their menu items with images.
