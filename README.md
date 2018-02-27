@@ -169,4 +169,4 @@ makeDateHumanReadable(date) {
 ### Responsive UI
 
 Finally, FetchAChef implements a responsive UI design optimized for varying browser sizes.
-![Phone Screen](docs/phone_screen.png)
+![Phone Screen](docs/phone_screen.jpg)
