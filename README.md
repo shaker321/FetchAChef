@@ -24,7 +24,7 @@ Users have different drop down menus and accessibility based on whether they are
 
 ![User Drop Down Menu](docs/users_drop_down_menu.png)
 ![Chef Drop Down Menu](docs/chefs_drop_down_menu.png)
-![Kitchen Drop Down Menu](docs/kitchens_drop_down_menu.png)
+![Kitchen Drop Down Menu](docs/kitchen_drop_down_menu.png)
 
 Protected paths prevent users from accessing routes they do not have access to.
 
