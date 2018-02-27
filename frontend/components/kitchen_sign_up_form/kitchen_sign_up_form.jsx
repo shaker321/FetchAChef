@@ -20,14 +20,14 @@ class KitchenSignUpForm extends React.Component {
   componentDidMount() {
     let input = document.getElementById("kitchen-form-location-input");
     this.autocomplete = new google.maps.places.Autocomplete(input);
-    this.autocompleteListener = google.maps.event.addListener(this.autocomplete, "place_changed", this._updateAddress);
+    this.autocompleteListener = google.maps.event.addListener(this.autocomplete, "place_changed", this.updateAddress.bind(this));
   }
 
   componentWillUnmount() {
     this.autocompleteListener.remove();
   }
 
-  _updateAddress() {
+  updateAddress() {
     this.address = this.autocomplete.getPlace();
   }
 
@@ -124,7 +124,7 @@ class KitchenSignUpForm extends React.Component {
 
           <div className="kitchen-form-img-container">
             <h5 className="kitchen-form-body">Health Certification</h5>
-            <input type="file" onChange={ this.updateHealthCert } className="kitchen-form-img"/>
+            <input type="file" onChange={ this.updateHealthCert.bind(this) } className="kitchen-form-img"/>
 
             <br/>
 
@@ -135,7 +135,7 @@ class KitchenSignUpForm extends React.Component {
 
           <div className="kitchen-form-img-container">
             <h5 className="kitchen-form-body">Food Handler Certification</h5>
-            <input type="file" onChange={ this.updateFoodHandlerCert } className="kitchen-form-img"/>
+            <input type="file" onChange={ this.updateFoodHandlerCert.bind(this) } className="kitchen-form-img"/>
 
             <br/>
 
