@@ -1,4 +1,4 @@
-# PetBnB
+# FetchAChef
 
 [FetchAChef live!](http://fetchachef.com/)
 
@@ -30,7 +30,7 @@ Protected paths prevent users from accessing routes they do not have access to.
 
 ### Different User Types Functionalities
 
-After logging in, normal users can order food:
+After logging in, normal users can order food while posting and viewing reviews:
 ![Kitchen Profile](docs/kitchen_profile_page.png)
 
 Sign up to become a chef:
@@ -39,11 +39,14 @@ Sign up to become a chef:
 Sign up to open a kitchen:
 ![Kitchen Sign Up](docs/kitchen_sign_up.png)
 
-Post and view reviews:
-![Reviews](docs/reviews.png)
-
 View their order histories:
 ![Order History](docs/order_history.png)
+
+Edit their carts:
+![Cart](docs/cart.png)
+
+Check out different chef's profiles:
+![Chef Profile](docs/chef_profile.png)
 
 Change their passwords:
 ![Change Password](docs/change_password.png)
@@ -52,7 +55,9 @@ Chef users can do all of the above plus, edit their profiles and menu items:
 ![Chef Edit Profile](docs/chef_edit_profile.png)
 
 Finally, kitchen users can do everything that a normal user can do with the addition of editing their kitchen profiles and approving/denying applicant chefs:
-![Kitchen Edit Profile](docs/kitchen_edit_profile.png)
+![Kitchen Edit Profile](docs/kitchen_edit_profile_1.png)
+![Kitchen Edit Profile](docs/kitchen_edit_profile_2.png)
+![Kitchen Edit Profile](docs/kitchen_edit_profile_3.png)
 
 ### File Upload
 
@@ -60,13 +65,15 @@ Users attempting to open an official kitchen are required to upload an image of 
 
 When uploaded, every kitchen's address is converted into precise latitude and longitude coordinates so it can be accurately placed on a google maps integrated map.
 
-### Browsing Pets
+### Browsing Kitchens
 
 ![Kitchen Index](docs/KitchenIndex.png)
 
 Search is an essential component of FetchAChef. With an autocomplete search bar always ready for a new address and a map itching to be moved, users can browse for kitchens until they finally remember how hungry they are.
 
-The map is fully functional; markers disappear and reappear as the map moves, each marker has an info-box that includes a kitchen's picture and name (plus each info-box is a link that can take you directly to a pet's profile). The search bar moves the map accurately and accordingly while the map tracks the current location of the user to allow for a more personalized experience!
+![Seach](docs/search.png)
+
+The map is fully functional; markers disappear and reappear as the map moves, each marker has an info-box that includes a kitchen's picture and name (plus each info-box is a link that can take you directly to a kitchen's profile). The search bar moves the map accurately and accordingly while the map tracks the current location of the user to allow for a more personalized experience!
 
 FetchAChef utilizes custom SQL queries to fetch only the kitchens that reside in the current map area and meet the filter criteria rather than every single kitchen in the database. This results in significant server optimization.
 
@@ -74,7 +81,9 @@ FetchAChef utilizes custom SQL queries to fetch only the kitchens that reside in
 
 FetchAChef utilizes ES6, React 16, and Redux as well as a separation between container and presentational components to keep code up-to-date with current trends and best practices.
 
-![Code Folders](docs/code_folders.png)
+![Code Folders](docs/code_folders_1.png)
+![Code Folders](docs/code_folders_2.png)
+![Code Folders](docs/code_folders_3.png)
 
 ### Handling of Async functionality
 
