@@ -9,16 +9,15 @@ class DropDownMenu extends React.Component {
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
-        <li key="change-password">
-          <Link to={ "/api/users/" + this.props.currentUser.id }
-            className="drop-down-menu-item"
-            >Change Password
+        <li key="change-password" className="drop-down-menu-item">
+          <Link
+            to={ "/api/users/" + this.props.currentUser.id }
+            >Password
           </Link>
         </li>,
-        <li key="user-orders">
+        <li key="user-orders" className="drop-down-menu-item">
           <Link
             to={ "/api/users/" + this.props.currentUser.id + "/orders" }
-            className="drop-down-menu-item"
             >User Orders
           </Link>
         </li>
@@ -26,37 +25,33 @@ class DropDownMenu extends React.Component {
 
       if (this.props.currentUser.kitchen && this.props.currentUser.chef) {
         dropDownMenuItems.push(
-          <li key="chef-tools">
+          <li key="chef-tools" className="drop-down-menu-item">
             <Link
               to={ "/api/chefs/" + this.props.currentUser.chef.id + "/chef_tools" }
-              className="drop-down-menu-item"
               >Chef Tools
             </Link>
           </li>,
-          <li key="kitchen-tools">
+          <li key="kitchen-tools" className="drop-down-menu-item">
             <Link
               to={ "/api/kitchens/" + this.props.currentUser.kitchen.id + "/kitchen_tools" }
-              className="drop-down-menu-item"
               >Kitchen Tools
             </Link>
           </li>
         );
       } else if (this.props.currentUser.kitchen) {
         dropDownMenuItems.push(
-          <li key="kitchen-tools">
+          <li key="kitchen-tools" className="drop-down-menu-item">
             <Link
               to={ "/api/kitchens/" + this.props.currentUser.kitchen.id + "/kitchen_tools" }
-              className="drop-down-menu-item"
               >Kitchen Tools
             </Link>
           </li>
         );
       } else if (this.props.currentUser.chef) {
         dropDownMenuItems.push(
-          <li key="chef-tools">
+          <li key="chef-tools" className="drop-down-menu-item">
             <Link
               to={ "/api/chefs/" + this.props.currentUser.chef.id + "/chef_tools" }
-              className="drop-down-menu-item"
               >Chef Tools
             </Link>
           </li>
@@ -64,10 +59,8 @@ class DropDownMenu extends React.Component {
       }
 
       dropDownMenuItems.push(
-        <li key="logout-button">
-          <div
-            onClick={ this.props.logout }
-            className="drop-down-menu-item">
+        <li key="logout-button" className="drop-down-menu-item">
+          <div onClick={ this.props.logout } >
             Log Out
         </div>
       </li>
