@@ -50,7 +50,7 @@ class NavBar extends React.Component {
 
   dropDownOff(e) {
     e.preventDefault();
-    // this.setState({ dropDownOpen: false });
+    this.setState({ dropDownOpen: false });
   }
 
   renderDropDownMenu() {
