@@ -14,8 +14,6 @@ class ChefEditProfile extends React.Component {
       description: "",
       userId: this.props.currentUser.id,
       chefId: this.props.currentUser.chef.id,
-      imageFile: "",
-      imageUrl: "",
       kitchens: []
     };
   }
@@ -45,8 +43,6 @@ class ChefEditProfile extends React.Component {
       specific_cuisine: this.chef.specific_cuisine,
       description: this.chef.description,
       kitchen_id: this.chef.kitchen_id,
-      imageFile: this.chef.imageFile,
-      imageUrl: ""
     });
   }
 
@@ -101,27 +97,8 @@ class ChefEditProfile extends React.Component {
     formData.append("chef[user_id]", this.state.userId);
     formData.append("chef[id]", this.state.chefId);
 
-    if (this.state.imageFile !== this.props.imageFile) {
-      formData.append("chef[image]", this.state.imageFile);
-    }
-
     this.props.updateChef(formData);
     this.props.history.push("/");
-  }
-
-  updateFile(e) {
-    e.preventDefault();
-
-    let file = e.currentTarget.files[0];
-    let fileReader = new FileReader();
-
-    fileReader.onloadend = (() => {
-      this.setState({imageFile: file, imageUrl: fileReader.result});
-    }).bind(this);
-
-    if (file) {
-      fileReader.readAsDataURL(file);
-    }
   }
 
   update(property) {
@@ -201,13 +178,6 @@ class ChefEditProfile extends React.Component {
             onChange={ this.update("description").bind(this) }
             className="chef-edit-profile-form-input chef-edit-profile-description-form-input"
             placeholder="About Me"/>
-
-          <br/>
-
-          <div className="chef-edit-profile-form-img-container">
-            <input type="file" onChange={ this.updateFile.bind(this) } className="chef-edit-profile-form-img"/>
-            <img src={ this.state.imageUrl } className="chef-edit-profile-form-img-show"/>
-          </div>
 
           <br/>
 
