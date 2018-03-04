@@ -1,6 +1,5 @@
 .kitchen-form-container {
   height: -webkit-calc(100% - 124px);
-  overflow: scroll;
 }
 
 .kitchen-form-image {
@@ -29,6 +28,7 @@
   color: black;
   text-align: center;
   float: left;
+  overflow: scroll;
 }
 
 .kitchen-form-title {
