@@ -56,7 +56,6 @@ class KitchenProfile extends React.Component {
         address: results[0].formatted_address
       });
     });
-
   }
 
   createKitchenLocationMap() {
@@ -129,7 +128,11 @@ class KitchenProfile extends React.Component {
     let sumRatings = 0;
 
     if (reviews) {
-      reviews.forEach((review) => {
+      let reviewsOrdered = reviews.sort((review1, review2) => {
+        return review2.id - review1.id;
+      });
+
+      reviewsOrdered.forEach((review) => {
         this.reviewIndexItems.push(
           <ReviewIndexItem
             rating={ review.rating }
@@ -143,8 +146,6 @@ class KitchenProfile extends React.Component {
         sumRatings += review.rating;
       });
     }
-
-    this.reviewIndexItems.reverse();
 
     this.avgRating = Math.round(sumRatings / numRatings );
 

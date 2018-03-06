@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
   }
 
   submitButton() {
-    if (this.props.currentUser && this.state.rating > 0 ) {
+    if (this.props.currentUser && this.state.rating > 0) {
       return (
         <input
           className="review-form-submit"
@@ -48,7 +48,7 @@ class ReviewForm extends React.Component {
     } else {
       return (
         <input
-          className="review-form-submit"
+          className="review-form-submit review-form-submit-disabled"
           type="submit"
           id="post"
           disabled="disabled"

@@ -32,6 +32,11 @@
   font-weight: bold;
 }
 
+.review-form-submit-disabled {
+  border: 1px solid grey;
+  color: grey;
+}
+
 .review-form-label {
   margin-bottom: 100px;
   text-decoration: underline;
