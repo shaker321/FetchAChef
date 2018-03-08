@@ -13,8 +13,33 @@ class NavBar extends React.Component {
     this.state = {
       username: this.props.currentUser,
       modalOpen: false,
-      dropDownOpen: false
+      dropDownOpen: false,
+      orders: []
     };
+  }
+
+  componentDidMount() {
+    if (this.props.currentUser) {
+      this.props.fetchCart(this.props.currentUser.cart.id).then(this.setCart.bind(this));
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.currentUser &&
+        this.props.cart[this.props.currentUser.cart.id] &&
+        (nextProps.cart[this.props.currentUser.cart.id].orders.length !== this.props.cart[this.props.currentUser.cart.id].orders.length ||
+        Object.keys(nextProps.cart).length !== Object.keys(this.props.cart).length)
+    ) {
+      this.props.fetchCart(this.props.currentUser.cart.id).then(this.setCart.bind(this));
+    }
+  }
+
+  setCart() {
+    this.cart = this.props.cart[this.props.currentUser.cart.id];
+
+    this.setState({
+      orders: this.cart.orders
+    });
   }
 
   closeModal() {
@@ -107,7 +132,11 @@ class NavBar extends React.Component {
           <li>
             <button
               onClick={ this.redirectToCart.bind(this) }
-              className="nav-bar-buttons nav-bar-cart">
+              className="nav-bar-buttons nav-bar-cart"
+            >
+              <div className="nav-bar-cart-number">
+                { this.state.orders.length }
+              </div>
             </button>
           </li>
         </ul>
