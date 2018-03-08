@@ -44,9 +44,9 @@
 
 .nav-bar-cart-number {
   color: white;
-  position: absolute;
-  right: 108px;
-  top: 12px;
+  position: relative;
+  bottom: 9px;
+  left: 2px;
 }
 
 // Search
@@ -70,12 +70,17 @@
 
 .drop-down-menu-item {
   margin-bottom: 3px;
-  padding: 10px 20px;
+  padding: 10px 0px;
   display: inline-block;
   width: 100%;
+  text-align: center;
 }
 
 .drop-down-menu-item:hover {
   background-color: green;
   color: white;
+  width: 100%;
+  margin: 0px;
+  padding: 10px 0px;
+  text-align: center;
 }

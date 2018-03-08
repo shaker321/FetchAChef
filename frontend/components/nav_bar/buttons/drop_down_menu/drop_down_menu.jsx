@@ -12,7 +12,7 @@ class DropDownMenu extends React.Component {
         <li key="change-password" className="drop-down-menu-item">
           <Link
             to={ "/api/users/" + this.props.currentUser.id }
-            >Password
+            >Change Password
           </Link>
         </li>,
         <li key="user-orders" className="drop-down-menu-item">
