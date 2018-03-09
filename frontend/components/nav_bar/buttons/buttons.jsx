@@ -65,7 +65,7 @@ class NavBar extends React.Component {
 
   demoLogIn(e) {
     e.preventDefault();
-    this.props.login({ username: "ChefRatatouille", password: "DemoChef"});
+    this.props.login({ username: "ChefRatatouille", password: "DemoChef"}).then(this.componentDidMount.bind(this));
   }
 
   dropDownOn(e) {
