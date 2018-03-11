@@ -6,6 +6,7 @@
   height: -webkit-calc(100% - 124px);
   background-image: asset-url("marble.jpg");
   color: white;
+  min-height: 500px;
 }
 
 .kitchen-profile-name {
@@ -19,10 +20,10 @@
 }
 
 .kitchen-profile-resp {
-  font-size: 16px;
+  font-size: 25px;
   font-weight: normal;
   text-align: center;
-  color: black;
+  color: green;
 }
 
 .kitchen-profile-description {
