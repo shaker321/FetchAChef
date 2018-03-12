@@ -12,7 +12,8 @@ const sessionReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
-      return merge({}, { currentUser });
+      return Object.assign({}, { currentUser });
+      // return merge({}, { currentUser });
     default:
       return state;
   }

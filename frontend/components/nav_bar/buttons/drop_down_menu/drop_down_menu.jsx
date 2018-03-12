@@ -6,6 +6,11 @@ class DropDownMenu extends React.Component {
     super(props);
   }
 
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
   render() {
     if (this.props.currentUser) {
       let dropDownMenuItems = [
@@ -60,7 +65,7 @@ class DropDownMenu extends React.Component {
 
       dropDownMenuItems.push(
         <li key="logout-button" className="drop-down-menu-item">
-          <div onClick={ this.props.logout } >
+          <div onClick={ this.logoutUser.bind(this) } >
             Log Out
         </div>
       </li>
