@@ -11,6 +11,7 @@ const mapStateToProps = (state, nextProps) => {
     formType: nextProps.type,
     toggle: nextProps.toggle,
     close: nextProps.close,
+    demo: nextProps.demo,
     login
   };
 };

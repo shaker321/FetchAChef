@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
     this.props.login({
       username: "ChefRatatouille",
       password: "DemoChef"
-    }).then(this.closeModal.bind(this));
+    }).then(this.closeModal.bind(this)).then(this.props.demo.bind(this));
   }
 
   closeModal() {

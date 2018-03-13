@@ -172,6 +172,7 @@ class NavBar extends React.Component {
             type={ this.form }
             toggle={ this.toggle }
             close={ this.closeModal.bind(this) }
+            demo={ this.componentDidMount.bind(this) }
           />
         </Modal>
       </div>
