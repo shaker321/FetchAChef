@@ -64,7 +64,7 @@
   float: left;
   display: inline-block;
   width: -webkit-calc(55%);
-  height: -webkit-calc(70%);
+  height: -webkit-calc(70% - 10px);
   margin-left: 2%;
   overflow: scroll;
   padding-left: 3%;
@@ -78,7 +78,7 @@
   float: right;
   display: inline-block;
   width: -webkit-calc(35%);
-  height: -webkit-calc(70%);
+  height: -webkit-calc(70% - 10px);
   overflow: scroll;
   margin-right: 2%;
   text-align: center;
