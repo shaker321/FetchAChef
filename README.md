@@ -173,4 +173,4 @@ Finally, FetchAChef implements a responsive UI design optimized for varying brow
 
 ### Future Additions
 
-In the future, FetchAChef will likely have search filters to find your favorite cuisine and increased image upload so that chefs can personalize their menu items with pictures as well as update their profiles with shots of themselves.
+In the future, FetchAChef will have search filters to find your favorite cuisine and increased image upload so that chefs can personalize their menu items with pictures as well as update their profiles with shots of themselves.
