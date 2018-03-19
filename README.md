@@ -119,7 +119,6 @@ export const createReview = review => dispatch => (
     dispatch(receiveSingleKitchen(kitchen))
   ))
 );
-
 ```
 
 ### Data Parsing
