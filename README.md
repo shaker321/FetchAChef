@@ -2,9 +2,9 @@
 
 [FetchAChef live!](http://fetchachef.com/)
 
-FetchAChef is where Uber meets home cooking in a shareconomy app inspired by a hungry stomach! FetchAChef utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with Redux on the frontend.
+FetchAChef is where Uber meets homecooking in a shareconomy app inspired by a hungry stomach! FetchAChef utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with Redux on the frontend.
 
-The app is about people cooking for other people (à la Uber), providing families with home-cooked meals and providing jobs for burgeoning chefs and underemployed workers with skill in the kitchen.
+The app is about people cooking for other people (à la Uber), providing families with homecooked meals and providing jobs for burgeoning chefs and underemployed workers with skill in the kitchen.
 
 ## Features & Implementation
 
