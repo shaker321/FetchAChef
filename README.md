@@ -18,7 +18,7 @@ FetchAChef is a single-page app; all content is delivered on one static page. Se
 
 ![Login](docs/Login.png)
 
-Existing users can login and maximize their fun while new users can sign up with an email address and password or use a provided guest account to poke around and get a feel for the app first.
+Existing users can log in and maximize their fun while new users can sign up with an email address and password or use a provided guest account to poke around and get a feel for the app first.
 
 Users have different drop down menus and accessibility based on whether they are normal users, chefs, and/or own a public kitchen where chefs can cook out of.
 
