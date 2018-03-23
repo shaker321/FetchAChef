@@ -60,7 +60,7 @@ class UserOrders extends React.Component {
   render() {
     return (
       <div className="user-orders-container">
-        <div className="user-orders-image"></div>
+        <div className="user-orders-image"/>
         <div className="user-orders-text">
           <h1 className="user-orders-title">Order Summary</h1>
           <div className="user-orders-index">

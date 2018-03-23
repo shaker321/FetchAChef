@@ -57,7 +57,7 @@ class ChangePasswordForm extends React.Component {
             value="Change Password"
           />
         </form>
-        <div className="change-password-form-image"></div>
+        <div className="change-password-form-image"/>
       </div>
     );
   }

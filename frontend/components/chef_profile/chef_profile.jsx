@@ -41,7 +41,7 @@ class ChefProfile extends React.Component {
   render() {
     return (
       <div className="chef-profile-container">
-        <div className="chef-profile-image"></div>
+        <div className="chef-profile-image"/>
         <div className="chef-profile-text">
           <h1 className="chef-profile-title"> Chef { this.state.chef.first_name } { this.state.chef.last_name }</h1>
 

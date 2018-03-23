@@ -50,7 +50,7 @@ class KitchenTools extends React.Component {
 
   setKitchen() {
     this.kitchen = this.props.kitchens[this.props.currentUser.kitchen.id];
-    
+
     this.setState({
       kitchen_name: this.kitchen.kitchen_name,
       description: this.kitchen.description,
@@ -264,7 +264,7 @@ class KitchenTools extends React.Component {
 
     return (
       <div className="kitchen-tools-container">
-        <div className="kitchen-tools-image"></div>
+        <div className="kitchen-tools-image"/>
         <div className="kitchen-tools-text">
           <form onSubmit={ this.handleSubmit.bind(this) }>
             <h3 className="kitchen-tools-title">Kitchen Tools</h3>
