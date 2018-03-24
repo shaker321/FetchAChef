@@ -81,7 +81,8 @@ class ChefEditMenuItems extends React.Component {
                   type="textarea"
                   name="description"
                   placeholder="Description"
-                  className="chef-edit-menu-items-add-menu-item-input chef-edit-menu-items-add-menu-item-description-input"
+                  className="chef-edit-menu-items-add-menu-item-input
+                  chef-edit-menu-items-add-menu-item-description-input"
                 />
               </li>
               <li>
