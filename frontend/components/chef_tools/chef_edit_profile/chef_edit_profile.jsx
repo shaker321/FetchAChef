@@ -131,7 +131,10 @@ class ChefEditProfile extends React.Component {
   render() {
     return (
       <div className="chef-edit-profile-form-container">
-        <form onSubmit={ this.handleSubmit.bind(this) } className="chef-edit-profile-form-text">
+        <form
+          onSubmit={ this.handleSubmit.bind(this) }
+          className="chef-edit-profile-form-text"
+        >
           <h3 className="chef-edit-profile-form-title">Update Chef Profile</h3>
           <input
             type="text"
@@ -151,7 +154,10 @@ class ChefEditProfile extends React.Component {
 
           <br/>
 
-          <select onChange={ this.update("general_cuisine").bind(this) } className="chef-edit-profile-form-input">
+          <select
+            onChange={ this.update("general_cuisine").bind(this) }
+            className="chef-edit-profile-form-input"
+          >
             { this.generateOptions() }
           </select>
 
@@ -166,7 +172,10 @@ class ChefEditProfile extends React.Component {
 
           <br/>
 
-          <select onChange={ this.update("kitchen_id").bind(this) } className="chef-edit-profile-form-input">
+          <select
+            onChange={ this.update("kitchen_id").bind(this) }
+            className="chef-edit-profile-form-input"
+          >
             { this.state.kitchens }
           </select>
 
@@ -176,7 +185,8 @@ class ChefEditProfile extends React.Component {
             type="text"
             value={ this.state.description }
             onChange={ this.update("description").bind(this) }
-            className="chef-edit-profile-form-input chef-edit-profile-description-form-input"
+            className="chef-edit-profile-form-input
+            chef-edit-profile-description-form-input"
             placeholder="About Me"/>
 
           <br/>
