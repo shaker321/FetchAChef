@@ -313,18 +313,29 @@ class KitchenTools extends React.Component {
 
             <div className="kitchen-tools-img-container">
               <h5 className="kitchen-tools-body">Kitchen Image</h5>
-              <input type="file" onChange={ this.updateKitchenImage.bind(this) } className="kitchen-tools-img"/>
+              <input
+                type="file"
+                onChange={ this.updateKitchenImage.bind(this) }
+                className="kitchen-tools-img"
+              />
 
               <br/>
 
-              <img src={ this.state.imageUrl } className="kitchen-tools-img-show"/>
+              <img
+                src={ this.state.imageUrl }
+                className="kitchen-tools-img-show"
+              />
             </div>
 
             <br/>
 
             <div className="kitchen-tools-img-container">
               <h5 className="kitchen-tools-body">Health Certification</h5>
-              <input type="file" onChange={ this.updateHealthCert.bind(this) } className="kitchen-tools-img"/>
+              <input
+                type="file"
+                onChange={ this.updateHealthCert.bind(this) }
+                className="kitchen-tools-img"
+              />
 
               <br/>
 
@@ -335,11 +346,18 @@ class KitchenTools extends React.Component {
 
             <div className="kitchen-tools-img-container">
               <h5 className="kitchen-tools-body">Food Handler Certification</h5>
-              <input type="file" onChange={ this.updateFoodHandlerCert.bind(this) } className="kitchen-tools-img"/>
+              <input
+                type="file"
+                onChange={ this.updateFoodHandlerCert.bind(this) }
+                className="kitchen-tools-img"
+              />
 
               <br/>
 
-              <img src={ this.state.foodHandlerCertUrl } className="kitchen-tools-img-show"/>
+              <img
+                src={ this.state.foodHandlerCertUrl }
+                className="kitchen-tools-img-show"
+              />
             </div>
 
             <br/>

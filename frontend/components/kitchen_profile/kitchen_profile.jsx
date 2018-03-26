@@ -187,7 +187,10 @@ class KitchenProfile extends React.Component {
 
         <div className="kitchen-profile-lower-right">
           <div className="kitchen-review-header">Reviews</div>
-          <ReviewFormContainer kitchenId={ this.state.kitchen.id } addReview={ this.componentWillMount.bind(this) } />
+          <ReviewFormContainer
+            kitchenId={ this.state.kitchen.id }
+            addReview={ this.componentWillMount.bind(this) }
+          />
           { this.reviewIndexItems }
         </div>
       </div>

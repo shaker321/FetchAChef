@@ -16,7 +16,20 @@ class ReviewIndexItem extends React.Component {
   }
 
   makeDateHumanReadable(date) {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
 
     let year = date.slice(0, 4);
     let month = months[parseInt(date.slice(5, 7)) - 1];
