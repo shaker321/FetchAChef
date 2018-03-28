@@ -7,19 +7,19 @@ export const receiveCart = (cart) => ({
   cart
 });
 
-export const fetchCart = cartId => dispatch => (
+export const fetchCart = (cartId) => (dispatch) => (
   APIUtil.fetchCart(cartId).then(cart => (
     dispatch(receiveCart(cart))
   ))
 );
 
-export const addToCart = (userId, menuItem, kitchen) => dispatch => (
+export const addToCart = (userId, menuItem, kitchen) => (dispatch) => (
   APIUtil.addToCart(userId, menuItem, kitchen).then(cart => (
     dispatch(receiveCart(cart))
   ))
 );
 
-export const removeFromCart = orderId => dispatch => (
+export const removeFromCart = (orderId) => (dispatch) => (
   APIUtil.removeFromCart(orderId).then(cart => (
     dispatch(receiveCart(cart))
   ))

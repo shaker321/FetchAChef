@@ -13,49 +13,49 @@ export const receiveSingleChef = (chef) => ({
   chef
 });
 
-export const fetchAllChefs = filters => dispatch => (
+export const fetchAllChefs = (filters) => (dispatch) => (
   APIUtil.fetchAllChefs(filters).then(chefs => (
     dispatch(receiveAllChefs(chefs))
   ))
 );
 
-export const fetchSingleChef = id => dispatch => (
+export const fetchSingleChef = (id) => (dispatch) => (
   APIUtil.fetchSingleChef(id).then(chef => (
     dispatch(receiveSingleChef(chef))
   ))
 );
 
-export const createChef = chef => dispatch => (
+export const createChef = (chef) => (dispatch) => (
   APIUtil.createChef(chef).then(newChef => (
     dispatch(receiveSingleChef(newChef))
   ))
 );
 
-export const approveChef = chef => dispatch => (
+export const approveChef = (chef) => (dispatch) => (
   APIUtil.approveChef(chef).then(approvedChef => (
     dispatch(receiveSingleChef(approvedChef))
   ))
 );
 
-export const denyChef = chefId => dispatch => (
+export const denyChef = (chefId) => (dispatch) => (
   APIUtil.denyChef(chefId).then((chefs) => (
     dispatch(receiveAllChefs(chefs))
   ))
 );
 
-export const updateChef = chef => dispatch => (
+export const updateChef = (chef) => (dispatch) => (
   APIUtil.updateChef(chef).then((chefs) => (
     dispatch(receiveAllChefs(chefs))
   ))
 );
 
-export const createMenuItem = menuItem => dispatch => (
+export const createMenuItem = (menuItem) => (dispatch) => (
   APIUtil.createMenuItem(menuItem).then(chef => (
     dispatch(receiveSingleChef(chef))
   ))
 );
 
-export const deleteMenuItem = itemId => dispatch => (
+export const deleteMenuItem = (itemId) => (dispatch) => (
   APIUtil.deleteMenuItem(itemId).then((chef) => (
     dispatch(receiveSingleChef(chef))
   ))

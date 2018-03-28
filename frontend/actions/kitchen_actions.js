@@ -14,31 +14,31 @@ export const receiveSingleKitchen = (kitchen) => ({
   kitchen
 });
 
-export const fetchAllKitchens = (bounds) => dispatch => (
+export const fetchAllKitchens = (bounds) => (dispatch) => (
   APIUtil.fetchAllKitchens(bounds).then(kitchens => (
     dispatch(receiveAllKitchens(kitchens))
   ))
 );
 
-export const fetchSingleKitchen = id => dispatch => (
+export const fetchSingleKitchen = (id) => (dispatch) => (
   APIUtil.fetchSingleKitchen(id).then(kitchen => (
     dispatch(receiveSingleKitchen(kitchen))
   ))
 );
 
-export const createKitchen = kitchen => dispatch => (
+export const createKitchen = (kitchen) => (dispatch) => (
   APIUtil.createKitchen(kitchen).then(newKitchen => (
     dispatch(receiveSingleKitchen(newKitchen))
   ))
 );
 
-export const updateKitchen = kitchen => dispatch => (
+export const updateKitchen = (kitchen) => (dispatch) => (
   APIUtil.updateKitchen(kitchen).then((kitchens) => (
     dispatch(receiveAllKitchens(kitchens))
   ))
 );
 
-export const createReview = review => dispatch => (
+export const createReview = (review) => (dispatch) => (
   APIUtil.createReview(review).then(kitchen => (
     dispatch(receiveSingleKitchen(kitchen))
   ))
