@@ -61,7 +61,7 @@ Finally, kitchen users can do everything that a normal user can do with the addi
 
 ### File Upload
 
-Users attempting to open an official kitchen are required to upload an image of their kitchen as well as documentation proving that they have the necessary health certification and food handler certification required to handle food in the USA. Images are hosted on AWS S3 allowing the app to scale.
+Users attempting to open an official kitchen are required to upload an image of their kitchen as well as documentation proving that they have the necessary health certification and food handler certification required in the USA. Images are hosted on AWS S3, allowing the app to scale.
 
 When uploaded, every kitchen's address is converted into precise latitude and longitude coordinates so it can be accurately placed on a google maps integrated map.
 
